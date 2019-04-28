@@ -16,7 +16,7 @@
     <!-- Third-Party CSS -->
     <link rel="stylesheet" href="../assets/online_css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/online_css/octicons.css">
-    <link rel="stylesheet" href="../assets/online_css/css/hover-min.css">
+    <link rel="stylesheet" href="../assets/online_css/hover-min.css">
     <link rel="stylesheet" href="../assets/online_css/user-content.min.css">
     <link rel="stylesheet" href="../assets/online_css/syntax.css">
     <link rel="stylesheet" href="../assets/online_css/gitalk.css">
@@ -28,7 +28,7 @@
 
     <!-- CSS set in page -->
     {% for css in page.css %}
-    <link rel="stylesheet" href="//www.itmind.net/assets/css/{{css}}">
+    <link rel="stylesheet" href="../assets/online_css/{{css}}">
     {% endfor %}
 
     <!-- CSS set in layout -->

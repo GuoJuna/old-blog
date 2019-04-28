@@ -1,3 +1,21 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@guojun16 
+9
+69 515 ityouknow/ityouknow.github.io
+ Code  Issues 2  Pull requests 4  Projects 0  Wiki  Insights
+ityouknow.github.io/_includes/head.html
+@ityouknow ityouknow m
+1298b96 on 12 Mar
+45 lines (33 sloc)  2.4 KB
+    
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,3 +58,18 @@
 
     <script type="text/javascript" src="http://www.itmind.net/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.itmind.net/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+</head>
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Support us  •  Feedback?

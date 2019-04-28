@@ -58,7 +58,7 @@
         </div>
     </div>
     <!-- Third-Party JS -->
-    <script type="text/javascript" src="http://www.itmind.net/bower_components/geopattern/js/geopattern.min.js"></script>
+    <script type="text/javascript" src="../assets/online_css/geopattern.min.js"></script>
     <!-- My JS -->
     <script type="text/javascript" src="../assets/online_css/script.js"></script>
     {% for javascript in page.javascript %}

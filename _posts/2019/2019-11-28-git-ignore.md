@@ -1,10 +1,10 @@
 ---
 layout: post
-title: gitignore 文件
+title: git配置文件
 copyright: java
 category: java
 tags: [java,git]
-excerpt: git 忽略配置文件
+excerpt: gitignore 文件
 ---
 
 ## 介绍

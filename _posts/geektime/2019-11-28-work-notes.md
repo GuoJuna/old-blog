@@ -76,4 +76,5 @@ excerpt: 工作笔记
      
     2.处理中文编码 -encoding utf-8 -charset utf-8 
 ```
-![](assets/images/2019/geektime/IDEAjavadoc.png)
+![](/assets/images/2019/geektime/IDEAjavadoc.png)
+

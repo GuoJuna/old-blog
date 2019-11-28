@@ -2,8 +2,8 @@
 layout: post
 title: gitignore 文件
 copyright: java
-category: other
-tags: [java]
+category: java
+tags: [java,git]
 excerpt: git 忽略配置文件
 ---
 

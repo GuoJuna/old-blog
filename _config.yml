@@ -54,37 +54,37 @@ paginate: 12
 paginate_path: 'page:num'
 
 # Navigation. top menu list
-menus:
-
-  -
-    href: /zsxq.html
-    label: 星球
-    target: _self
-
-  -
-    href: /gitchat.html
-    label: Chat
-    target: _self
-
-  -
-    href: /geektime.html
-    label: 极客
-    target: _self
-
-  -
-    href: /life.html
-    label: 故事
-    target: _self
-
-  -
-    href: /arch.html
-    label: 架构
-    target: _self
-
-  -
-    href: /link.html
-    label: 友链
-    target: _self
+#menus:
+#
+#  -
+#    href: /zsxq.html
+#    label: 星球
+#    target: _self
+#
+#  -
+#    href: /gitchat.html
+#    label: Chat
+#    target: _self
+#
+#  -
+#    href: /geektime.html
+#    label: 极客
+#    target: _self
+#
+#  -
+#    href: /life.html
+#    label: 故事
+#    target: _self
+#
+#  -
+#    href: /arch.html
+#    label: 架构
+#    target: _self
+#
+#  -
+#    href: /link.html
+#    label: 友链
+#    target: _self
 
 
 

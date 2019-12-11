@@ -3,7 +3,7 @@ layout: post
 title: git配置文件
 copyright: java
 category: tools
-tags: [java,git]
+tags: [java,git,tools]
 excerpt: gitignore 文件
 ---
 

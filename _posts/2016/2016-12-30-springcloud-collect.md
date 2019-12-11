@@ -8,7 +8,7 @@ tags: [springcloud]
 收集 Spring Cloud 相关的学习资料
 
 
-> 学习 Spring Cloud 首先需要了解 Spring Boot，不了解 Spring Boot 的同学戳这里[Spring Boot学习资料汇总](http://www.ityouknow.com/springboot/2015/12/30/springboot-collect.html)
+> 学习 Spring Cloud 首先需要了解 Spring Boot，不了解 Spring Boot 的同学戳这里[Spring Boot学习资料汇总](http://www.guojun49.github.io/springboot/2015/12/30/springboot-collect.html)
 
 
 **重点推荐：[Spring Cloud 中文索引](http://springcloud.fun/)**
@@ -16,7 +16,7 @@ tags: [springcloud]
 
 ## 推荐博客
 
-- [纯洁的微笑 Spring Cloud 系列文章](http://www.ityouknow.com/spring-cloud) 
+- [纯洁的微笑 Spring Cloud 系列文章](http://www.guojun49.github.io/spring-cloud) 
 - [windmt一spring cloud](https://windmt.com/tags/Spring-Cloud/)  
 - [方志朋 Spring Cloud 专栏](http://blog.csdn.net/column/details/15197.html)  
 - [许进 跟我学 Spring Cloud](http://xujin.org/categories/%E8%B7%9F%E6%88%91%E5%AD%A6Spring-Cloud/)  

@@ -7,7 +7,7 @@ tags: [springboot]
 keywords: Spring Boot,开源项目,学习教程
 ---
 
-2016年，在一次技术调研的过程中认识到了 Spring Boot ，试用之后便一发不可收拾的爱上它。为了防止学习之后忘记，就在网上连载了 [Spring Boot 系列文章](http://www.ityouknow.com/spring-boot.html)，没想到这一开始便与 Spring Boot 深度结缘。
+2016年，在一次技术调研的过程中认识到了 Spring Boot ，试用之后便一发不可收拾的爱上它。为了防止学习之后忘记，就在网上连载了 [Spring Boot 系列文章](http://www.guojun49.github.io/spring-boot.html)，没想到这一开始便与 Spring Boot 深度结缘。
 
 近三年的时间写了一百多篇关于 Spring Boot 的文章（包含两个课程），在写文章的过程中将文中的示例项目托管在 Github 上面，随着学习 Spring Boot 的朋友越来越多，在 Github 上面的关注（Star）人数也越来越多，到现在已经高达 8300 多个 Star。
 
@@ -30,7 +30,7 @@ keywords: Spring Boot,开源项目,学习教程
 
 此开源项目创建比较早，因此有一部分示例项目和对应的文章还在 1.0，最近计划找一些时间将这些项目全部升级到最新版本，重新优化后的文章都会推送到公号：Java 极客技术 上面，如果对学习 Spring Boot 有兴趣可以关注此公号。
 
-![](http://www.ityouknow.com/assets/images/java.jpg)
+![](http://www.guojun49.github.io/assets/images/java.jpg)
 
 ## [云收藏(star 3000+)](https://github.com/cloudfavorites/favorites-web)
 

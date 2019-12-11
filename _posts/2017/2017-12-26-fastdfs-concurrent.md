@@ -19,7 +19,7 @@ keywords: FastDFS,并发,架构
 - nginx ：1.7.9      
 - fastdfs-nginx-module：1.16
 
-为了尽可能的模拟生产，我在测试环境1:1搭建了一套和生产一样的FastDFS集群，当时也写了搭建过程：[FastDFS 集群 安装 配置](http://www.ityouknow.com/fastdfs/2017/10/10/cluster-building-fastdfs.html)
+为了尽可能的模拟生产，我在测试环境1:1搭建了一套和生产一样的FastDFS集群，当时也写了搭建过程：[FastDFS 集群 安装 配置](http://www.guojun49.github.io/fastdfs/2017/10/10/cluster-building-fastdfs.html)
 
 ## 从日志中找线索
 

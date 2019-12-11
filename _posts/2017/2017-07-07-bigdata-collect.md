@@ -12,7 +12,7 @@ no-post-nav: true
 
 ## 博客
 
-- [纯洁的微笑](http://www.ityouknow.com)
+- [纯洁的微笑](http://www.guojun49.github.io)
 
 - [粉丝日志](http://blog.fens.me/series-hadoop-family/)
 

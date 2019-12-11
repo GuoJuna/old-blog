@@ -8,7 +8,7 @@ tags: [zsxq]
 excerpt:  韭菜被割怕
 ---
 
-前两天写了一篇文章[《人生第一个过万 Star 的 GitHub 项目诞生》](http://www.ityouknow.com/springboot/2019/03/12/github-ten-thousand-star.html)，有一个前端兄弟给我发了一个留言如下下图：
+前两天写了一篇文章[《人生第一个过万 Star 的 GitHub 项目诞生》](http://www.guojun49.github.io/springboot/2019/03/12/github-ten-thousand-star.html)，有一个前端兄弟给我发了一个留言如下下图：
 
 ![](http://www.itmind.net/assets/images/2019/zsxq/money40.jpg)
 对方说的费用是错的

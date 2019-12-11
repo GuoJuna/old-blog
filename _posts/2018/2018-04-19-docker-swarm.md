@@ -256,7 +256,7 @@ docker pull registry.docker-cn.com/library/alpine
 现在我们在上一节创建的 Swarm 集群中运行一个名为 helloworld 服务。
 
 ``` sh
-docker@manager1:~$ docker service create --replicas 1 --name helloworld alpine ping ityouknow.com
+docker@manager1:~$ docker service create --replicas 1 --name helloworld alpine ping guojun49.github.io
 rwpw7eij4v6h6716jvqvpxbyv
 overall progress: 1 out of 1 tasks
 1/1: running   [==================================================>]
@@ -268,7 +268,7 @@ verify: Service converged
 - `docker service create` 命令创建一个服务
 - `--name` 服务名称命名为 `helloworld`
 - `--replicas` 设置启动的示例数
-- `alpine `指的是使用的镜像名称，`ping ityouknow.com`指的是容器运行的bash
+- `alpine `指的是使用的镜像名称，`ping guojun49.github.io`指的是容器运行的bash
 
 使用命令 `docker service ps rwpw7eij4v6h6716jvqvpxbyv` 可以查看服务进展
 
@@ -313,7 +313,7 @@ UpdateConfig:
  Rollback order:    stop-first
 ContainerSpec:
  Image:         alpine:latest@sha256:7b848083f93822dd21b0a2f14a110bd99f6efb4b838d499df6d04a49d0debf8b
- Args:          ping ityouknow.com
+ Args:          ping guojun49.github.io
 Resources:
 Endpoint Mode:  vip
 ```
@@ -339,7 +339,7 @@ docker-machine ssh  worker1
 ``` sh
 docker@worker1:~$   docker ps
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
-96bf5b1d8010        alpine:latest       "ping ityouknow.com"   4 minutes ago       Up 4 minutes                            helloworld.1.rgroe3s9qa53lf4u4ky0tzcb8
+96bf5b1d8010        alpine:latest       "ping guojun49.github.io"   4 minutes ago       Up 4 minutes                            helloworld.1.rgroe3s9qa53lf4u4ky0tzcb8
 ```
 
 这样的话，我们在 Swarm 集群中成功的运行了一个 helloworld 服务，根据命令可以看出在 worker1 节点上运行。

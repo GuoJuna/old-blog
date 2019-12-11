@@ -8,7 +8,7 @@ keywords: Spring Boot Admin，监控，应用，图形化
 copyright: java
 ---
 
-上一篇文章[《Spring Boot(十九)：使用 Spring Boot Actuator 监控应用》](http://www.ityouknow.com/springboot/2018/02/06/spring-boot-actuator.html)介绍了 Spring Boot Actuator 的使用，Spring Boot Actuator 提供了对单个 Spring Boot 的监控，信息包含：应用状态、内存、线程、堆栈等等，比较全面的监控了 Spring Boot 应用的整个生命周期。
+上一篇文章[《Spring Boot(十九)：使用 Spring Boot Actuator 监控应用》](http://www.guojun49.github.io/springboot/2018/02/06/spring-boot-actuator.html)介绍了 Spring Boot Actuator 的使用，Spring Boot Actuator 提供了对单个 Spring Boot 的监控，信息包含：应用状态、内存、线程、堆栈等等，比较全面的监控了 Spring Boot 应用的整个生命周期。
 
 但是这样监控也有一些问题：第一，所有的监控都需要调用固定的接口来查看，如果全面查看应用状态需要调用很多接口，并且接口返回的 Json 信息不方便运营人员理解；第二，如果 Spring Boot 应用集群非常大，每个应用都需要调用不同的接口来查看监控信息，操作非常繁琐低效。在这样的背景下，就诞生了另外一个开源软件：**Spring Boot Admin**。
 

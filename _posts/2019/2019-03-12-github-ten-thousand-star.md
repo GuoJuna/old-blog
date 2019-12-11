@@ -42,7 +42,7 @@ excerpt: 用了三年时间
 
 开源项目中有一部分示例还在 1.0，最近在持续更新到 2.x，已经更新了六篇，优化后的文章都会推送到公号：Java 极客技术 上面，如果对 Java 感兴趣，请一定要关注。
 
-![](http://www.ityouknow.com/assets/images/java.jpg)
+![](http://www.guojun49.github.io/assets/images/java.jpg)
 （友情提示，这个公号无广告）
 
 其实在这三年中，在 Github 上面创建关于 Spring Boot 的项目还有另外三个，只是这个项目受到的关注量最高。

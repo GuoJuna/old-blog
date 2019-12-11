@@ -7,7 +7,7 @@ keywords: springcloud, GateWay，服务网关
 excerpt: Spring Cloud GateWay 服务网关和注册中心结合使用
 ---
 
-上一篇文章[服务网关 Spring Cloud GateWay 初级篇](http://www.ityouknow.com/springcloud/2018/12/12/spring-cloud-gateway-start.html)，介绍了 Spring Cloud Gateway 的相关术语、技术原理，以及如何快速使用 Spring Cloud Gateway。这篇文章我们继续学习 Spring Cloud Gateway 的高级使用方式，比如如何配置服务中心来使用，如何使用熔断、限流等高级功能。
+上一篇文章[服务网关 Spring Cloud GateWay 初级篇](http://www.guojun49.github.io/springcloud/2018/12/12/spring-cloud-gateway-start.html)，介绍了 Spring Cloud Gateway 的相关术语、技术原理，以及如何快速使用 Spring Cloud Gateway。这篇文章我们继续学习 Spring Cloud Gateway 的高级使用方式，比如如何配置服务中心来使用，如何使用熔断、限流等高级功能。
 
 ## 注册中心
 
@@ -16,7 +16,7 @@ excerpt: Spring Cloud GateWay 服务网关和注册中心结合使用
 
 ### 准备服务和注册中心
 
-在介绍[服务网关 zuul 的使用](http://www.ityouknow.com/springcloud/2017/06/01/gateway-service-zuul.html)时，提供了 spring-cloud-eureka 、spring-cloud-producer 项目示例，本次演示我们将两个项目版本升级到 `Finchley.SR2` 后继续演示使用。
+在介绍[服务网关 zuul 的使用](http://www.guojun49.github.io/springcloud/2017/06/01/gateway-service-zuul.html)时，提供了 spring-cloud-eureka 、spring-cloud-producer 项目示例，本次演示我们将两个项目版本升级到 `Finchley.SR2` 后继续演示使用。
 
 spring-cloud-eureka(Eureka Server) 的 pom 文件更改，其它依赖包不变。
 
@@ -62,7 +62,7 @@ spring-cloud-producer(Eureka Client)的 pom 文件更改。因为配置中心需
 
 ### 服务网关注册到注册中心
 
-复制上一节的示例项目 [cloud-gateway](http://www.ityouknow.com/springcloud/2018/12/12/spring-cloud-gateway-start.html) 重新命名为 cloud-gateway-eureka，添加 eureka 的客户端依赖包。
+复制上一节的示例项目 [cloud-gateway](http://www.guojun49.github.io/springcloud/2018/12/12/spring-cloud-gateway-start.html) 重新命名为 cloud-gateway-eureka，添加 eureka 的客户端依赖包。
 
 ```
 <dependency>
@@ -128,7 +128,7 @@ hello world smile!
 
 ## 基于 Filter(过滤器) 实现的高级功能
 
-在[服务网关Zuul高级篇](http://www.ityouknow.com/springcloud/2018/01/20/spring-cloud-zuul.html)中大概介绍过 Filter 的概念。
+在[服务网关Zuul高级篇](http://www.guojun49.github.io/springcloud/2018/01/20/spring-cloud-zuul.html)中大概介绍过 Filter 的概念。
 
 Spring Cloud Gateway 的 Filter 的生命周期不像 Zuul 的那么丰富，它只有两个：“pre” 和 “post”。
 

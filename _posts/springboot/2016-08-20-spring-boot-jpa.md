@@ -6,7 +6,7 @@ copyright: java
 tags: [springboot]
 ---
 
-在上篇文章[Spring Boot(二)：Web 综合开发](http://www.ityouknow.com/springboot/2016/02/03/spring-boot-web.html)中简单介绍了一下 Spring Boot Jpa 的基础性使用，这篇文章将更加全面的介绍 Spring Boot Jpa 常见用法以及注意事项。
+在上篇文章[Spring Boot(二)：Web 综合开发](http://www.guojun49.github.io/springboot/2016/02/03/spring-boot-web.html)中简单介绍了一下 Spring Boot Jpa 的基础性使用，这篇文章将更加全面的介绍 Spring Boot Jpa 常见用法以及注意事项。
 
 使用 Spring Boot Jpa 开发时，发现国内对 Spring Boot Jpa 全面介绍的文章比较少案例也比较零碎，因此写文章总结一下。本人也正在翻译[Spring Data JPA 参考指南](https://ityouknow.gitbooks.io/spring-data-jpa-reference-documentation/content/),有兴趣的同学欢迎联系我，一起加入翻译中！
 

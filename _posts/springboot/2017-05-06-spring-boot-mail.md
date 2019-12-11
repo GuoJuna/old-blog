@@ -258,7 +258,7 @@ public void sendInlineResourceMail() {
     </head>
     <body>
         您好,这是验证邮件,请点击下面的链接完成验证,<br/>
-        <a href="#" th:href="@{ http://www.ityouknow.com/neo/{id}(id=${id}) }">激活账号</a>
+        <a href="#" th:href="@{ http://www.guojun49.github.io/neo/{id}(id=${id}) }">激活账号</a>
     </body>
 </html>
 ```
@@ -290,7 +290,7 @@ public void sendTemplateMail() {
 
 很多时候邮件发送并不是我们主业务必须关注的结果，比如通知类、提醒类的业务可以允许延时或者失败。这个时候可以采用异步的方式来发送邮件，加快主交易执行速度，在实际项目中可以采用MQ发送邮件相关参数，监听到消息队列之后启动发送邮件。
 
-可以参考前期文章：[Spring Boot(八)：RabbitMQ 详解](http://www.ityouknow.com/springboot/2016/11/30/spring-boot-rabbitMQ.html) 来实现。
+可以参考前期文章：[Spring Boot(八)：RabbitMQ 详解](http://www.guojun49.github.io/springboot/2016/11/30/spring-boot-rabbitMQ.html) 来实现。
 
 > 文章内容已经升级到 Spring Boot 2.x 
 

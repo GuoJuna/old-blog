@@ -96,7 +96,7 @@ spring:
     gateway:
       routes:
       - id: neo_route
-        uri: http://www.ityouknow.com
+        uri: http://www.guojun49.github.io
         predicates:
         - Path=/spring-cloud
 ```
@@ -108,7 +108,7 @@ spring:
 - predicates：路由条件，Predicate 接受一个输入参数，返回一个布尔值结果。该接口包含多种默认方法来将 Predicate 组合成其他复杂的逻辑（比如：与，或，非）。
 - filters：过滤规则，本示例暂时没用。
 
-上面这段配置的意思是，配置了一个 id 为 neo_route 的路由规则，当访问地址 `http://localhost:8080/spring-cloud`时会自动转发到地址：`http://www.ityouknow.com/spring-cloud`。配置完成启动项目即可在浏览器访问进行测试，当我们访问地址`http://localhost:8080/spring-cloud` 时会展示页面展示如下：
+上面这段配置的意思是，配置了一个 id 为 neo_route 的路由规则，当访问地址 `http://localhost:8080/spring-cloud`时会自动转发到地址：`http://www.guojun49.github.io/spring-cloud`。配置完成启动项目即可在浏览器访问进行测试，当我们访问地址`http://localhost:8080/spring-cloud` 时会展示页面展示如下：
 
 ![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway1.png)
 
@@ -128,14 +128,14 @@ public class GateWayApplication {
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("path_route", r -> r.path("/about")
-						.uri("http://ityouknow.com"))
+						.uri("http://guojun49.github.io"))
 				.build();
 	}
 
 }
 ```
 
-上面配置了一个 id 为 path_route 的路由，当访问地址`http://localhost:8080/about`时会自动转发到地址：`http://www.ityouknow.com/about`和上面的转发效果一样，只是这里转发的是以`项目地址/about`格式的请求地址。
+上面配置了一个 id 为 path_route 的路由，当访问地址`http://localhost:8080/about`时会自动转发到地址：`http://www.guojun49.github.io/about`和上面的转发效果一样，只是这里转发的是以`项目地址/about`格式的请求地址。
 
 上面两个示例中 uri 都是指向了我的个人网站，在实际项目使用中可以将 uri 指向对外提供服务的项目地址，统一对外输出接口。
 
@@ -169,16 +169,16 @@ spring:
     gateway:
       routes:
        - id: time_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
          - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
 
 Spring 是通过 ZonedDateTime 来对时间进行的对比，ZonedDateTime  是 Java 8 中日期时间功能里，用于表示带时区的日期与时间信息的类，ZonedDateTime 支持通过时区来设置时间，中国的时区是：`Asia/Shanghai`。
 
-After Route Predicate 是指在这个时间之后的请求都转发到目标地址。上面的示例是指，请求时间在 2018年1月20日6点6分6秒之后的所有请求都转发到地址`http://ityouknow.com`。`+08:00`是指时间和UTC时间相差八个小时，时间地区为`Asia/Shanghai`。
+After Route Predicate 是指在这个时间之后的请求都转发到目标地址。上面的示例是指，请求时间在 2018年1月20日6点6分6秒之后的所有请求都转发到地址`http://guojun49.github.io`。`+08:00`是指时间和UTC时间相差八个小时，时间地区为`Asia/Shanghai`。
 
-添加完路由规则之后，访问地址`http://localhost:8080`会自动转发到`http://ityouknow.com`。
+添加完路由规则之后，访问地址`http://localhost:8080`会自动转发到`http://guojun49.github.io`。
 
 Before Route Predicate 刚好相反，在某个时间之前的请求的请求都进行转发。我们把上面路由规则中的 After 改为 Before，如下：
 
@@ -188,7 +188,7 @@ spring:
     gateway:
       routes:
        - id: after_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
          - Before=2018-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
@@ -203,7 +203,7 @@ spring:
     gateway:
       routes:
        - id: after_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
          - Between=2018-01-20T06:06:06+08:00[Asia/Shanghai], 2019-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
@@ -220,7 +220,7 @@ spring:
     gateway:
       routes:
        - id: cookie_route
-         uri: http://ityouknow.com
+         uri: http://guojun49.github.io
          predicates:
          - Cookie=ityouknow, kee.e
 ```
@@ -243,7 +243,7 @@ spring:
     gateway:
       routes:
       - id: header_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Header=X-Request-Id, \d+
 ```
@@ -266,16 +266,16 @@ spring:
     gateway:
       routes:
       - id: host_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
-        - Host=**.ityouknow.com
+        - Host=**.guojun49.github.io
 ```
 
 使用 curl 测试，命令行输入:
 
 ```
-curl http://localhost:8080  -H "Host: www.ityouknow.com" 
-curl http://localhost:8080  -H "Host: md.ityouknow.com" 
+curl http://localhost:8080  -H "Host: www.guojun49.github.io" 
+curl http://localhost:8080  -H "Host: md.guojun49.github.io" 
 ```
 
 经测试以上两种 host 均可匹配到 host_route 路由，去掉 host 参数则会报 404 错误。
@@ -290,7 +290,7 @@ spring:
     gateway:
       routes:
       - id: method_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Method=GET
 ```
@@ -321,7 +321,7 @@ spring:
     gateway:
       routes:
       - id: host_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Path=/foo/{segment}
 ```
@@ -348,7 +348,7 @@ spring:
     gateway:
       routes:
       - id: query_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Query=smile
 ```
@@ -372,7 +372,7 @@ spring:
     gateway:
       routes:
       - id: query_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Query=keep, pu.
 ```
@@ -398,7 +398,7 @@ spring:
     gateway:
       routes:
       - id: remoteaddr_route
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - RemoteAddr=192.168.1.1/24
 ```
@@ -423,7 +423,7 @@ spring:
     gateway:
       routes:
        - id: host_foo_path_headers_to_httpbin
-        uri: http://ityouknow.com
+        uri: http://guojun49.github.io
         predicates:
         - Host=**.foo.org
         - Path=/headers

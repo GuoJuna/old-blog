@@ -104,5 +104,5 @@ Tor支持动态代理链（通过Tor访问一个地址时，所经过的节点�
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[www.ityouknow.com](http://www.ityouknow.com)**      
+**出处：[www.guojun49.github.io](http://www.guojun49.github.io)**      
 **版权归作者所有，转载请注明出处** 

@@ -80,7 +80,7 @@ public static void main(String[] args) {
 
 使用方式很简单，将写好的markdown格式的代码直接复制粘贴到这个页面里面，点击预览就可以看到渲染后的效果了，根据自己的需要也可以在上面选择不同的样式和代码高亮的格式，选完之后点击复制，直接粘贴到微信公号的编辑器中既可，我试着用了一下效果不错。
 
-大家可以使用这个地址来测试[http://md.ityouknow.com/](http://md.ityouknow.com/)
+大家可以使用这个地址来测试[http://md.guojun49.github.io/](http://md.guojun49.github.io/)
 
 但是还是有一些小瑕疵，作者也会去完善，感兴趣的可以去github上面star一下。小瑕疵有三个：
 

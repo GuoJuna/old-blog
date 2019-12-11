@@ -120,7 +120,7 @@ Eureka是Netflix开源的一款提供服务注册和发现的产品，它提供�
 
 当然服务中心这么重要的组件一但挂掉将会影响全部服务，因此需要搭建Eureka集群来保持高可用性，生产中建议最少两台。随着系统的流量不断增加，需要根据情况来扩展某个服务，Eureka内部已经提供均衡负载的功能，只需要增加相应的服务端实例既可。那么在系统的运行期间某个实例挂了怎么办？Eureka内容有一个心跳检测机制，如果某个实例在规定的时间内没有进行通讯则会自动被剔除掉，避免了某个实例挂掉而影响服务。
 
-因此使用了Eureka就自动具有了注册中心、负载均衡、故障转移的功能。如果想对Eureka进一步了解可以参考这篇文章：[注册中心Eureka](http://www.ityouknow.com/springcloud/2017/05/10/springcloud-eureka.html)
+因此使用了Eureka就自动具有了注册中心、负载均衡、故障转移的功能。如果想对Eureka进一步了解可以参考这篇文章：[注册中心Eureka](http://www.guojun49.github.io/springcloud/2017/05/10/springcloud-eureka.html)
 
 ### Hystrix
 
@@ -134,7 +134,7 @@ Eureka是Netflix开源的一款提供服务注册和发现的产品，它提供�
 
 Hystrix会在某个服务连续调用N次不响应的情况下，立即通知调用端调用失败，避免调用端持续等待而影响了整体服务。Hystrix间隔时间会再次检查此服务，如果服务恢复将继续提供服务。
 
-继续了解Hystrix可以参考：[熔断器Hystrix](http://www.ityouknow.com/springcloud/2017/05/10/springcloud-eureka.html)
+继续了解Hystrix可以参考：[熔断器Hystrix](http://www.guojun49.github.io/springcloud/2017/05/10/springcloud-eureka.html)
 
 ### Hystrix Dashboard和Turbine
 
@@ -145,7 +145,7 @@ Hystrix-dashboard是一款针对Hystrix进行实时监控的工具，通过Hystr
 
 ![](http://www.itmind.net/assets/images/2017/springcloud/turbine-02.jpg)
 
-想了解具体都监控了哪些指标，以及如何监控可以参考这篇文章：[熔断监控Hystrix Dashboard和Turbine](http://www.ityouknow.com/springcloud/2017/05/18/hystrix-dashboard-turbine.html)
+想了解具体都监控了哪些指标，以及如何监控可以参考这篇文章：[熔断监控Hystrix Dashboard和Turbine](http://www.guojun49.github.io/springcloud/2017/05/18/hystrix-dashboard-turbine.html)
 
 ### 配置中心
 
@@ -155,11 +155,11 @@ Hystrix-dashboard是一款针对Hystrix进行实时监控的工具，通过Hystr
 
 Spring Cloud Config是一个解决分布式系统的配置管理方案。它包含了Client和Server两个部分，Server提供配置文件的存储、以接口的形式将配置文件的内容提供出去，Client通过接口获取数据、并依据此数据初始化自己的应用。
 
-其实就是Server端将所有的配置文件服务化，需要配置文件的服务实例去Config Server获取对应的数据。将所有的配置文件统一整理，避免了配置文件碎片化。配置中心git实例参考：[配置中心git示例](http://www.ityouknow.com/springcloud/2017/05/22/springcloud-config-git.html)；
+其实就是Server端将所有的配置文件服务化，需要配置文件的服务实例去Config Server获取对应的数据。将所有的配置文件统一整理，避免了配置文件碎片化。配置中心git实例参考：[配置中心git示例](http://www.guojun49.github.io/springcloud/2017/05/22/springcloud-config-git.html)；
 
-如果服务运行期间改变配置文件，服务是不会得到最新的配置信息，需要解决这个问题就需要引入Refresh。可以在服务的运行期间重新加载配置文件，具体可以参考这篇文章：[配置中心svn示例和refresh](http://www.ityouknow.com/springcloud/2017/05/23/springcloud-config-svn-refresh.html)
+如果服务运行期间改变配置文件，服务是不会得到最新的配置信息，需要解决这个问题就需要引入Refresh。可以在服务的运行期间重新加载配置文件，具体可以参考这篇文章：[配置中心svn示例和refresh](http://www.guojun49.github.io/springcloud/2017/05/23/springcloud-config-svn-refresh.html)
 
-当所有的配置文件都存储在配置中心的时候，配置中心就成为了一个非常重要的组件。如果配置中心出现问题将会导致灾难性的后果，因此在生产中建议对配置中心做集群，来支持配置中心高可用性。具体参考：[配置中心服务化和高可用](http://www.ityouknow.com/springcloud/2017/05/25/springcloud-config-eureka.html)
+当所有的配置文件都存储在配置中心的时候，配置中心就成为了一个非常重要的组件。如果配置中心出现问题将会导致灾难性的后果，因此在生产中建议对配置中心做集群，来支持配置中心高可用性。具体参考：[配置中心服务化和高可用](http://www.guojun49.github.io/springcloud/2017/05/25/springcloud-config-eureka.html)
 
 #### Spring Cloud Bus
 
@@ -171,7 +171,7 @@ Spring Cloud Bus是轻量级的通讯组件，也可以用在其它类似的场�
 
 ![](http://www.itmind.net/assets/images/2017/springcloud/configbus2.jpg)
 
-也可以参考这篇文章来了解：[配置中心和消息总线](http://www.ityouknow.com/springcloud/2017/05/26/springcloud-config-eureka-bus.html)
+也可以参考这篇文章来了解：[配置中心和消息总线](http://www.guojun49.github.io/springcloud/2017/05/26/springcloud-config-eureka-bus.html)
 
 ### 服务网关
 
@@ -183,7 +183,7 @@ Spring Cloud体系中支持API Gateway落地的技术就是Zuul。Spring Cloud Z
 
 它的具体作用就是服务转发，接收并转发所有内外部的客户端调用。使用Zuul可以作为资源的统一访问入口，同时也可以在网关做一些权限校验等类似的功能。
 
-具体使用参考这篇文章：[服务网关zuul](http://www.ityouknow.com/springcloud/2017/06/01/gateway-service-zuul.html)
+具体使用参考这篇文章：[服务网关zuul](http://www.guojun49.github.io/springcloud/2017/06/01/gateway-service-zuul.html)
 
 ### 链路跟踪
 

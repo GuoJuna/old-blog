@@ -5,7 +5,7 @@ category:  arch
 tags: [arch]
 ---
 
-我们本身是一家互联网金融公司，公司的主流业务就是p2p，因为各种原因吧，15年底启动建设众筹平台。考虑到前期开发过程中的一些弊端和架构经验，本次架构引用了dubbo做soa服务的治理，web容器nginx+tomcat，后端语言采用java,框架选择spring+mybaits,前端模板引擎使用的是btl,app采用原生+h5的模式。这个架构可以参考我之前写的文章[从零到百亿互联网金融架构发展史](http://www.ityouknow.com/arch/2017/01/10/ten-billion-architecture-history.html)中的第三代系统架构,之前的文章主要介绍了架构的变迁，本篇文章主要介绍在第三代平台中遇到的问题以及解决方法。
+我们本身是一家互联网金融公司，公司的主流业务就是p2p，因为各种原因吧，15年底启动建设众筹平台。考虑到前期开发过程中的一些弊端和架构经验，本次架构引用了dubbo做soa服务的治理，web容器nginx+tomcat，后端语言采用java,框架选择spring+mybaits,前端模板引擎使用的是btl,app采用原生+h5的模式。这个架构可以参考我之前写的文章[从零到百亿互联网金融架构发展史](http://www.guojun49.github.io/arch/2017/01/10/ten-billion-architecture-history.html)中的第三代系统架构,之前的文章主要介绍了架构的变迁，本篇文章主要介绍在第三代平台中遇到的问题以及解决方法。
 
 
 首先介绍一下众筹系统的部署架构（如下图），网站和app请求都是首先到最前端的nginx,如果只是静态内容的访问nginx直接处理后返回；动态请求分别转发到后端的tomcat前端服务层，前端服务层只关注页面端业务逻辑不涉及数据库的操作，如果只是页面框架渲染以及不涉及数据库的请求，在前端服务层直接处理返回；如果涉及到数据库操作或者核心业务逻辑，前端服务层通过dubbo调用后端的接入层服务或者核心层服务。
@@ -197,5 +197,5 @@ esac
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[www.ityouknow.com](http://www.ityouknow.com)**    
+**出处：[www.guojun49.github.io](http://www.guojun49.github.io)**    
 **版权归作者所有，转载请注明出处** 

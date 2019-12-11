@@ -2,7 +2,7 @@
 layout: post
 title: git配置文件
 copyright: java
-category: java
+category: tools
 tags: [java,git]
 excerpt: gitignore 文件
 ---

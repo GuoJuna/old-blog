@@ -110,15 +110,16 @@ navs:
         subLabel: Spring Cloud
 
   -
-    href: /spring-cloud.html
-    label: Spring Cloud
-    target: _self
-
-  -
     
     href: /java.html
     label: Java
     target: _blank
+
+  -
+   href: /tools.html
+   label: Tools
+   target: _self
+
 
   -
     href: /archives.html

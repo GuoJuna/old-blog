@@ -2,7 +2,7 @@
 layout: post
 title: github 搜索
 copyright: java
-category: java
+category: tools
 tags: [java,github]
 excerpt: github 高级搜索
 ---

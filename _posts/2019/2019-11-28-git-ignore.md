@@ -1,6 +1,6 @@
 ---
 layout: post
-title: git配置文件
+title: git 忽略文件
 copyright: java
 category: tools
 tags: [java,git,tools]

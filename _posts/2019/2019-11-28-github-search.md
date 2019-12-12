@@ -1,6 +1,6 @@
 ---
 layout: post
-title: github 搜索
+title: github 高级搜索
 copyright: java
 category: tools
 tags: [java,github]

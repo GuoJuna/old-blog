@@ -81,3 +81,34 @@ ENV VERSION=1.0 DEBUG=on \
 EXPOSE <port> [<port>...]
 ```
 EXPOSE 指令并不会让容器监听 host 的端口，如果需要，需要在 docker run 时使用 -p、-P 参数来发布容器端口到 host 的某个端口上。
+
+## VOLUME 定义匿名卷
+VOLUME用于创建挂载点，即向基于所构建镜像创始的容器添加卷：
+```
+VOLUME ["/data"]
+```
+一个卷可以存在于一个或多个容器的指定目录，该目录可以绕过联合文件系统，并具有以下功能：
+
+卷可以容器间共享和重用
+容器并不一定要和其它容器共享卷
+修改卷后会立即生效
+对卷的修改不会对镜像产生影响
+卷会一直存在，直到没有任何容器在使用它
+VOLUME 让我们可以将源代码、数据或其它内容添加到镜像中，而又不并提交到镜像中，并使我们可以多个容器间共享这些内容。
+
+## WORKDIR 指定工作目录
+WORKDIR用于在容器内设置一个工作目录：
+```
+WORKDIR /path/to/workdir
+```
+通过WORKDIR设置工作目录后，Dockerfile 中其后的命令 RUN、CMD、ENTRYPOINT、ADD、COPY 等命令都会在该目录下执行。
+如，使用WORKDIR设置工作目录：
+
+```
+WORKDIR /a
+WORKDIR b
+WORKDIR c
+RUN pwd
+```
+
+在以上示例中，pwd 最终将会在 /a/b/c 目录中执行。在使用 docker run 运行容器时，可以通过-w参数覆盖构建时所设置的工作目录。

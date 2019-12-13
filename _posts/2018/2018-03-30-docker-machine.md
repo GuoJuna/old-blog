@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(五)：Docker 三剑客之 Docker Machine
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,Docker Machine,使用,介绍
 ---

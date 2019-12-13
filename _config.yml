@@ -116,10 +116,16 @@ navs:
     target: _self
 
   -
-   href: /tools.html
-   label: Tools
+   href: /other.html
+   label: other
    target: _self
+   subnav:
 
+     - subHref: /git.html
+       subLabel: git
+
+     - subHref: /docker.html
+       subLabel: docker
 
   -
     href: /archives.html

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(二)：Dockerfile 使用介绍
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,Dockerfile,使用
 ---

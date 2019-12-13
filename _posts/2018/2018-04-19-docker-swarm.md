@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(六)：Docker 三剑客之 Docker Swarm
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,Docker Swarm,使用,介绍
 ---

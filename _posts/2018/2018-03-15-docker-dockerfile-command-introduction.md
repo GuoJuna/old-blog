@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(三)：Dockerfile 命令详解
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,Dockerfile,命令,指令详解
 ---

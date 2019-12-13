@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(四)：Docker 三剑客之 Docker Compose 
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,Docker Compose,使用,介绍
 excerpt: Docker-Compose 是 Docker 的一种编排服务，是一个用于在 Docker 上定义并运行复杂应用的工具，可以让用户在集群中部署分布式应用。

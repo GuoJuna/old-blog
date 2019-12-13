@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Docker(一)：Docker入门教程
-category: docker
+category: Docker
 tags: [docker]
 keywords: docker,入门,教程
 ---

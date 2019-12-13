@@ -8,22 +8,22 @@ excerpt: Docker 常用命令总结
 
 ## Docker 环境安装
 - 安装yum-utils：
-```bash
+```
 yum install -y yum-utils device-mapper-persistent-data lvm2
 ```
 
 - 为yum源添加docker仓库位置
-```bash
+```
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 ```
 
 - 安装docker
-```bash
+```
 yum install docker-ce
 ```
 
 - 启动docker
-```bash
+```
 systemctl start docker
 ```
 
@@ -35,7 +35,7 @@ docker search java
 ```
 
 ### 下载镜像
-```bash
+```
 docker pull java:8
 ```
 
@@ -46,14 +46,14 @@ docker pull java:8
 ```
 
 ### 列出镜像
-```bash
+```
 docker images
 ```
 
 ### 删除镜像
 
 - 指定名称删除镜像
-```bash
+```
 docker rmi java:8
 
 ```

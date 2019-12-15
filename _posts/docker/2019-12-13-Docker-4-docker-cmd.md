@@ -53,12 +53,14 @@ docker images
 ### 删除镜像
 
 - 指定名称删除镜像
+
 ```
 docker rmi java:8
 
 ```
 
 - 指定名称删除镜像（强制）
+
 ```
 docker rmi -f java:8
 ```

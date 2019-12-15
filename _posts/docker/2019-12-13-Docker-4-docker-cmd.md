@@ -53,20 +53,17 @@ docker images
 ### 删除镜像
 
 - 指定名称删除镜像
-
 ```
 docker rmi java:8
 
 ```
 
 - 指定名称删除镜像（强制）
-
 ```
 docker rmi -f java:8
 ```
 
 - 强制删除所有镜像
-
 ```
 docker rmi -f $(docker images)
 ```
@@ -84,13 +81,11 @@ docker run -p 80:80 --name nginx -d nginx:1.17.0
 ### 列出容器
 
 - 列出运行中的容器
-
 ```
 docker ps
 ```
 
 - 列出所有容器
-
 ```
 docker ps -a
 ```
@@ -118,13 +113,11 @@ docker start $ContainerName(或者$ContainerId)
 ### 进入容器
 
 - 先查询出容器的pid
-
 ```
 docker inspect --format "{{.State.Pid}}" $ContainerName(或者$ContainerId)
 ```
 
 - 根据容器的pid进入容器
-
 ```
 nsenter --target "$pid" --mount --uts --ipc --net --pid
 ```
@@ -143,13 +136,11 @@ docker rm -f $(docker ps -a -q)
 
 ### 查看容器的日志
 - 查看当前全部日志
-
 ```
 docker logs $ContainerName(或者$ContainerId)
 ```
 
 - 动态查看日志
-
 ```
 docker logs $ContainerName(或者$ContainerId) -f
 ```
@@ -167,13 +158,11 @@ docker cp /etc/localtime $ContainerName(或者$ContainerId):/etc/
 ### 在宿主机查看docker使用cpu、内存、网络、io情况
 
 - 查看指定容器情况
-
 ```
 docker stats $ContainerName(或者$ContainerId)
 ```
 
 - 查看所有容器情况
-
 ``` 
 docker stats -a
 ```
@@ -191,19 +180,16 @@ docker info | grep "Docker Root Dir"
 ```
 
 - 关闭Docker服务
-
 ```
 systemctl stop docker
 ```
 
 - 移动目录到目标路径
-
 ``` 
 mv /var/lib/docker /mydata/docker
 ```
 
 - 建立软连接
-
 ``` 
 ln -s /mydata/docker /var/lib/docker
 ```

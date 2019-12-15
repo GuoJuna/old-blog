@@ -1,8 +1,8 @@
 ---
 layout: page
-title: GIt
+title: Git
 titlebar: java
-subtitle: <span class="mega-octicon octicon-clippy"></span> &nbsp;&nbsp; Git 使用笔记>&nbsp;&nbsp;>&nbsp;&nbsp;<a href ="http://www.justdojava.com/" target="_blank" ><font color="#EB9439">点我直达</font></a>
+subtitle: <span class="mega-octicon octicon-clippy"></span> &nbsp;&nbsp; Git 使用笔记>&nbsp;&nbsp;>&nbsp;&nbsp;
 menu: git
 css: ['blog-page.css']
 permalink: /git

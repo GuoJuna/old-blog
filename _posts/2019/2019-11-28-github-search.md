@@ -1,8 +1,7 @@
 ---
 layout: post
 title: github 高级搜索
-copyright: java
-category: tools
+category: git
 tags: [java,github]
 excerpt: github 高级搜索
 ---

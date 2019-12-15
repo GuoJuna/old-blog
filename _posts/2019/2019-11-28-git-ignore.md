@@ -1,8 +1,7 @@
 ---
 layout: post
 title: git 忽略文件
-copyright: java
-category: tools
+category: git
 tags: [java,git,tools]
 excerpt: gitignore 文件
 ---

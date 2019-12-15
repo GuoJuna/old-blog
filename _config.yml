@@ -111,21 +111,24 @@ navs:
 
   -
     
-    href: /java.html
-    label: Java
+    href: /spring-cloud.html
+    label: Spring Cloud
     target: _self
 
   -
-   href: /other.html
-   label: other
+   href: /java.html
+   label: Java
    target: _self
    subnav:
 
+     - subHref: /java.html
+       subLabel: Java
+
      - subHref: /git.html
-       subLabel: git
+       subLabel: Git
 
      - subHref: /docker.html
-       subLabel: docker
+       subLabel: Docker
 
   -
     href: /archives.html

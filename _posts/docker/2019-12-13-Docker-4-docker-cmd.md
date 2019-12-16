@@ -141,7 +141,7 @@ docker logs $ContainerName(或者$ContainerId)
 
 - 动态查看日志
 ```
-docker logs $ContainerName(或者$ContainerId) -f
+docker logs -f $ContainerName(或者$ContainerId) 
 ```
 
 ### 查看容器的IP地址

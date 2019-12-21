@@ -28,3 +28,47 @@ grant 权限 on 数据库对象 to 用户
 ```
 grant all on *.* to gj@'%'IDENTIFIED by '密码'
 ```
+
+## 查询树结构
+
+- 创建函数
+```
+DELIMITER $$
+
+USE `pv_web2`$$
+
+DROP FUNCTION IF EXISTS `getChildList`$$
+
+CREATE DEFINER=`root`@`%` FUNCTION `getChildList`(rootId INT) RETURNS VARCHAR(1000) CHARSET utf8
+BEGIN
+      DECLARE sChildList VARCHAR(1000);
+      DECLARE sChildTemp VARCHAR(1000);
+      SET sChildTemp =CAST(rootId AS CHAR);
+      WHILE sChildTemp IS NOT NULL DO
+        IF (sChildList IS NOT NULL) THEN
+          SET sChildList = CONCAT(sChildList,',',sChildTemp);
+	ELSE
+	  SET sChildList = CONCAT(sChildTemp);
+	END IF;
+        SELECT GROUP_CONCAT(open_id) INTO sChildTemp FROM sp_member_relation WHERE FIND_IN_SET(p_open_id,sChildTemp)>0;
+        END WHILE;
+      RETURN sChildList;
+END$$
+
+DELIMITER ;
+```
+
+- 使用函数
+```
+select * from sp_member_relation where FIND_IN_SET(p_open_id, getChildList(1));
+```
+
+- 查询所有函数与存储过程
+```
+ SELECT * FROM information_schema.Routines
+```
+
+- 查询单个函数
+```
+show create function getChildList
+```

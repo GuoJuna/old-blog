@@ -39,41 +39,90 @@ CREATE TABLE `sp_member_relation` (
   PRIMARY KEY (`p_open_id`,`open_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='会员关系';
 ```
-###
+### 获取所有子节点
 
-创建mysql 函数获取子节点
+创建mysql 函数获取所有子节点
 ```
 DELIMITER $$
-
 USE `pv_web2`$$
 
-DROP FUNCTION IF EXISTS `getChildList`$$
+DROP FUNCTION
+IF EXISTS `getChildList`$$
 
-CREATE DEFINER=`root`@`%` FUNCTION `getChildList`(openId varchar(50)) RETURNS VARCHAR(1000) CHARSET utf8
+CREATE DEFINER = `root`@`%` FUNCTION `getChildList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
 BEGIN
-      DECLARE sChildList VARCHAR(1000);
-      DECLARE sChildTemp VARCHAR(1000);
-      SET sChildTemp =CAST(openId AS CHAR);
-      WHILE sChildTemp IS NOT NULL DO
-        IF (sChildList IS NOT NULL) THEN
-          SET sChildList = CONCAT(sChildList,',',sChildTemp);
-	ELSE
-	  SET sChildList = CONCAT(sChildTemp);
-	END IF;
-        SELECT GROUP_CONCAT(open_id) INTO sChildTemp FROM sp_member_relation WHERE FIND_IN_SET(p_open_id,sChildTemp)>0;
-        END WHILE;
-      RETURN sChildList;
-END$$
+	DECLARE
+		sChildList VARCHAR (1000) ; DECLARE
+			sChildTemp VARCHAR (1000) ;
+		SET sChildTemp = rootId;
+		WHILE sChildTemp IS NOT NULL DO
+
+		IF (sChildList IS NOT NULL) THEN
+
+		SET sChildList = CONCAT(sChildList, ',', sChildTemp) ;
+		ELSE
+
+		SET sChildList = CONCAT(sChildTemp) ;
+		END
+		IF ; SELECT
+			GROUP_CONCAT(open_id) INTO sChildTemp
+		FROM
+			sp_member_relation
+		WHERE
+			FIND_IN_SET(p_open_id, sChildTemp) > 0 ;
+		END
+		WHILE ; RETURN sChildList ; END$$
 
 DELIMITER ;
 
 ```
 
-### 使用函数
+使用函数
 ```
 select * from sp_member_relation where FIND_IN_SET(p_open_id, getChildList(#{openId,jdbcType=VARCHAR}))
 ```
 
+### 获取所有父节点
+
+创建函数
+```
+DELIMITER $$
+USE `pv_web2`$$
+
+DROP FUNCTION
+IF EXISTS `getChildList`$$
+
+CREATE DEFINER = `root`@`%` FUNCTION `getSupList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
+BEGIN
+	DECLARE
+		sChildList VARCHAR (1000) ; DECLARE
+			sChildTemp VARCHAR (1000) ;
+		SET sChildTemp = rootId;
+		WHILE sChildTemp IS NOT NULL DO
+
+		IF (sChildList IS NOT NULL) THEN
+
+		SET sChildList = CONCAT(sChildList, ',', sChildTemp) ;
+		ELSE
+
+		SET sChildList = CONCAT(sChildTemp) ;
+		END
+		IF ; SELECT
+			GROUP_CONCAT(p_open_id) INTO sChildTemp
+		FROM
+			sp_member_relation
+		WHERE
+			FIND_IN_SET(open_id, sChildTemp) > 0 ;
+		END
+		WHILE ; RETURN sChildList ; END$$
+
+DELIMITER ;
+```
+
+使用函数
+```
+select * from sp_member_relation where FIND_IN_SET(open_id, getSupList("44"));
+```
 
 > https://blog.csdn.net/sinat_33261247/article/details/91492396
 

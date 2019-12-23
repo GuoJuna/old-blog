@@ -74,7 +74,6 @@ BEGIN
 		WHILE ; RETURN sChildList ; END$$
 
 DELIMITER ;
-
 ```
 
 使用函数
@@ -84,7 +83,7 @@ select * from sp_member_relation where FIND_IN_SET(p_open_id, getChildList(#{ope
 
 ### 获取所有父节点
 
-创建函数
+创建函数   
 ```
 DELIMITER $$
 USE `pv_web2`$$

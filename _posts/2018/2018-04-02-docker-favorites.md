@@ -16,14 +16,14 @@ excerpt: 只需三步即可部署开源项目云收藏，打造专属个人的�
 
 ##  [云收藏](https://github.com/cloudfavorites/favorites-web)
 
-一些朋友可能还不了解[云收藏](http://favorites.ren)，给大家简单介绍一下：
+一些朋友可能还不了解[云收藏](https://favorites.ren)，给大家简单介绍一下：
 
 云收藏是一个使用 Spring Boot 构建的开源网站，可以让用户在线随时随地收藏的一个网站，在网站上分类整理收藏的网站或者文章，可以作为稍后阅读的一个临时存放。作为一个开放开源的软件，可以让用户从浏览器将收藏夹内容导入到云收藏，也支持随时将云收藏收集的文章导出去做备份。
 
 
 **产品主页**
 
-[http://favorites.ren](http://favorites.ren/)  
+[https://favorites.ren](https://favorites.ren/)  
 
 **项目主页**
 
@@ -31,7 +31,7 @@ excerpt: 只需三步即可部署开源项目云收藏，打造专属个人的�
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2016/favorites_index.png)  
+![](https://www.itmind.net/assets/images/2016/favorites_index.png)  
 
 核心功能点：
 
@@ -64,16 +64,16 @@ excerpt: 只需三步即可部署开源项目云收藏，打造专属个人的�
 
 准备一台系统为 Centos 7 以上的服务器，系统需要安装 Docker 和 Docker Compos 环境，安装方法可以参考前面两篇文章：
 
-- [Docker(一)：Docker入门教程](http://www.guojun49.github.io/docker/2018/03/07/docker-introduction.html)
-- [Docker(四)：Docker 三剑客之 Docker Compose](http://www.guojun49.github.io/docker/2018/03/22/docker-compose.html)
+- [Docker(一)：Docker入门教程](https://www.guojun49.github.io/docker/2018/03/07/docker-introduction.html)
+- [Docker(四)：Docker 三剑客之 Docker Compose](https://www.guojun49.github.io/docker/2018/03/22/docker-compose.html)
 
 **Docker 化改造**
 
 项目改造后的项目机构图如下：
 
-![](http://www.itmind.net/assets/images/2018/springboot/favorites_mulu.png)
+![](https://www.itmind.net/assets/images/2018/springboot/favorites_mulu.png)
 
-因为上一篇文章[Spring Boot 2.0(五)：Docker Compose + Spring Boot + Nginx + Mysql 实践](http://www.guojun49.github.io/springboot/2018/03/28/dockercompose-springboot-mysql-nginx.html) 已经介绍了此类项目结构和内容含义，因此这里主要描述新增内容。
+因为上一篇文章[Spring Boot 2.0(五)：Docker Compose + Spring Boot + Nginx + Mysql 实践](https://www.guojun49.github.io/springboot/2018/03/28/dockercompose-springboot-mysql-nginx.html) 已经介绍了此类项目结构和内容含义，因此这里主要描述新增内容。
 
 
 **`docker-compose.yaml` 文件**
@@ -230,7 +230,7 @@ vi app/src/main/resources/application-docker.properties
 
 修改内容如下
 ``` sh
-favorites.base.path=http://xx.xxx.xx.xx/ 
+favorites.base.path=https://xx.xxx.xx.xx/ 
 ```
 >地址为部署服务器的地址
 
@@ -247,7 +247,7 @@ Creating favoriteswebfavorites111_mysql_1 ... done
 Creating favoriteswebfavorites111_app_1   ... done
 ```
 
-启动完成后，浏览器访问上面配置地址：`http://xx.xxx.xx.xx/`，就可以看到云收藏的首页了。
+启动完成后，浏览器访问上面配置地址：`https://xx.xxx.xx.xx/`，就可以看到云收藏的首页了。
 
 
 **辅助内容**

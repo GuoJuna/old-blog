@@ -52,7 +52,7 @@ Docker 容器几乎可以在任意的平台上运行，包括物理机、虚拟�
 
 从下图可以看出，VM是一个运行在宿主机之上的完整的操作系统，VM运行自身操作系统会占用较多的CPU、内存、硬盘资源。Docker不同于VM，只包含应用程序以及依赖库，基于libcontainer运行在宿主机上，并处于一个隔离的环境中，这使得Docker更加轻量高效，启动容器只需几秒钟之内完成。由于Docker轻量、资源占用少，使得Docker可以轻易的应用到构建标准化的应用中。但Docker目前还不够完善，比如隔离效果不如VM，共享宿主机操作系统的一些基础库等；网络配置功能相对简单，主要以桥接方式为主；查看日志也不够方便灵活。
 
-![](http://www.itmind.net/assets/images/2018/docker/docker_vs_vm.png)
+![](https://www.itmind.net/assets/images/2018/docker/docker_vs_vm.png)
 
 Docker 在容器的基础上，进行了进一步的封装，从文件系统、网络互联到进程隔离等等，极大的简化了容器的创建和维护。使得 Docker 技术比虚拟机技术更为轻便、快捷。
 
@@ -67,7 +67,7 @@ Docker是CS架构，主要有两个概念：
 - **Docker client**: Docker 命令行工具，是用户使用Docker的主要方式，Docker client与Docker daemon通信并将结果返回给用户，Docker client也可以通过socket或者RESTful api访问远程的Docker daemon
 
 
-![](http://www.itmind.net/assets/images/2018/docker/docker_component.png)
+![](https://www.itmind.net/assets/images/2018/docker/docker_component.png)
 
 了解了Docker的组成，再来了解一下Docker的三个主要概念：
 
@@ -247,4 +247,4 @@ docker search nginx
 
 [Docker — 从入门到实践](https://yeasy.gitbooks.io/docker_practice/content/)  
 [Docker系列之一：入门介绍](https://tech.meituan.com/docker_introduction.html)  
-[Docker 入门教程](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)  
+[Docker 入门教程](https://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)  

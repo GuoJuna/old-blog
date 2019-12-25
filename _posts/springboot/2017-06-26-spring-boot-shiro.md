@@ -36,7 +36,7 @@ Shiro 致力在所有应用环境下实现上述功能，小到命令行应用�
 
 Apache Shiro 是一个全面的、蕴含丰富功能的安全框架。下图为描述 Shiro 功能的框架图：
 
-![](http://www.itmind.net/assets/images/2017/springboot/ShiroFeatures.png)
+![](https://www.itmind.net/assets/images/2017/springboot/ShiroFeatures.png)
 
 Authentication（认证）, Authorization（授权）, Session Management（会话管理）, Cryptography（加密）被 Shiro 框架的开发团队称之为应用安全的四大基石。那么就让我们来看看它们吧：
 
@@ -61,7 +61,7 @@ Authentication（认证）, Authorization（授权）, Session Management（会�
 
 在概念层，Shiro 架构包含三个主要的理念：Subject，SecurityManager和 Realm。下面的图展示了这些组件如何相互作用，我们将在下面依次对其进行描述。
  
-![](http://www.itmind.net/assets/images/2017/springboot/ShiroBasicArchitecture.png)
+![](https://www.itmind.net/assets/images/2017/springboot/ShiroBasicArchitecture.png)
 
 - Subject：当前用户，Subject 可以是一个人，但也可以是第三方服务、守护进程帐户、时钟守护任务或者其它--当前和软件交互的任何事件。
 - SecurityManager：管理所有Subject，SecurityManager 是 Shiro 架构的核心，配合内部安全组件共同组成安全伞。
@@ -447,9 +447,9 @@ public String login(HttpServletRequest request, Map<String, Object> map) throws 
 
 ### 测试
 
-1、编写好后就可以启动程序，访问`http://localhost:8080/userInfo/userList`页面，由于没有登录就会跳转到`http://localhost:8080/login`页面。登录之后就会跳转到 index 页面，登录后，直接在浏览器中输入`http://localhost:8080/userInfo/userList`访问就会看到用户信息。上面这些操作时候触发```MyShiroRealm.doGetAuthenticationInfo()```这个方法，也就是登录认证的方法。
+1、编写好后就可以启动程序，访问`https://localhost:8080/userInfo/userList`页面，由于没有登录就会跳转到`https://localhost:8080/login`页面。登录之后就会跳转到 index 页面，登录后，直接在浏览器中输入`https://localhost:8080/userInfo/userList`访问就会看到用户信息。上面这些操作时候触发```MyShiroRealm.doGetAuthenticationInfo()```这个方法，也就是登录认证的方法。
 
-2、登录admin账户，访问：```http://127.0.0.1:8080/userInfo/userAdd```显示```用户添加界面```，访问```http://127.0.0.1:8080/userInfo/userDel```显示```403没有权限```。上面这些操作时候触发```MyShiroRealm.doGetAuthorizationInfo()```这个方面，也就是权限校验的方法。
+2、登录admin账户，访问：```https://127.0.0.1:8080/userInfo/userAdd```显示```用户添加界面```，访问```https://127.0.0.1:8080/userInfo/userDel```显示```403没有权限```。上面这些操作时候触发```MyShiroRealm.doGetAuthorizationInfo()```这个方面，也就是权限校验的方法。
 
 3、修改 admin不 同的权限进行测试
 
@@ -466,5 +466,5 @@ Shiro 很强大，这仅仅是完成了登录认证和权限管理这两个功�
 参考：
 
 [Apache Shiro中文手册](https://waylau.gitbooks.io/apache-shiro-1-2-x-reference/content/)   
-[Spring Boot Shiro权限管理【从零开始学Spring Boot】](http://412887952-qq-com.iteye.com/blog/2299777)  
-[SpringBoot+shiro整合学习之登录认证和权限控制](http://z77z.oschina.io/2017/02/13/SpringBoot+shiro%E6%95%B4%E5%90%88%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E5%92%8C%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/)
+[Spring Boot Shiro权限管理【从零开始学Spring Boot】](https://412887952-qq-com.iteye.com/blog/2299777)  
+[SpringBoot+shiro整合学习之登录认证和权限控制](https://z77z.oschina.io/2017/02/13/SpringBoot+shiro%E6%95%B4%E5%90%88%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E5%92%8C%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6/)

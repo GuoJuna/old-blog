@@ -20,10 +20,10 @@ tags: [other]
 > Welcome to have a try!
 
 ### 效果图：
-![](http://loop-x.github.io/X-Alarm/assets/css/images/banner.png) <br/>
+![](https://loop-x.github.io/X-Alarm/assets/css/images/banner.png) <br/>
 
 项目地址：
-[X-Alarm](http://loop-x.github.io/X-Alarm/)
+[X-Alarm](https://loop-x.github.io/X-Alarm/)
 
 
 ## text-diagram

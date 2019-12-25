@@ -12,7 +12,7 @@ copyright: java
 
 现在的技术博客有很多的流派，有的喜欢分析源码，有的倾向于底层原理，我最喜欢写这种小而美的示例，方便自己方便他人。
 
-其实以前写过 Thymeleaf 和 Jpa 的相关文章：[ Spring Boot (四)： Thymeleaf 使用详解](http://www.guojun49.github.io/springboot/2016/05/01/spring-boot-thymeleaf.html)和[Spring Boot(五)：Spring Data Jpa 的使用](http://www.guojun49.github.io/springboot/2016/08/20/spring-boot-jpa.html) 里面的代码示例都给的云收藏的内容[Favorites-web](https://github.com/cloudfavorites/favorites-web)，云收藏的内容比较多，查找起来不是很方便，因此想重新整理一篇快速上手、简单的内容，来介绍 Jpa 和 Thymeleaf 的使用，也就是本文的内容。
+其实以前写过 Thymeleaf 和 Jpa 的相关文章：[ Spring Boot (四)： Thymeleaf 使用详解](https://www.guojun49.github.io/springboot/2016/05/01/spring-boot-thymeleaf.html)和[Spring Boot(五)：Spring Data Jpa 的使用](https://www.guojun49.github.io/springboot/2016/08/20/spring-boot-jpa.html) 里面的代码示例都给的云收藏的内容[Favorites-web](https://github.com/cloudfavorites/favorites-web)，云收藏的内容比较多，查找起来不是很方便，因此想重新整理一篇快速上手、简单的内容，来介绍 Jpa 和 Thymeleaf 的使用，也就是本文的内容。
 
 这篇文章就不在介绍什么是 Jpa 、 Thymeleaf ，如果还不了解这些基本的概念，可以先移步前两篇相关文章。
 
@@ -102,7 +102,7 @@ public class User {
 }
 ```
 
-继承 JpaRepository 类会自动实现很多内置的方法，包括增删改查。也可以根据方法名来自动生成相关 Sql，具体可以参考：[ Spring Boot (五)：Spring Data Jpa 的使用](http://www.guojun49.github.io/springboot/2016/08/20/spring-boot-jpa.html)
+继承 JpaRepository 类会自动实现很多内置的方法，包括增删改查。也可以根据方法名来自动生成相关 Sql，具体可以参考：[ Spring Boot (五)：Spring Data Jpa 的使用](https://www.guojun49.github.io/springboot/2016/08/20/spring-boot-jpa.html)
 
 ``` java
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -214,7 +214,7 @@ list 列表
 
 ``` html
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>userList</title>
@@ -260,18 +260,18 @@ list 列表
 
 效果图：
 
-![](http://www.itmind.net/assets/images/2017/springboot/list.png)
+![](https://www.itmind.net/assets/images/2017/springboot/list.png)
 
 `<tr  th:each="user : ${users}">` 这里会从 Controler 层 model set 的对象去获取相关的内容，`th:each`表示会循环遍历对象内容。
 
-其实还有其它的写法，具体的语法内容可以参考这篇文章：[ Spring Boot (四)： Thymeleaf 使用详解](http://www.guojun49.github.io/springboot/2016/05/01/spring-boot-thymeleaf.html)
+其实还有其它的写法，具体的语法内容可以参考这篇文章：[ Spring Boot (四)： Thymeleaf 使用详解](https://www.guojun49.github.io/springboot/2016/05/01/spring-boot-thymeleaf.html)
 
 
 修改页面：
 
 ``` html
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>user</title>
@@ -320,7 +320,7 @@ list 列表
 
 效果图：
 
-![](http://www.itmind.net/assets/images/2017/springboot/edit.png)
+![](https://www.itmind.net/assets/images/2017/springboot/edit.png)
 
 这样一个使用 Jpa 和 Thymeleaf 的增删改查示例就完成了。
 

@@ -7,11 +7,11 @@ tags: [jvm]
 
 本文由[CrowHawk](https://crowhawk.github.io/)翻译，地址：[如何优化Java GC「译」](https://crowhawk.github.io/2017/08/21/jvm_4/)，是Java GC调优的经典佳作。
 
-Sangmin Lee发表在[Cubrid](http://www.cubrid.org/blog)上的"Become a Java GC Expert"系列文章的第三篇[《How to Tune Java Garbage Collection》](http://www.cubrid.org/blog/how-to-tune-java-garbage-collection),本文的作者是韩国人，写在JDK 1.8发布之前，虽然有些地方有些许过时，但整体内容还是非常有价值的。译者此前也看到有人翻译了本文，发现其中有许多错漏生硬和语焉不详之处，因此决定自己翻译一份，供大家分享。
+Sangmin Lee发表在[Cubrid](https://www.cubrid.org/blog)上的"Become a Java GC Expert"系列文章的第三篇[《How to Tune Java Garbage Collection》](https://www.cubrid.org/blog/how-to-tune-java-garbage-collection),本文的作者是韩国人，写在JDK 1.8发布之前，虽然有些地方有些许过时，但整体内容还是非常有价值的。译者此前也看到有人翻译了本文，发现其中有许多错漏生硬和语焉不详之处，因此决定自己翻译一份，供大家分享。
 
-本文是“成为Java GC专家”系列文章的第三篇，在系列的第一篇文章[《理解Java GC》](http://www.cubrid.org/blog/understanding-java-garbage-collection)中，我们了解到了不同GC算法的执行过程、GC的工作原理、新生代和老年代的概念、JDK 7中你需要了解的5种GC类型以及每一种GC对性能的影响。
+本文是“成为Java GC专家”系列文章的第三篇，在系列的第一篇文章[《理解Java GC》](https://www.cubrid.org/blog/understanding-java-garbage-collection)中，我们了解到了不同GC算法的执行过程、GC的工作原理、新生代和老年代的概念、JDK 7中你需要了解的5种GC类型以及每一种GC对性能的影响。
 
-在系列的第二篇文章[《如何监控Java GC》](http://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)中笔者已经解释了JVM进行实时GC的原理、监控GC的方法以及可以使这一过程更加迅速高效的工具。
+在系列的第二篇文章[《如何监控Java GC》](https://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)中笔者已经解释了JVM进行实时GC的原理、监控GC的方法以及可以使这一过程更加迅速高效的工具。
 
 在第三篇文章中，笔者将基于实际生产环境中的案例，介绍几个GC优化的最佳参数设置。在此我们假设你已经理解了本系列前两篇文章的内容，因此为了更深入的理解本文所讲内容，我建议你在阅读本篇文章之前先仔细阅读这两篇文章。
 
@@ -55,7 +55,7 @@ Full GC的执行时间比Minor GC要长很多，因此，如果在Full GC上花�
 
 ## 影响GC性能的参数
 
-正如我在系列的第一篇文章[《理解Java GC》](http://www.cubrid.org/blog/understanding-java-garbage-collection)末尾提到的，不要幻想着“如果有人用他设置的GC参数获取了不错的性能，我们为什么不复制他的参数设置呢？”，因为对于不用的Web服务，它们创建的对象大小和生命周期都不相同。
+正如我在系列的第一篇文章[《理解Java GC》](https://www.cubrid.org/blog/understanding-java-garbage-collection)末尾提到的，不要幻想着“如果有人用他设置的GC参数获取了不错的性能，我们为什么不复制他的参数设置呢？”，因为对于不用的Web服务，它们创建的对象大小和生命周期都不相同。
 
 举一个简单的例子，如果一个任务的执行条件是A，B，C，D和E，另一个完全相同的任务执行条件只有A和B，那么哪一个任务执行速度更快呢？作为常识来讲，答案很明显是后者。
 
@@ -99,7 +99,7 @@ GC优化的过程和大多数常见的提升性能的过程相似，下面是笔
 
 ### 1.监控GC状态
 
-你需要监控GC从而检查系统中运行的GC的各种状态，具体方法请查看系列的第二篇文章[《如何监控Java GC》](http://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)
+你需要监控GC从而检查系统中运行的GC的各种状态，具体方法请查看系列的第二篇文章[《如何监控Java GC》](https://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)
 
 ### 2.分析监控结果后决定是否需要优化GC
 
@@ -111,7 +111,7 @@ GC优化的过程和大多数常见的提升性能的过程相似，下面是笔
 
 > **堆转储（heap dump）**是一个用来检查Java内存中的对象和数据的内存文件。该文件可以通过执行JDK中的`jmap`命令来创建。在创建文件的过程中，所有Java程序都将暂停，因此，不要再系统执行过程中创建该文件。
 
-> 你可以在互联网上搜索heap dump的详细说明。对于韩国读者，可以直接参考我去年发布的书：[《The story of troubleshooting for Java developers and system operators》](http://book.naver.com/bookdb/book_detail.nhn?bid=6654751) (Sangmin Lee, Hanbit Media, 2011, 416 pages)
+> 你可以在互联网上搜索heap dump的详细说明。对于韩国读者，可以直接参考我去年发布的书：[《The story of troubleshooting for Java developers and system operators》](https://book.naver.com/bookdb/book_detail.nhn?bid=6654751) (Sangmin Lee, Hanbit Media, 2011, 416 pages)
 
 ### 3.设置GC类型/内存大小
 
@@ -130,7 +130,7 @@ GC优化的过程和大多数常见的提升性能的过程相似，下面是笔
 
 ## 监控GC状态并分析结果
 
-在运行中的Web应用服务器（Web Application Server,WAS）上查看GC状态的最佳方式就是使用`jstat`命令。笔者在[《如何监控Java GC》](http://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)中已经介绍过了`jstat`命令，所以在本篇文章中我将着重关注数据部分。
+在运行中的Web应用服务器（Web Application Server,WAS）上查看GC状态的最佳方式就是使用`jstat`命令。笔者在[《如何监控Java GC》](https://www.cubrid.org/blog/how-to-monitor-java-garbage-collection)中已经介绍过了`jstat`命令，所以在本篇文章中我将着重关注数据部分。
 
 下面的例子展示了某个还没有执行GC优化的JVM的状态（虽然它并不是运行服务器）。
 

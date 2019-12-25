@@ -299,11 +299,11 @@ chmod 777 rsync.sh
 
 ## 参考：
 
-[Linux下同步工具inotify+rsync使用详解](http://seanlook.com/2014/12/12/rsync_inotify_setup/)
+[Linux下同步工具inotify+rsync使用详解](https://seanlook.com/2014/12/12/rsync_inotify_setup/)
 
 
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[www.guojun49.github.io](http://www.guojun49.github.io)**   
+**出处：[www.guojun49.github.io](https://www.guojun49.github.io)**   
 **版权所有，欢迎保留原文链接进行转载 :)**

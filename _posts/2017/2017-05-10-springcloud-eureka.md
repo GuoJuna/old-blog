@@ -21,23 +21,23 @@ Eureka是Netflix开源的一款提供服务注册和发现的产品，它提供�
 正常调用项目A请求项目B
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/ab.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/ab.jpg)
 
 
 有了服务中心之后，任何一个服务都不能直接去掉用，都需要通过服务中心来调用
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/a2b.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/a2b.jpg)
 
 项目A调用项目B，项目B在调用项目C
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/abc.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/abc.jpg)
 
 这时候调用的步骤就会为两步：第一步，项目A首先从服务中心请求项目B服务器，然后项目B在从服务中心请求项目C服务。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/a2b2c.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/a2b2c.jpg)
 
 上面的项目只是两三个相互之间的简单调用，但是如果项目超过20个30个呢，在15年底的时候我司分布式的项目就达到了二十几个，画一张图来描述几十个项目之间的相互调用关系全是线条，任何其中的一个项目改动，就会牵连好几个项目跟着重启，巨麻烦而且容易出错。通过服务中心来获取服务你不需要关注你调用的项目IP地址，由几台服务器组成，每次直接去服务中心获取可以使用的服务去调用既可。
 
@@ -72,7 +72,7 @@ Eureka由两个组件组成：Eureka服务器和Eureka客户端。Eureka服务�
 用一张图来认识以下：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-architecture-overview.png)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-architecture-overview.png)
 
 上图简要描述了Eureka的基本架构，由3个角色组成：
 
@@ -144,7 +144,7 @@ server.port=8000
 eureka.client.register-with-eureka=false
 eureka.client.fetch-registry=false
 
-eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:${server.port}/eureka/
 ```
 
 - ```eureka.client.register-with-eureka``` ：表示是否将自己注册到Eureka Server，默认为true。
@@ -153,10 +153,10 @@ eureka.client.serviceUrl.defaultZone=http://localhost:${server.port}/eureka/
 
 
 
-启动工程后，访问：http://localhost:8000/，可以看到下面的页面，其中还没有发现任何服务
+启动工程后，访问：https://localhost:8000/，可以看到下面的页面，其中还没有发现任何服务
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka_start.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka_start.jpg)
 
 
 ## 集群
@@ -174,7 +174,7 @@ spring.application.name=spring-cloud-eureka
 server.port=8000
 eureka.instance.hostname=peer1
 
-eureka.client.serviceUrl.defaultZone=http://peer2:8001/eureka/
+eureka.client.serviceUrl.defaultZone=https://peer2:8001/eureka/
 
 ```
 
@@ -185,7 +185,7 @@ spring.application.name=spring-cloud-eureka
 server.port=8001
 eureka.instance.hostname=peer2
 
-eureka.client.serviceUrl.defaultZone=http://peer1:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://peer1:8000/eureka/
 ```
 
 3、host转换
@@ -209,10 +209,10 @@ java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
 java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
 ```
 
-依次启动完成后，浏览器输入：```http://localhost:8000/``` 效果图如下：
+依次启动完成后，浏览器输入：```https://localhost:8000/``` 效果图如下：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-two.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-two.jpg)
 
 
 根据图可以看出peer1的注册中心DS Replicas已经有了peer2的相关配置信息，并且出现在available-replicas中。我们手动停止peer2来观察，发现peer2就会移动到unavailable-replicas一栏中，表示peer2不可用。
@@ -239,7 +239,7 @@ eureka:
     hostname: peer1
   client:
     serviceUrl:
-      defaultZone: http://peer2:8001/eureka/,http://peer3:8002/eureka/
+      defaultZone: https://peer2:8001/eureka/,https://peer3:8002/eureka/
 ---
 spring:
   application:
@@ -252,7 +252,7 @@ eureka:
     hostname: peer2
   client:
     serviceUrl:
-      defaultZone: http://peer1:8000/eureka/,http://peer3:8002/eureka/
+      defaultZone: https://peer1:8000/eureka/,https://peer3:8002/eureka/
 ---
 spring:
   application:
@@ -265,7 +265,7 @@ eureka:
     hostname: peer3
   client:
     serviceUrl:
-      defaultZone: http://peer1:8000/eureka/,http://peer2:8001/eureka/
+      defaultZone: https://peer1:8000/eureka/,https://peer2:8001/eureka/
 
 ```
 
@@ -277,10 +277,10 @@ java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
 java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer3
 ```
 
-依次启动完成后，浏览器输入：```http://localhost:8000/``` 效果图如下：
+依次启动完成后，浏览器输入：```https://localhost:8000/``` 效果图如下：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-cluster.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-cluster.jpg)
 
 可以在peer1中看到了peer2、peer3的相关信息。至此eureka集群也已经完成了
 
@@ -292,4 +292,4 @@ java -jar spring-cloud-eureka-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer3
 
 参考：
 
-[Peer Awareness](http://cloud.spring.io/spring-cloud-static/spring-cloud.html#_peer_awareness)
+[Peer Awareness](https://cloud.spring.io/spring-cloud-static/spring-cloud.html#_peer_awareness)

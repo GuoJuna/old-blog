@@ -2,7 +2,7 @@
 
 [fork]: https://github.com/github/primer/fork
 [pr]: https://github.com/github/primer/compare
-[style]: http://primercss.io/guidelines/
+[style]: https://primercss.io/guidelines/
 
 Hi there! We're thrilled that you'd like to contribute to this project. Your help is essential for keeping it great.
 
@@ -22,13 +22,13 @@ A bug is a _demonstrable problem_ that is caused by the code in the repository. 
 
 Guidelines for bug reports:
 
-0. **Validate and lint your code** &mdash; [validate your HTML](http://html5.validator.nu) to ensure your problem isn't caused by a simple error in your own code.
+0. **Validate and lint your code** &mdash; [validate your HTML](https://html5.validator.nu) to ensure your problem isn't caused by a simple error in your own code.
 
 1. **Use the GitHub issue search** &mdash; check if the issue has already been reported.
 
 2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `master` or development branch in the repository.
 
-3. **Isolate the problem** &mdash; ideally create a [reduced test case](http://css-tricks.com/6263-reduced-test-cases/) and a live example. [This JS Bin](http://jsbin.com/lefey/1/edit?html,output) is a helpful template.
+3. **Isolate the problem** &mdash; ideally create a [reduced test case](https://css-tricks.com/6263-reduced-test-cases/) and a live example. [This JS Bin](https://jsbin.com/lefey/1/edit?html,output) is a helpful template.
 
 A good bug report shouldn't leave others needing to chase you up for more information. Please try to be as detailed as possible in your report. What is your environment? What steps will reproduce the issue? What browser(s) and OS experience the problem? Do other browsers show the bug differently? What would you expect to be the outcome? All these details will help people to fix any potential bugs.
 
@@ -70,7 +70,7 @@ Here are a few things you can do that will increase the likelihood of your pull 
 
 - Follow the [style guide][style].
 - Keep your change as focused as possible. If there are multiple changes you would like to make that are not dependent upon each other, consider submitting them as separate pull requests.
-- Write a [good commit message](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
+- Write a [good commit message](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
 
 ## Resources
 

@@ -72,9 +72,9 @@ public class FileUploadWebApplication {
 
 tomcatEmbedded 这段代码是为了解决，上传文件大于10M出现连接重置的问题。此异常内容 GlobalException 也捕获不到。
 
-![](http://www.itmind.net/assets/images/2018/springboot/connect_rest.png)
+![](https://www.itmind.net/assets/images/2018/springboot/connect_rest.png)
 
-详细内容参考：[Tomcat large file upload connection reset](http://www.mkyong.com/spring/spring-file-upload-and-connection-reset-issue/)
+详细内容参考：[Tomcat large file upload connection reset](https://www.mkyong.com/spring/spring-file-upload-and-connection-reset-issue/)
 
 ## 3、编写前端页面
 
@@ -82,7 +82,7 @@ tomcatEmbedded 这段代码是为了解决，上传文件大于10M出现连接�
 
 ``` html
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="https://www.thymeleaf.org">
 <body>
 <h1>Spring Boot file upload example</h1>
 <form method="POST" action="/upload" enctype="multipart/form-data">
@@ -95,13 +95,13 @@ tomcatEmbedded 这段代码是为了解决，上传文件大于10M出现连接�
 
 非常简单的一个 Post 请求，一个选择框选择文件，一个提交按钮，效果如下：
 
-![](http://www.itmind.net/assets/images/2018/springboot/upload_submit.png)
+![](https://www.itmind.net/assets/images/2018/springboot/upload_submit.png)
 
 上传结果展示页面：
 
 ``` html
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <body>
 <h1>Spring Boot - Upload Status</h1>
 <div th:if="${message}">
@@ -113,7 +113,7 @@ tomcatEmbedded 这段代码是为了解决，上传文件大于10M出现连接�
 
 效果图如下：
 
-![](http://www.itmind.net/assets/images/2018/springboot/uploadstatus.png)
+![](https://www.itmind.net/assets/images/2018/springboot/uploadstatus.png)
 
 
 ## 4、编写上传控制类
@@ -159,15 +159,15 @@ public String singleFileUpload(@RequestParam("file") MultipartFile file,
 
 `MultipartFile`是Spring上传文件的封装类，包含了文件的二进制流和文件属性等信息，在配置文件中也可对相关属性进行配置，基本的配置信息如下：
 
-- `spring.http.multipart.enabled=true` #默认支持文件上传.
-- `spring.http.multipart.file-size-threshold=0` #支持文件写入磁盘.
-- `spring.http.multipart.location= `# 上传文件的临时目录
-- `spring.http.multipart.max-file-size=1Mb` # 最大支持文件大小
-- `spring.http.multipart.max-request-size=10Mb` # 最大支持请求大小
+- `spring.https.multipart.enabled=true` #默认支持文件上传.
+- `spring.https.multipart.file-size-threshold=0` #支持文件写入磁盘.
+- `spring.https.multipart.location= `# 上传文件的临时目录
+- `spring.https.multipart.max-file-size=1Mb` # 最大支持文件大小
+- `spring.https.multipart.max-request-size=10Mb` # 最大支持请求大小
 
 最常用的是最后两个配置内容，限制文件上传大小，上传时超过大小会抛出异常：
 
-![](http://www.itmind.net/assets/images/2018/springboot/uploadmax.png)
+![](https://www.itmind.net/assets/images/2018/springboot/uploadmax.png)
 
 
 更多配置信息参考这里：[Common application properties](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#common-application-properties)
@@ -204,7 +204,7 @@ public class GlobalExceptionHandler {
 
 **参考**：
 
-[Spring Boot file upload example](http://www.mkyong.com/spring-boot/spring-boot-file-upload-example/)
+[Spring Boot file upload example](https://www.mkyong.com/spring-boot/spring-boot-file-upload-example/)
 
 
 

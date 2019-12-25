@@ -4,7 +4,7 @@
 
 /**
  * Converts a hex CSS color value to RGB.
- * Adapted from http://stackoverflow.com/a/5624139.
+ * Adapted from https://stackoverflow.com/a/5624139.
  *
  * @param	String	hex		The hexadecimal color value
  * @return	Object			The RGB representation
@@ -37,8 +37,8 @@ function rgb2hex(rgb) {
 
 /**
  * Converts an RGB color value to HSL. Conversion formula adapted from
- * http://en.wikipedia.org/wiki/HSL_color_space. This function adapted
- * from http://stackoverflow.com/a/9493060.
+ * https://en.wikipedia.org/wiki/HSL_color_space. This function adapted
+ * from https://stackoverflow.com/a/9493060.
  * Assumes r, g, and b are contained in the set [0, 255] and
  * returns h, s, and l in the set [0, 1].
  *
@@ -69,8 +69,8 @@ function rgb2hsl(rgb) {
 
 /**
  * Converts an HSL color value to RGB. Conversion formula adapted from
- * http://en.wikipedia.org/wiki/HSL_color_space. This function adapted
- * from http://stackoverflow.com/a/9493060.
+ * https://en.wikipedia.org/wiki/HSL_color_space. This function adapted
+ * from https://stackoverflow.com/a/9493060.
  * Assumes h, s, and l are contained in the set [0, 1] and
  * returns r, g, and b in the set [0, 255].
  *

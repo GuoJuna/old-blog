@@ -7,7 +7,7 @@ excerpt: 一次FastDFS并发问题的排查经历
 keywords: FastDFS,并发,架构
 ---
 
-![](http://www.itmind.net/assets/images/2017/life/router.jpg)  
+![](https://www.itmind.net/assets/images/2017/life/router.jpg)  
 
 前一段时间，业务部门同事反馈在一次生产服务器升级之后，POS消费上传小票业务偶现异常，上传小票业务有重试机制，有些重试三次也不会成功，他们排查了一下没有找到原因，希望架构部帮忙解决。
 
@@ -19,7 +19,7 @@ keywords: FastDFS,并发,架构
 - nginx ：1.7.9      
 - fastdfs-nginx-module：1.16
 
-为了尽可能的模拟生产，我在测试环境1:1搭建了一套和生产一样的FastDFS集群，当时也写了搭建过程：[FastDFS 集群 安装 配置](http://www.guojun49.github.io/fastdfs/2017/10/10/cluster-building-fastdfs.html)
+为了尽可能的模拟生产，我在测试环境1:1搭建了一套和生产一样的FastDFS集群，当时也写了搭建过程：[FastDFS 集群 安装 配置](https://www.guojun49.github.io/fastdfs/2017/10/10/cluster-building-fastdfs.html)
 
 ## 从日志中找线索
 
@@ -87,11 +87,11 @@ pkgInfo是封装好的文件流信息，ProtoCommon是fastdfs-client-java中封�
 
 
 ``` java
-[ INFO] [http://*:8083-69096 2017-09-25 14:07:32] (FileManager.java:upload:92) upload_file time used:76 ms
-[ INFO] [http://*:8083-69096 2017-09-25 14:07:32] (FileManager.java:upload:103) upload file successfully!!!group_name:group2, remoteFileName: M00/3C/A8/wKg5Z1nInSOAaHSNAAAdNipAyrQ611.jpg
+[ INFO] [https://*:8083-69096 2017-09-25 14:07:32] (FileManager.java:upload:92) upload_file time used:76 ms
+[ INFO] [https://*:8083-69096 2017-09-25 14:07:32] (FileManager.java:upload:103) upload file successfully!!!group_name:group2, remoteFileName: M00/3C/A8/wKg5Z1nInSOAaHSNAAAdNipAyrQ611.jpg
 upload file successfully!!!group_name:group2, remoteFileName: M00/3C/A8/wKg5Z1nInSOAaHSNAAAdNipAyrQ611.jpg
 [Ljava.lang.String;@17584701
-[ERROR] [http://*:8083-69087 2017-09-25 14:07:32] (FileManager.java:upload:90) Non IO Exception when uploadind the file:520
+[ERROR] [https://*:8083-69087 2017-09-25 14:07:32] (FileManager.java:upload:90) Non IO Exception when uploadind the file:520
 java.lang.NullPointerException
 	at org.csource.fastdfs.StorageClient.do_upload_file(StorageClient.java:842)
 	at org.csource.fastdfs.StorageClient.upload_file(StorageClient.java:208)
@@ -186,7 +186,7 @@ private static void latchTest() throws InterruptedException {
 public static void testLoad() {
     String filePath="C:\\Users\\xxx\\Pictures\\xz.jpg";
     File file=new File(filePath);
-    String serverUrl="http://localhost:8080/uploadSign";
+    String serverUrl="https://localhost:8080/uploadSign";
     for (int i=0;i<10000;i++){
         HttpClientUtils.uploadFile(file,serverUrl);
     }

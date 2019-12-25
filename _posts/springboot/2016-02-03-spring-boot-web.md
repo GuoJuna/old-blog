@@ -6,7 +6,7 @@ category: springboot
 tags: [springboot]
 ---
 
-上篇文章介绍了 Spring Boot 初级教程：[Spring Boot(一)：入门篇](http://www.guojun49.github.io/springboot/2016/01/06/spring-boot-quick-start.html)，方便大家快速入门、了解实践 Spring Boot 特性；本篇文章接着上篇内容继续为大家介绍 Spring Boot 的其它特性（有些未必是 Spring Boot 体系桟的功能，但是是 Spring 特别推荐的一些开源技术本文也会介绍），对了这里只是一个大概的介绍，特别详细的使用我们会在其它的文章中来展开说明。
+上篇文章介绍了 Spring Boot 初级教程：[Spring Boot(一)：入门篇](https://www.guojun49.github.io/springboot/2016/01/06/spring-boot-quick-start.html)，方便大家快速入门、了解实践 Spring Boot 特性；本篇文章接着上篇内容继续为大家介绍 Spring Boot 的其它特性（有些未必是 Spring Boot 体系桟的功能，但是是 Spring 特别推荐的一些开源技术本文也会介绍），对了这里只是一个大概的介绍，特别详细的使用我们会在其它的文章中来展开说明。
 
 
 ## Web 开发
@@ -270,7 +270,7 @@ Thymeleaf: <p th:text="${message}">Hello World!</p>
 URL 在 Web 应用模板中占据着十分重要的地位，需要特别注意的是 Thymeleaf 对于 URL 的处理是通过语法 `@{...}` 来处理的。Thymeleaf 支持绝对路径 URL：
 
 ``` html 
-<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
+<a th:href="@{https://www.thymeleaf.org}">Thymeleaf</a>
 ```
 
 ### 条件求值
@@ -307,7 +307,7 @@ Spring 项目建议使用 Maven/Gradle 进行构建项目，相比 Maven 来讲 
 ```
 buildscript {
     repositories {
-        maven { url "http://repo.spring.io/libs-snapshot" }
+        maven { url "https://repo.spring.io/libs-snapshot" }
         mavenLocal()
     }
     dependencies {
@@ -331,7 +331,7 @@ targetCompatibility = 1.7  //目标兼容版本 JDK1.7
 repositories {     //  Maven 仓库
     mavenLocal()        //使用本地仓库
     mavenCentral()      //使用中央仓库
-    maven { url "http://repo.spring.io/libs-snapshot" } //使用远程仓库
+    maven { url "https://repo.spring.io/libs-snapshot" } //使用远程仓库
 }
  
 dependencies {   // 各种 依赖的jar包
@@ -369,7 +369,7 @@ WebJars 是将客户端（浏览器）资源（JavaScript，Css等）打成 Jar 
 
 ###  如何使用
 
-1、 [WebJars主官网](http://www.webjars.org/bower) 查找对于的组件，比如 Vuejs 
+1、 [WebJars主官网](https://www.webjars.org/bower) 查找对于的组件，比如 Vuejs 
 
 ``` xml
 <dependency>
@@ -395,7 +395,7 @@ WebJars 是将客户端（浏览器）资源（JavaScript，Css等）打成 Jar 
 
 ## 参考：
 
-[新一代Java模板引擎Thymeleaf](http://www.tianmaying.com/tutorial/using-thymeleaf)
+[新一代Java模板引擎Thymeleaf](https://www.tianmaying.com/tutorial/using-thymeleaf)
 
 [Spring Boot参考指南-中文版](https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/)
 

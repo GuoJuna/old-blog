@@ -430,7 +430,7 @@ jhat [dumpfile]
 > - -refs false|true
 > 关闭对象引用跟踪(tracking of references to objects)。 默认值为 true. 默认情况下, 返回的指针是指向其他特定对象的对象,如反向链接或输入引用(referrers or incoming references), 会统计/计算堆中的所有对象。> 
 > - -port port-number
-> 设置 jhat HTTP server 的端口号. 默认值 7000.> 
+> 设置 jhat https server 的端口号. 默认值 7000.> 
 > - -exclude exclude-file
 > 指定对象查询时需要排除的数据成员列表文件(a file that lists data members that should be excluded from the reachable objects query)。 例如, 如果文件列列出了 java.lang.String.value , 那么当从某个特定对象 Object o 计算可达的对象列表时, 引用路径涉及 java.lang.String.value 的都会被排除。> 
 > - -baseline exclude-file
@@ -453,7 +453,7 @@ $ jhat -J-Xmx512m dump.hprof
   Chasing references, expect 54 dots......................................................
   Eliminating duplicate references......................................................
   Snapshot resolved.
-  Started HTTP server on port 7000
+  Started https server on port 7000
   Server is ready.
 ```
 
@@ -477,9 +477,9 @@ Execute Object Query Language (OQL) query
 
 一般查看堆异常情况主要看这个两个部分：
 Show instance counts for all classes (excluding platform)，平台外的所有对象信息。如下图：
-![](http://guojun49.github.io/assets/images/2016/jvm-jhat-excluding-paltform.png) <br/>
+![](https://guojun49.github.io/assets/images/2016/jvm-jhat-excluding-paltform.png) <br/>
 Show heap histogram 以树状图形式展示堆情况。如下图：
-![](http://guojun49.github.io/assets/images/2016/jvm-jhat-heap-histogram.png) <br/>
+![](https://guojun49.github.io/assets/images/2016/jvm-jhat-heap-histogram.png) <br/>
 具体排查时需要结合代码，观察是否大量应该被回收的对象在一直被引用或者是否有占用内存特别大的对象无法被回收。<br/>
 **一般情况，会down到客户端用工具来分析**
 
@@ -512,7 +512,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (24.71-b01 mixed mode):
    Locked ownable synchronizers:
         - None
 
-"http-bio-8005-exec-2" daemon prio=10 tid=0x00007feb94028000 nid=0x7b8c waiting on condition [0x00007fea8f56e000]
+"https-bio-8005-exec-2" daemon prio=10 tid=0x00007feb94028000 nid=0x7b8c waiting on condition [0x00007fea8f56e000]
    java.lang.Thread.State: WAITING (parking)
         at sun.misc.Unsafe.park(Native Method)
         - parking to wait for  <0x00000000cae09b80> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
@@ -535,7 +535,7 @@ Full thread dump Java HotSpot(TM) 64-Bit Server VM (24.71-b01 mixed mode):
 ### 分析
 
 这里有一篇文章解释的很好
-[分析打印出的文件内容](http://www.hollischuang.com/archives/110) 
+[分析打印出的文件内容](https://www.hollischuang.com/archives/110) 
 
 
 ## jinfo

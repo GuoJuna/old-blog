@@ -26,7 +26,7 @@ linux终端上面 执行sz操作后，文件目录
 
 ## 4、mac安装不同版本jdk，已经命令切换到不同版本
 
-[jdk下载地址](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+[jdk下载地址](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 安装完之后，jkd 在 /Library/Java/JavaVirtualMachines 目录下
 

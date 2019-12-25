@@ -14,7 +14,7 @@ tags: [mongodb]
 
 ``` sh
 2017-08-16T18:33:42.985+0800 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
-2017-08-16T18:33:42.985+0800 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2017-08-16T18:33:42.985+0800 I STORAGE  [initandlisten] **          See https://dochub.mongodb.org/core/prodnotes-filesystem
 2017-08-16T18:33:43.024+0800 I CONTROL  [initandlisten] 
 2017-08-16T18:33:43.024+0800 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
 2017-08-16T18:33:43.024+0800 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
@@ -26,7 +26,7 @@ tags: [mongodb]
 2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] 
 2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] ** WARNING: /proc/sys/vm/zone_reclaim_mode is 1
 2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] **          We suggest setting it to 0
-2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] **          http://www.kernel.org/doc/Documentation/sysctl/vm.txt
+2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] **          https://www.kernel.org/doc/Documentation/sysctl/vm.txt
 2017-08-16T18:33:43.026+0800 I CONTROL  [initandlisten] 
 2017-08-16T18:33:43.027+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
 2017-08-16T18:33:43.027+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
@@ -40,13 +40,13 @@ tags: [mongodb]
 
 第一条，“Using the XFS filesystem is strongly recommended with the WiredTiger storage engine” ，意思就是强烈建议启用XFS文件系统，启用XFS文件系统会对性能有比较好的提升，我们使用的系统是centos6.9，重新格式化磁盘就可以。
 
-具体如何格式成XFS文件系统，请参考这篇文章：[centos6构建XFS文件系统](http://blog.csdn.net/xiegh2014/article/details/52687734)
+具体如何格式成XFS文件系统，请参考这篇文章：[centos6构建XFS文件系统](https://blog.csdn.net/xiegh2014/article/details/52687734)
 
 第二条，“Access control is not enabled for the database. Read and write access to data and configuration is unrestricted.”，就是说数据安全很重要，该配置管理员账户、密码、权限的就赶紧配上。
 
 如何去配置呢，参考官方文档吧：[Re-start the MongoDB instance with access control.](https://docs.mongodb.com/master/tutorial/enable-authentication/#re-start-the-mongodb-instance-with-access-controls)
 
-第三条，“ You are running on a NUMA machine.We suggest launching mongod like this to avoid，numactl --interleave=all mongod [other options]”，我们运行的服务器CPU架构是MUMA，因此建议启动的时候加一些参数，可以提高性能，怎么加呢，看下面的命令，想多了解一些可以参考这篇文章：[Mongodb NUMA 导致的性能问题](http://zhangliyong.github.io/posts/2014/04/09/mongodb-numa-dao-zhi-de-xing-neng-wen-ti.html)
+第三条，“ You are running on a NUMA machine.We suggest launching mongod like this to avoid，numactl --interleave=all mongod [other options]”，我们运行的服务器CPU架构是MUMA，因此建议启动的时候加一些参数，可以提高性能，怎么加呢，看下面的命令，想多了解一些可以参考这篇文章：[Mongodb NUMA 导致的性能问题](https://zhangliyong.github.io/posts/2014/04/09/mongodb-numa-dao-zhi-de-xing-neng-wen-ti.html)
 
 ``` sh
 numactl --interleave=all mongod [other options]

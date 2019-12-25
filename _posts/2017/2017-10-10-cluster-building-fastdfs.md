@@ -100,7 +100,7 @@ port=22122
 #设置tracker的数据文件和日志目录（需手动创建）
 base_path=/root/fastdfs
 #设置http端口号
-http.server_port=9090
+https.server_port=9090
 ```
 
 使用```/usr/bin/fdfs_trackerd /etc/fdfs/tracker.conf start```尝试启动tracker
@@ -240,12 +240,12 @@ checking for gcc -pipe switch ... found
 
 ......
 
-nginx http access log file: "/usr/local/nginx/logs/access.log"
-nginx http client request body temporary files: "client_body_temp"
-nginx http proxy temporary files: "proxy_temp"
-nginx http fastcgi temporary files: "fastcgi_temp"
-nginx http uwsgi temporary files: "uwsgi_temp"
-nginx http scgi temporary files: "scgi_temp" 
+nginx https access log file: "/usr/local/nginx/logs/access.log"
+nginx https client request body temporary files: "client_body_temp"
+nginx https proxy temporary files: "proxy_temp"
+nginx https fastcgi temporary files: "fastcgi_temp"
+nginx https uwsgi temporary files: "uwsgi_temp"
+nginx https scgi temporary files: "scgi_temp" 
 ```
 configure成功了
 
@@ -347,7 +347,7 @@ location ~/group[1-2]/M00 {
 复制fastdfs中的http.conf、mime.types文件到/etc/fdfs
 
 ``` sh
-cp /usr/local/fastdfs-5.05/conf/http.conf /usr/local/fastdfs-5.05/conf/mime.types  /etc/fdfs
+cp /usr/local/fastdfs-5.05/conf/https.conf /usr/local/fastdfs-5.05/conf/mime.types  /etc/fdfs
 ```
 
 至此，nginx以及FastDFS插件模块设置完成。
@@ -436,7 +436,7 @@ events {
     worker_connections  65535;        #最大链接数
     use epoll;                        #新版本的Linux可使用epoll加快处理性能
 }
-http {
+https {
     #设置group1的服务器
     upstream fdfs_group1 {
         server 192.168.53.90:8080 weight=1 max_fails=2 fail_timeout=30s;
@@ -453,11 +453,11 @@ http {
         listen       8080;
        #设置group1的负载均衡参数
         location /group1/M00 {
-            proxy_pass http://fdfs_group1;
+            proxy_pass https://fdfs_group1;
         }
         #设置group2的负载均衡参数
         location /group2/M00 {
-            proxy_pass http://fdfs_group2;
+            proxy_pass https://fdfs_group2;
         }
       }
 
@@ -503,7 +503,7 @@ vim /etc/fdfs/client.conf
 base_path=/root/fastdfs                   #日志存放路径
 tracker_server=192.168.53.85:22122         
 tracker_server=192.168.53.86:22122 
-http.tracker_server_port=8080
+https.tracker_server_port=8080
 ```
 
 使用/usr/local/bin/fdfs_upload_file上传一个文件，程序会自动返回文件的URL。
@@ -516,12 +516,12 @@ group2/M00/00/00/wKg26VncfamAEqZ0AAu-4Kcs3QI677.jpg
 然后使用浏览器访问:
 
 ``` sh
-http://192.168.53.85:8080/group2/M00/00/00/wKg26VncfamAEqZ0AAu-4Kcs3QI677.jpg
+https://192.168.53.85:8080/group2/M00/00/00/wKg26VncfamAEqZ0AAu-4Kcs3QI677.jpg
 ```
 
 看有查看到图片,说明集群搭建成功！
 
-![](http://www.itmind.net/assets/images/neo.jpg)
+![](https://www.itmind.net/assets/images/neo.jpg)
 
 > 生产中可以将：```/root/fastdfs``` 替换为：```/fdfs/storage```
 
@@ -588,7 +588,7 @@ make
 ``` sh
 cat /usr/local/nginx/logs/error.log
 ngx_http_fastdfs_process_init pid=12770
-[2017-10-10 13:41:44] ERROR - file: ini_file_reader.c, line: 631, include file "http.conf" not exists, line: "#include http.conf"
+[2017-10-10 13:41:44] ERROR - file: ini_file_reader.c, line: 631, include file "https.conf" not exists, line: "#include https.conf"
 [2017-10-10 13:41:44] ERROR - file: /usr/local/fastdfs-nginx-module/src/common.c, line: 155, load conf file "/etc/fdfs/mod_fastdfs.conf" fail, ret code: 2
 2017/10/10 13:41:44 [alert] 12769#0: worker process 12770 exited with fatal code 2 and cannot be respawned
 ```
@@ -598,7 +598,7 @@ ngx_http_fastdfs_process_init pid=12770
 复制fastdfs中的http.conf、mime.types文件到/etc/fdfs
 
 ``` sh
-cp /usr/local/fastdfs-5.05/conf/http.conf /usr/local/fastdfs-5.05/conf/mime.types  /etc/fdfs
+cp /usr/local/fastdfs-5.05/conf/https.conf /usr/local/fastdfs-5.05/conf/mime.types  /etc/fdfs
 ```
 
 然后重启nginx
@@ -640,7 +640,7 @@ url_have_group_name=true
 
 ### 测试图片无法访问
 
-搭建完成之后，访问```http://192.168.53.85:8080/group2/M00/00/00/wKg26VncfamAEqZ0AAu-4Kcs3QI677.jpg```
+搭建完成之后，访问```https://192.168.53.85:8080/group2/M00/00/00/wKg26VncfamAEqZ0AAu-4Kcs3QI677.jpg```
 地址图片总是报404无法找到，跟踪到storage服务器，查看nginx的error日志发现如下；
 
 ``` sh

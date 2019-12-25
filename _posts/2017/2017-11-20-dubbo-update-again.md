@@ -7,7 +7,7 @@ tags: [springcloud]
 
 最近，开源社区发生了一件大事，那个全国 Java 开发者使用最广的开源服务框架 Dubbo 低调重启维护，并且 3 个月连续发布了 4 个维护版本。
 
-我上次在写[放弃Dubbo，选择最流行的Spring Cloud微服务架构实践与经验总结](http://mp.weixin.qq.com/s/bciSlKearaVFQg1QWOSn_g)这篇文章的时候，就有很多的网友给我留言说，Dubbo 又开始更新了。我当然是清楚的，我也一直在关注着 Dubbo 的走向，在几个月前技术圈里面就有一个消息说是 Dubbo 又开始更新了，大家议论纷纷不知真伪。我还专门跑到 GitHub 上面进行了留言询问，最后在 Dubbo 的 gitter 聊天室里面找到了确信的答案，说是正在组建团队。虽然稍稍有所期待，但也不知道阿里这次拿出了多少的诚意来做这件事，于是我昨天又到 GitHub 逛了一下，发现从 9 月开始，阿里三个月连着发布了四个版本，还是非常有诚意的，值得关注。
+我上次在写[放弃Dubbo，选择最流行的Spring Cloud微服务架构实践与经验总结](https://mp.weixin.qq.com/s/bciSlKearaVFQg1QWOSn_g)这篇文章的时候，就有很多的网友给我留言说，Dubbo 又开始更新了。我当然是清楚的，我也一直在关注着 Dubbo 的走向，在几个月前技术圈里面就有一个消息说是 Dubbo 又开始更新了，大家议论纷纷不知真伪。我还专门跑到 GitHub 上面进行了留言询问，最后在 Dubbo 的 gitter 聊天室里面找到了确信的答案，说是正在组建团队。虽然稍稍有所期待，但也不知道阿里这次拿出了多少的诚意来做这件事，于是我昨天又到 GitHub 逛了一下，发现从 9 月开始，阿里三个月连着发布了四个版本，还是非常有诚意的，值得关注。
 
 ## Dubbo简介
 
@@ -23,7 +23,7 @@ Dubbo 是阿里巴巴公司一个开源的高性能服务框架，致力于提�
 - 集群容错，提供基于接口方法的透明远程过程调用，包括多协议支持，以及软负载均衡，失败容错，地址路由，动态配置等集群支持。
 - 自动发现，基于注册中心目录服务，使服务消费方能动态的查找服务提供方，使地址透明，使服务提供方可以平滑增加或减少机器。 
 
-![](http://www.itmind.net/assets/images/2017/architecture/dubbo-architecture.png)  
+![](https://www.itmind.net/assets/images/2017/architecture/dubbo-architecture.png)  
 
 
 ## Dubbo发展史
@@ -40,7 +40,7 @@ Dubbo 开源之后，框架发展比较迅速，几乎两三个月会发布一�
 
 2014 年的 10 月 20 号，当当网 Fork 了阿里的一个 Dubbo 版本开始维护，并命名为 dubbox-2.8.0。值得注意的是，当当网扩展 Dubbo 服务框架支持 REST 风格远程调用，并且跟随着 ZooKeepe 和 Spring 升级了对应的版本。之后 Dubbox 一直在小版本维护，2015 年 3 月 31 号发布了最后一个版本 **dubbox-2.8.4**。
 
-![](http://www.itmind.net/assets/images/2017/architecture/dubbox_rest.jpg)  
+![](https://www.itmind.net/assets/images/2017/architecture/dubbox_rest.jpg)  
 
 ## Dubbo团队这三个月都做了什么
 
@@ -55,7 +55,7 @@ Dubbo 开源之后，框架发展比较迅速，几乎两三个月会发布一�
 
 依赖	    |当前版本|	目标版本|	影响点
 ---     |---    |---        |---
-spring	|3.2.16.RELEASE|	4.3.10.RELEASE|	schema配置解析；Http RPC协议
+spring	|3.2.16.RELEASE|	4.3.10.RELEASE|	schema配置解析；https RPC协议
 zookeeper|	3.3.3	|3.4.9	|常用注册中心
 zkclient|	0.1	0.10|	zookeeper |客户端工具
 curator|	1.1.16	|2.12.0	|zookeeper客户端工具
@@ -125,7 +125,7 @@ MonitorService初次调用，如遇zk不可达，当前版本会忽略monitor数
 **根据阿里技术的信息，最近三个版本会做的事情如下：**
 
 - 优先解决社区使用过程中的问题和框架的缺陷，吸收社区贡献的新特性，解决文档访问和不全面的问题。  
-- 提供服务延迟暴乱、优雅停机 API 接口支持 RESTFULE 风格服务调用，提供 netty http 的支持，集成高性能序列化协议。  
+- 提供服务延迟暴乱、优雅停机 API 接口支持 RESTFULE 风格服务调用，提供 netty https 的支持，集成高性能序列化协议。  
 - 路由功能优化、消费端异步功能优化、提供端异步调用支持注册中心推送通知异步、合并处理改造等。  
 
 **未来计划**：
@@ -159,12 +159,12 @@ MonitorService初次调用，如遇zk不可达，当前版本会忽略monitor数
 
 **如果仅仅关注于服务治理的这个层面，Dubbo其实还优于Spring Cloud很多：**
 
-- Dubbo 支持更多的协议，如：rmi、hessian、http、webservice、thrift、memcached、redis 等。  
+- Dubbo 支持更多的协议，如：rmi、hessian、https、webservice、thrift、memcached、redis 等。  
 - Dubbo 使用 RPC 协议效率更高，在极端压力测试下，Dubbo 的效率会高于 Spring Cloud 效率一倍多。   
 - Dubbo 有更强大的后台管理，Dubbo 提供的后台管理 Dubbo Admin 功能强大，提供了路由规则、动态配置、访问控制、权重调节、均衡负载等诸多强大的功能。  
 - 可以限制某个 IP 流量的访问权限，设置不同服务器分发不同的流量权重，并且支持多种算法，利用这些功能我们可以在线上做灰度发布、故障转移等，Spring Cloud 到现在还不支持灰度发布、流量权重等功能。
 
-![](http://www.itmind.net/assets/images/2017/architecture/dubbo_admin.png)  
+![](https://www.itmind.net/assets/images/2017/architecture/dubbo_admin.png)  
 
 **所以Dubbo专注于服务治理；Spring Cloud关注于微服务架构生态。**
 
@@ -180,9 +180,9 @@ MonitorService初次调用，如遇zk不可达，当前版本会忽略monitor数
 
 ## 如何选择？
 
-可能很多人正在犹豫，在服务治理的时候应该选择那个框架呢？如果公司对效率有极高的要求建议使用 Dubbo，相对比 RPC 的效率会比 HTTP 高很多；如果团队不想对技术架构做大的改造建议使用 Dubbo，Dubbo 仅仅需要少量的修改就可以融入到内部系统的架构中。但如果技术团队喜欢挑战新技术，建议选择 Spring Cloud，Spring Cloud 架构体系有有趣很酷的技术。如果公司选择微服务架构去重构整个技术体系，那么 Spring Cloud 是当仁不让之选，它可以说是目前最好的微服务框架没有之一。
+可能很多人正在犹豫，在服务治理的时候应该选择那个框架呢？如果公司对效率有极高的要求建议使用 Dubbo，相对比 RPC 的效率会比 https 高很多；如果团队不想对技术架构做大的改造建议使用 Dubbo，Dubbo 仅仅需要少量的修改就可以融入到内部系统的架构中。但如果技术团队喜欢挑战新技术，建议选择 Spring Cloud，Spring Cloud 架构体系有有趣很酷的技术。如果公司选择微服务架构去重构整个技术体系，那么 Spring Cloud 是当仁不让之选，它可以说是目前最好的微服务框架没有之一。
 
 最后，技术选型是一个综合的问题，需要考虑团队的情况、业务的发展以及公司的产品特征。最炫最酷的技术并不一定是最好的，选择适合自己团队、符合公司业务的框架才是最佳方案。技术的发展永远没有尽头，因此我们对技术也要保持空杯、保持饥饿、保持敬畏！
 
-原文出处[阿里Dubbo疯狂更新，关Spring Cloud什么事？](http://mp.weixin.qq.com/s/aYlHAXNbwiXq7DPFOYTK6A)
+原文出处[阿里Dubbo疯狂更新，关Spring Cloud什么事？](https://mp.weixin.qq.com/s/aYlHAXNbwiXq7DPFOYTK6A)
 

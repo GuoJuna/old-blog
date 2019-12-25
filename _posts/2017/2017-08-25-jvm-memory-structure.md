@@ -10,7 +10,7 @@ tags: [jvm]
 先看一张图，这张图能很清晰的说明JVM内存结构布局。
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/jvm03.png)
+![](https://www.itmind.net/assets/images/2017/jvm/jvm03.png)
 
 JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。堆内存是JVM中最大的一块由年轻代和老年代组成，而年轻代内存又被分成三部分，**Eden空间**、**From Survivor空间**、**To Survivor空间**,默认情况下年轻代按照**8:1:1**的比例来分配；
 
@@ -20,7 +20,7 @@ JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。�
 在通过一张图来了解如何通过参数来控制各区域的内存大小
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/jvm04.png)
+![](https://www.itmind.net/assets/images/2017/jvm/jvm04.png)
 
 控制参数
 
@@ -40,7 +40,7 @@ JVM内存结构主要有三大块：**堆内存**、**方法区**和**栈**。�
 从更高的一个维度再次来看JVM和系统调用之间的关系
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/jvm05.png)
+![](https://www.itmind.net/assets/images/2017/jvm/jvm05.png)
 
 *方法区和对是所有线程共享的内存区域；而java栈、本地方法栈和程序员计数器是运行是线程私有的内存区域。*
 
@@ -71,7 +71,7 @@ Java虚拟机规范对这个区域的限制非常宽松，除了和Java堆一样
 方法区有时被称为持久代（PermGen）。
 
  
-![](http://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_2_MemoryModel-1.png)
+![](https://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_2_MemoryModel-1.png)
 
 所有的对象在实例化后的整个运行周期内，都被存放在堆内存中。堆内存又被划分成不同的部分：伊甸区(Eden)，幸存者区域(Survivor Sapce)，老年代（Old Generation Space）。
 
@@ -94,11 +94,11 @@ public class HelloWorld {
 
 这段程序的数据在内存中的存放如下：
 
-![](http://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_4_MemoryModel.png)
+![](https://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_4_MemoryModel.png)
 
 通过JConsole工具可以查看运行中的Java程序（比如Eclipse）的一些信息：堆内存的分配，线程的数量以及加载的类的个数；
 
-![](http://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_5_JConsole.png)
+![](https://ifeve.com/wp-content/uploads/2015/05/JUtH_20121024_RuntimeDataAreas_5_JConsole.png)
 
 
 ##  程序计数器（Program Counter Register）

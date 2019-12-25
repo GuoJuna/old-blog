@@ -6,7 +6,7 @@ tags: [docker]
 keywords: docker,Dockerfile,命令,指令详解
 ---
 
-上一篇文章[Docker(二)：Dockerfile 使用介绍](http://www.guojun49.github.io/docker/2018/03/12/docker-use-dockerfile.html)介绍了 Dockerfile 的使用，这篇文章我们来继续了解 Dockerfile ,学习 Dockerfile 各种命令的使用。
+上一篇文章[Docker(二)：Dockerfile 使用介绍](https://www.guojun49.github.io/docker/2018/03/12/docker-use-dockerfile.html)介绍了 Dockerfile 的使用，这篇文章我们来继续了解 Dockerfile ,学习 Dockerfile 各种命令的使用。
 
 
 ## Dockerfile 指令详解
@@ -422,7 +422,7 @@ MAINTAINER zhangjiayang "zhangjiayang@sczq.com.cn"
   
 # 镜像的指令操作
 # 获取APT更新的资源列表
-RUN echo "deb http://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list
+RUN echo "deb https://archive.ubuntu.com/ubuntu precise main universe"> /etc/apt/sources.list
 # 更新软件
 RUN apt-get update  
   
@@ -430,7 +430,7 @@ RUN apt-get update
 RUN apt-get -y install curl  
   
 # Install JDK 7  
-RUN cd /tmp &&  curl -L 'http://download.oracle.com/otn-pub/java/jdk/7u65-b17/jdk-7u65-linux-x64.tar.gz' -H 'Cookie: oraclelicense=accept-securebackup-cookie; gpw_e24=Dockerfile' | tar -xz  
+RUN cd /tmp &&  curl -L 'https://download.oracle.com/otn-pub/java/jdk/7u65-b17/jdk-7u65-linux-x64.tar.gz' -H 'Cookie: oraclelicense=accept-securebackup-cookie; gpw_e24=Dockerfile' | tar -xz  
 RUN mkdir -p /usr/lib/jvm  
 RUN mv /tmp/jdk1.7.0_65/ /usr/lib/jvm/java-7-oracle/  
   
@@ -442,7 +442,7 @@ RUN update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-7-oracl
 ENV JAVA_HOME /usr/lib/jvm/java-7-oracle/  
   
 # Install tomcat7  
-RUN cd /tmp && curl -L 'http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.8/bin/apache-tomcat-7.0.8.tar.gz' | tar -xz  
+RUN cd /tmp && curl -L 'https://archive.apache.org/dist/tomcat/tomcat-7/v7.0.8/bin/apache-tomcat-7.0.8.tar.gz' | tar -xz  
 RUN mv /tmp/apache-tomcat-7.0.8/ /opt/tomcat7/  
   
 ENV CATALINA_HOME /opt/tomcat7  

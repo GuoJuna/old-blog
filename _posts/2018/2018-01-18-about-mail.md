@@ -67,7 +67,7 @@ IMAP的一个与POP3的区别是：IMAP它只下载邮件的主题，并不是�
 
 ## 邮件发送流程
 
-![](http://www.itmind.net/assets/images/2018/springboot/mail-process.png)
+![](https://www.itmind.net/assets/images/2018/springboot/mail-process.png)
 
 
 - 发信人在用户代理上编辑邮件，并写清楚收件人的邮箱地址；
@@ -148,8 +148,8 @@ public void simpleSend() {
 
 **Spring Boot And  Mail**
 
-再到了后来，Spring Boot就出现了，更加简单了邮件发送的步骤，想了解如何使用Spring Boot发送邮件看这里：[springboot(十)：邮件服务](http://www.guojun49.github.io/springboot/2017/05/06/springboot-mail.html)
+再到了后来，Spring Boot就出现了，更加简单了邮件发送的步骤，想了解如何使用Spring Boot发送邮件看这里：[springboot(十)：邮件服务](https://www.guojun49.github.io/springboot/2017/05/06/springboot-mail.html)
 
 参考：
 
-[邮件发送的原理](http://www.cnblogs.com/xiaoxiangfeizi/archive/2012/04/17/2453026.html) 
+[邮件发送的原理](https://www.cnblogs.com/xiaoxiangfeizi/archive/2012/04/17/2453026.html) 

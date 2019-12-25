@@ -25,7 +25,7 @@ tags: [other]
 
 这些年，中国基础服务公司，慢慢都倒闭了，前一阵的很多网盘大家还记忆尤甚，接下来又是多说。
 
-最后使用这篇文章中的办法，成功导入到disqus [弃用多说, 多说转 Disqus](http://lukang.me/2016/duoshuo2disqus.html),但是转化后的xml有一个小bug，它会默认对所有的链接后面添加.html，需要手动改一下既可。
+最后使用这篇文章中的办法，成功导入到disqus [弃用多说, 多说转 Disqus](https://lukang.me/2016/duoshuo2disqus.html),但是转化后的xml有一个小bug，它会默认对所有的链接后面添加.html，需要手动改一下既可。
 
 发此文记录此事。
 
@@ -72,7 +72,7 @@ tags: [other]
 
 *20171122日记*  
 
-看到[码志的博客](http://mazhuang.org/) ，发现gitalk作为评论框还是挺不错的，换了过来。
+看到[码志的博客](https://mazhuang.org/) ，发现gitalk作为评论框还是挺不错的，换了过来。
 
 
 毕竟有的时候我自个都打不开disqus，但是仍然留有disqus，作为懒加载的方式提供出来。

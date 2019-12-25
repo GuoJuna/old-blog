@@ -1,5 +1,5 @@
 GEM
-  remote: http://gems.ruby-china.com/
+  remote: https://gems.ruby-china.com/
   specs:
     actionmailer (4.2.10)
       actionpack (= 4.2.10)

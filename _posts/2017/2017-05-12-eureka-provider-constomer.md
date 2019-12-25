@@ -38,7 +38,7 @@ application.properties配置如下：
 ``` properties
 spring.application.name=spring-cloud-producer
 server.port=9000
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 参数在上一篇都已经解释过，这里不多说。
@@ -76,7 +76,7 @@ public class HelloController {
 添加```@EnableDiscoveryClient```注解后，项目就具有了服务注册的功能。启动工程后，就可以在注册中心的页面看到SPRING-CLOUD-PRODUCER服务。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka_server.png)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka_server.png)
 
 到此服务提供者配置就完成了。
 
@@ -107,7 +107,7 @@ application.properties配置如下：
 ``` properties
 spring.application.name=spring-cloud-consumer
 server.port=9001
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 ### 3、启动类
@@ -174,13 +174,13 @@ public class ConsumerController {
 ### 简单调用
 依次启动spring-cloud-eureka、spring-cloud-producer、spring-cloud-consumer三个项目
 
-先输入：```http://localhost:9000/hello?name=neo``` 检查spring-cloud-producer服务是否正常
+先输入：```https://localhost:9000/hello?name=neo``` 检查spring-cloud-producer服务是否正常
 
 返回：```hello neo，this is first messge```
 
 说明spring-cloud-producer正常启动，提供的服务也正常。
 
-浏览器中输入：```http://localhost:9001/hello/neo```  
+浏览器中输入：```https://localhost:9001/hello/neo```  
 
 返回：```hello neo，this is first messge``` 
 
@@ -206,15 +206,15 @@ public class HelloController {
 ``` properties
 spring.application.name=spring-cloud-producer
 server.port=9003
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 打包启动后，在eureka就会发现两个服务提供者，如下图：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka_server2.png)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka_server2.png)
 
-然后在浏览器再次输入：```http://localhost:9001/hello/neo```  进行测试：
+然后在浏览器再次输入：```https://localhost:9001/hello/neo```  进行测试：
 
 第一次返回结果：```hello neo，this is first messge```
 
@@ -229,7 +229,7 @@ eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/05/12/eureka-provider-constomer.html)**      
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/05/12/eureka-provider-constomer.html)**      
 **版权归作者所有，转载请注明出处** 
 
 

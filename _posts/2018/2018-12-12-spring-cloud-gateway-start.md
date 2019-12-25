@@ -18,12 +18,12 @@ Spring Cloud Gateway 作为 Spring Cloud 生态系统中的网关，目标是替
 **相关概念:**
 
 - Route（路由）：这是网关的基本构建块。它由一个 ID，一个目标 URI，一组断言和一组过滤器定义。如果断言为真，则路由匹配。
-- Predicate（断言）：这是一个 Java 8 的 Predicate。输入类型是一个 ServerWebExchange。我们可以使用它来匹配来自 HTTP 请求的任何内容，例如 headers 或参数。
+- Predicate（断言）：这是一个 Java 8 的 Predicate。输入类型是一个 ServerWebExchange。我们可以使用它来匹配来自 https 请求的任何内容，例如 headers 或参数。
 - Filter（过滤器）：这是`org.springframework.cloud.gateway.filter.GatewayFilter`的实例，我们可以使用它修改请求和响应。
 
 **工作流程：**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway.png)
 
 客户端向 Spring Cloud Gateway 发出请求。如果 Gateway Handler Mapping 中找到与请求相匹配的路由，将其发送到 Gateway Web Handler。Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。
 过滤器之间用虚线分开是因为过滤器可能会在发送代理请求之前（“pre”）或之后（“post”）执行业务逻辑。
@@ -96,7 +96,7 @@ spring:
     gateway:
       routes:
       - id: neo_route
-        uri: http://www.guojun49.github.io
+        uri: https://www.guojun49.github.io
         predicates:
         - Path=/spring-cloud
 ```
@@ -108,9 +108,9 @@ spring:
 - predicates：路由条件，Predicate 接受一个输入参数，返回一个布尔值结果。该接口包含多种默认方法来将 Predicate 组合成其他复杂的逻辑（比如：与，或，非）。
 - filters：过滤规则，本示例暂时没用。
 
-上面这段配置的意思是，配置了一个 id 为 neo_route 的路由规则，当访问地址 `http://localhost:8080/spring-cloud`时会自动转发到地址：`http://www.guojun49.github.io/spring-cloud`。配置完成启动项目即可在浏览器访问进行测试，当我们访问地址`http://localhost:8080/spring-cloud` 时会展示页面展示如下：
+上面这段配置的意思是，配置了一个 id 为 neo_route 的路由规则，当访问地址 `https://localhost:8080/spring-cloud`时会自动转发到地址：`https://www.guojun49.github.io/spring-cloud`。配置完成启动项目即可在浏览器访问进行测试，当我们访问地址`https://localhost:8080/spring-cloud` 时会展示页面展示如下：
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway1.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway1.png)
 
 证明页面转发成功。
 
@@ -128,14 +128,14 @@ public class GateWayApplication {
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route("path_route", r -> r.path("/about")
-						.uri("http://guojun49.github.io"))
+						.uri("https://guojun49.github.io"))
 				.build();
 	}
 
 }
 ```
 
-上面配置了一个 id 为 path_route 的路由，当访问地址`http://localhost:8080/about`时会自动转发到地址：`http://www.guojun49.github.io/about`和上面的转发效果一样，只是这里转发的是以`项目地址/about`格式的请求地址。
+上面配置了一个 id 为 path_route 的路由，当访问地址`https://localhost:8080/about`时会自动转发到地址：`https://www.guojun49.github.io/about`和上面的转发效果一样，只是这里转发的是以`项目地址/about`格式的请求地址。
 
 上面两个示例中 uri 都是指向了我的个人网站，在实际项目使用中可以将 uri 指向对外提供服务的项目地址，统一对外输出接口。
 
@@ -146,7 +146,7 @@ public class GateWayApplication {
 
 Spring Cloud Gateway 的功能很强大，我们仅仅通过 Predicates 的设计就可以看出来，前面我们只是使用了 predicates 进行了简单的条件匹配，其实 Spring Cloud Gataway 帮我们内置了很多 Predicates 功能。
 
-Spring Cloud Gateway 是通过 Spring WebFlux 的 `HandlerMapping` 做为底层支持来匹配到转发路由，Spring Cloud Gateway 内置了很多 Predicates 工厂，这些 Predicates 工厂通过不同的 HTTP 请求参数来匹配，多个 Predicates 工厂可以组合使用。
+Spring Cloud Gateway 是通过 Spring WebFlux 的 `HandlerMapping` 做为底层支持来匹配到转发路由，Spring Cloud Gateway 内置了很多 Predicates 工厂，这些 Predicates 工厂通过不同的 https 请求参数来匹配，多个 Predicates 工厂可以组合使用。
 
 ### Predicate 介绍
 
@@ -154,7 +154,7 @@ Predicate 来源于 Java 8，是 Java 8 中引入的一个函数，Predicate 接
 
 在 Spring Cloud Gateway 中 Spring 利用 Predicate 的特性实现了各种路由匹配规则，有通过 Header、请求参数等不同的条件来进行作为条件匹配到对应的路由。网上有一张图总结了 Spring Cloud 内置的几种 Predicate 的实现。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway3.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-cloud-gateway3.png)
 
 说白了 Predicate 就是为了实现一组匹配规则，方便让请求过来找到对应的 Route 进行处理，接下来我们接下 Spring Cloud GateWay 内置几种 Predicate 的使用。
 
@@ -169,16 +169,16 @@ spring:
     gateway:
       routes:
        - id: time_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
          - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
 
 Spring 是通过 ZonedDateTime 来对时间进行的对比，ZonedDateTime  是 Java 8 中日期时间功能里，用于表示带时区的日期与时间信息的类，ZonedDateTime 支持通过时区来设置时间，中国的时区是：`Asia/Shanghai`。
 
-After Route Predicate 是指在这个时间之后的请求都转发到目标地址。上面的示例是指，请求时间在 2018年1月20日6点6分6秒之后的所有请求都转发到地址`http://guojun49.github.io`。`+08:00`是指时间和UTC时间相差八个小时，时间地区为`Asia/Shanghai`。
+After Route Predicate 是指在这个时间之后的请求都转发到目标地址。上面的示例是指，请求时间在 2018年1月20日6点6分6秒之后的所有请求都转发到地址`https://guojun49.github.io`。`+08:00`是指时间和UTC时间相差八个小时，时间地区为`Asia/Shanghai`。
 
-添加完路由规则之后，访问地址`http://localhost:8080`会自动转发到`http://guojun49.github.io`。
+添加完路由规则之后，访问地址`https://localhost:8080`会自动转发到`https://guojun49.github.io`。
 
 Before Route Predicate 刚好相反，在某个时间之前的请求的请求都进行转发。我们把上面路由规则中的 After 改为 Before，如下：
 
@@ -188,12 +188,12 @@ spring:
     gateway:
       routes:
        - id: after_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
          - Before=2018-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
 
-就表示在这个时间之前可以进行路由，在这时间之后停止路由，修改完之后重启项目再次访问地址`http://localhost:8080`，页面会报 404 没有找到地址。
+就表示在这个时间之前可以进行路由，在这时间之后停止路由，修改完之后重启项目再次访问地址`https://localhost:8080`，页面会报 404 没有找到地址。
 
 除过在时间之前或者之后外，Gateway 还支持限制路由请求在某一个时间段范围内，可以使用 Between Route Predicate 来实现。
 
@@ -203,7 +203,7 @@ spring:
     gateway:
       routes:
        - id: after_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
          - Between=2018-01-20T06:06:06+08:00[Asia/Shanghai], 2019-01-20T06:06:06+08:00[Asia/Shanghai]
 ```
@@ -220,7 +220,7 @@ spring:
     gateway:
       routes:
        - id: cookie_route
-         uri: http://guojun49.github.io
+         uri: https://guojun49.github.io
          predicates:
          - Cookie=ityouknow, kee.e
 ```
@@ -228,7 +228,7 @@ spring:
 使用 curl 测试，命令行输入:
 
 ```
-curl http://localhost:8080 --cookie "ityouknow=kee.e"
+curl https://localhost:8080 --cookie "ityouknow=kee.e"
 ```
 
 则会返回页面代码，如果去掉`--cookie "ityouknow=kee.e"`，后台汇报 404 错误。
@@ -243,7 +243,7 @@ spring:
     gateway:
       routes:
       - id: header_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Header=X-Request-Id, \d+
 ```
@@ -251,7 +251,7 @@ spring:
 使用 curl 测试，命令行输入:
 
 ```
-curl http://localhost:8080  -H "X-Request-Id:666666" 
+curl https://localhost:8080  -H "X-Request-Id:666666" 
 ```
 
 则返回页面代码证明匹配成功。将参数`-H "X-Request-Id:666666"`改为`-H "X-Request-Id:neo"`再次执行时返回404证明没有匹配。
@@ -266,7 +266,7 @@ spring:
     gateway:
       routes:
       - id: host_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Host=**.guojun49.github.io
 ```
@@ -274,8 +274,8 @@ spring:
 使用 curl 测试，命令行输入:
 
 ```
-curl http://localhost:8080  -H "Host: www.guojun49.github.io" 
-curl http://localhost:8080  -H "Host: md.guojun49.github.io" 
+curl https://localhost:8080  -H "Host: www.guojun49.github.io" 
+curl https://localhost:8080  -H "Host: md.guojun49.github.io" 
 ```
 
 经测试以上两种 host 均可匹配到 host_route 路由，去掉 host 参数则会报 404 错误。
@@ -290,7 +290,7 @@ spring:
     gateway:
       routes:
       - id: method_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Method=GET
 ```
@@ -299,14 +299,14 @@ spring:
 
 ```
 # curl 默认是以 GET 的方式去请求
-curl http://localhost:8080
+curl https://localhost:8080
 ```
 
 测试返回页面代码，证明匹配到路由，我们再以 POST 的方式请求测试。
 
 ```
 # curl 默认是以 GET 的方式去请求
-curl -X POST http://localhost:8080
+curl -X POST https://localhost:8080
 ```
 
 返回 404 没有找到，证明没有匹配上路由
@@ -321,7 +321,7 @@ spring:
     gateway:
       routes:
       - id: host_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Path=/foo/{segment}
 ```
@@ -331,9 +331,9 @@ spring:
 使用 curl 测试，命令行输入:
 
 ```
-curl http://localhost:8080/foo/1
-curl http://localhost:8080/foo/xx
-curl http://localhost:8080/boo/xx
+curl https://localhost:8080/foo/1
+curl https://localhost:8080/foo/xx
+curl https://localhost:8080/boo/xx
 ```
 
 经过测试第一和第二条命令可以正常获取到页面返回值，最后一个命令报404，证明路由是通过指定路由来匹配。
@@ -348,7 +348,7 @@ spring:
     gateway:
       routes:
       - id: query_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Query=smile
 ```
@@ -372,7 +372,7 @@ spring:
     gateway:
       routes:
       - id: query_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Query=keep, pu.
 ```
@@ -398,7 +398,7 @@ spring:
     gateway:
       routes:
       - id: remoteaddr_route
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - RemoteAddr=192.168.1.1/24
 ```
@@ -423,7 +423,7 @@ spring:
     gateway:
       routes:
        - id: host_foo_path_headers_to_httpbin
-        uri: http://guojun49.github.io
+        uri: https://guojun49.github.io
         predicates:
         - Host=**.foo.org
         - Path=/headers
@@ -452,6 +452,6 @@ spring:
 
 ## 参考
 
-[Spring Cloud Gateway](http://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)  
+[Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)  
 [Spring Cloud Gateway（路由）](https://windmt.com/2018/05/07/spring-cloud-13-spring-cloud-gateway-router/)
 

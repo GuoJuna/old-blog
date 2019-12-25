@@ -64,7 +64,7 @@ public class DockerApplication {
 }
 ```
 
-添加完毕后启动项目，启动成功后浏览器放问：`http://localhost:8080/`，页面返回：`Hello Docker!`，说明 Spring Boot 项目配置正常。
+添加完毕后启动项目，启动成功后浏览器放问：`https://localhost:8080/`，页面返回：`Hello Docker!`，说明 Spring Boot 项目配置正常。
 
 
 ## Spring Boot 项目添加 Docker 支持
@@ -197,7 +197,7 @@ source /etc/profile
 
 ###  安装MAVEN
 
-下载：`http://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz`
+下载：`https://mirrors.shu.edu.cn/apache/maven/maven-3/3.5.2/binaries/apache-maven-3.5.2-bin.tar.gz`
 
 ``` sh
 ## 解压
@@ -287,7 +287,7 @@ CONTAINER ID        IMAGE                           COMMAND                  CRE
 049570da86a9        springboot/spring-boot-docker   "java -Djava.security"   30 seconds ago      Up 27 seconds       0.0.0.0:8080->8080/tcp   determined_mahavira
 ```
 
-可以看到我们构建的容器正在在运行，访问浏览器：`http://192.168.0.x:8080/`,返回
+可以看到我们构建的容器正在在运行，访问浏览器：`https://192.168.0.x:8080/`,返回
 
 ``` sh
 Hello Docker!

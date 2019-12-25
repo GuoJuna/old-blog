@@ -1,7 +1,7 @@
 // GitHub Flavored Markdown
 // ================================
 //
-// *View the [source of this content](http://github.github.com/github-flavored-markdown/sample_content.html).*
+// *View the [source of this content](https://github.github.com/github-flavored-markdown/sample_content.html).*
 //
 // Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:
 //
@@ -150,9 +150,9 @@
 // I get 10 times more traffic from [Google] [1] than from
 // [Yahoo] [2] or [MSN] [3].
 //
-//   [1]: http://google.com/        "Google"
-//   [2]: http://search.yahoo.com/  "Yahoo Search"
-//   [3]: http://search.msn.com/    "MSN Search"
+//   [1]: https://google.com/        "Google"
+//   [2]: https://search.yahoo.com/  "Yahoo Search"
+//   [3]: https://search.msn.com/    "MSN Search"
 //
 //
 // # Header 1
@@ -218,7 +218,7 @@
 //
 // ### Multiple single ticks
 //
-// `2012-03-28 09:19:58.0908|INFO|FileLogger|Processing xml: <Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='MSSQLSERVER'/><EventID Qualifiers='49152'>18456</EventID><Level>0</Level><Task>4</Task><Keywords>0x90000000000000</Keywords><TimeCreated SystemTime='2012-03-28T13:19:58.000000000Z'/><EventRecordID>399270</EventRecordID><Channel>Application</Channel><Computer>dallas</Computer><Security/></System><EventData><Data>sa</Data><Data> Reason: Password did not match that for the login provided.</Data><Data> [CLIENT: 118.186.64.242]</Data><Binary>184800000E00000007000000440041004C004C00410053000000070000006D00610073007400650072000000</Binary></EventData></Event>`
+// `2012-03-28 09:19:58.0908|INFO|FileLogger|Processing xml: <Event xmlns='https://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='MSSQLSERVER'/><EventID Qualifiers='49152'>18456</EventID><Level>0</Level><Task>4</Task><Keywords>0x90000000000000</Keywords><TimeCreated SystemTime='2012-03-28T13:19:58.000000000Z'/><EventRecordID>399270</EventRecordID><Channel>Application</Channel><Computer>dallas</Computer><Security/></System><EventData><Data>sa</Data><Data> Reason: Password did not match that for the login provided.</Data><Data> [CLIENT: 118.186.64.242]</Data><Binary>184800000E00000007000000440041004C004C00410053000000070000006D00610073007400650072000000</Binary></EventData></Event>`
 //
 // `2012-03-28 09:19:58.0908|INFO|FileLogger|No regex, so counting as a match sdf sdf sdf sdfsd lksdfj lksjdf lksjdf lksdjf lksjdf lsdfj werwer werwer`
 //

@@ -53,9 +53,9 @@ Spring Boot 2.0 刚刚发布，一些 Maven 仓库还没更新，如果导入项
 
 我们先来回顾一下在 Spring Boot 1.0 中如何更换启动 Banner，其实都很简单，只需要在`src/main/resources`路径下新建一个`banner.txt`文件，`banner.txt`中填写好需要打印的字符串内容即可。
 
-一般情况下，我们会借助第三方工具帮忙转化内容，如网站`http://www.network-science.de/ascii/`将文字转化成字符串，网站：`http://www.degraeve.com/img2txt.php`可以将图片转化成字符串。
+一般情况下，我们会借助第三方工具帮忙转化内容，如网站`https://www.network-science.de/ascii/`将文字转化成字符串，网站：`https://www.degraeve.com/img2txt.php`可以将图片转化成字符串。
 
-![](http://www.itmind.net/assets/images/2018/springboot/hello.png)
+![](https://www.itmind.net/assets/images/2018/springboot/hello.png)
 
 我们以Hello World为启动字符串来进行测试：
 
@@ -72,7 +72,7 @@ Spring Boot 2.0 刚刚发布，一些 Maven 仓库还没更新，如果导入项
 
 接下来在 Spring Boot 2.0 项目中测试打印动态 Banner ，使用的gif如下：
 
-![](http://www.itmind.net/assets/images/2018/springboot/banner.gif)
+![](https://www.itmind.net/assets/images/2018/springboot/banner.gif)
 
 同样我们将 banner.gif 文件放到项目的`src/main/resources`路径下，启动项目进行测试，输出栏打印信息如下：
 

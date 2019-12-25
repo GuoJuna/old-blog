@@ -7,7 +7,7 @@ keywords: springcloud, zuul，路由，网关
 excerpt: Spring Cloud Zuul网关 Filter、熔断、重试、高可用的使用方式。
 ---
 
-时间过的很快，写[springcloud(十)：服务网关zuul初级篇](http://www.guojun49.github.io/springcloud/2017/06/01/gateway-service-zuul.html)还在半年前，现在已经是2018年了，我们继续探讨Zuul更高级的使用方式。
+时间过的很快，写[springcloud(十)：服务网关zuul初级篇](https://www.guojun49.github.io/springcloud/2017/06/01/gateway-service-zuul.html)还在半年前，现在已经是2018年了，我们继续探讨Zuul更高级的使用方式。
 
 上篇文章主要介绍了Zuul网关使用模式，以及自动转发机制，但其实Zuul还有更多的应用场景，比如：鉴权、流量转发、请求统计等等，这些功能都可以使用Zuul来实现。
 
@@ -15,7 +15,7 @@ excerpt: Spring Cloud Zuul网关 Filter、熔断、重试、高可用的使用�
 
 Filter是Zuul的核心，用来实现对外服务的控制。Filter的生命周期有4个，分别是“PRE”、“ROUTING”、“POST”、“ERROR”，整个生命周期可以用下图来表示。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/zuul-core.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/zuul-core.png)
 
 Zuul大部分功能都是通过过滤器来实现的，这些过滤器类型对应于请求的典型生命周期。
 
@@ -150,8 +150,8 @@ public TokenFilter tokenFilter() {
 
 我们依次启动示例项目：`spring-cloud-eureka`、`spring-cloud-producer`、`spring-cloud-zuul`，这个三个项目均为上一篇示例项目，`spring-cloud-zuul`稍微进行改造。
 
-访问地址：`http://localhost:8888/spring-cloud-producer/hello?name=neo`，返回：token is empty ，请求被拦截返回。  
-访问地址：`http://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，返回：hello neo，this is first messge，说明请求正常响应。
+访问地址：`https://localhost:8888/spring-cloud-producer/hello?name=neo`，返回：token is empty ，请求被拦截返回。  
+访问地址：`https://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，返回：hello neo，this is first messge，说明请求正常响应。
 
 通过上面这例子我们可以看出，我们可以使用“PRE"类型的Filter做很多的验证工作，在实际使用中我们可以结合shiro、oauth2.0等技术去做鉴权、验证。
 
@@ -244,7 +244,7 @@ public class ProducerFallback implements FallbackProvider {
 
 当服务出现异常时，打印相关异常信息，并返回"The service is unavailable."。
 
-启动项目spring-cloud-producer-2，这时候服务中心会有两个spring-cloud-producer项目，我们重启Zuul项目。再手动关闭spring-cloud-producer-2项目，多次访问地址：`http://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，会交替返回：
+启动项目spring-cloud-producer-2，这时候服务中心会有两个spring-cloud-producer项目，我们重启Zuul项目。再手动关闭spring-cloud-producer-2项目，多次访问地址：`https://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，会交替返回：
 
 ```
 hello neo，this is first messge
@@ -305,7 +305,7 @@ public String index(@RequestParam String name) {
 
 重启 spring-cloud-producer-2和spring-cloud-zuul项目。
 
-访问地址：`http://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，当页面返回：`The service is unavailable.`时查看项目spring-cloud-producer-2后台日志如下：
+访问地址：`https://localhost:8888/spring-cloud-producer/hello?name=neo&token=xx`，当页面返回：`The service is unavailable.`时查看项目spring-cloud-producer-2后台日志如下：
 
 ```
 2018-01-22 19:50:32.401  INFO 19488 --- [io-9001-exec-14] o.s.c.n.z.f.route.FallbackProvider       : request two name is neo
@@ -324,7 +324,7 @@ public String index(@RequestParam String name) {
 
 ## Zuul高可用
 
-![](http://www.itmind.net/assets/images/2018/springcloud/zuul-case.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/zuul-case.png)
 
 我们实际使用Zuul的方式如上图，不同的客户端使用不同的负载将请求分发到后端的Zuul，Zuul在通过Eureka调用后端服务，最后对外输出。因此为了保证Zuul的高可用性，前端可以同时启动多个Zuul实例进行负载，在Zuul的前端使用Nginx或者F5进行负载转发以达到高可用性。
 
@@ -335,7 +335,7 @@ public String index(@RequestParam String name) {
 
 **参考：**
 
-[Spring Cloud（七）服务网关 Zuul Filter 使用](http://www.ymq.io/2017/12/11/spring-cloud-zuul-filter/)       
-[Spring Cloud技术分析（4）- spring cloud zuul](http://tech.lede.com/2017/05/16/rd/server/SpringCloudZuul/)     
+[Spring Cloud（七）服务网关 Zuul Filter 使用](https://www.ymq.io/2017/12/11/spring-cloud-zuul-filter/)       
+[Spring Cloud技术分析（4）- spring cloud zuul](https://tech.lede.com/2017/05/16/rd/server/SpringCloudZuul/)     
 [Zuul 路由使用](https://xli1224.github.io/2017/09/09/use-zuul/)    
  

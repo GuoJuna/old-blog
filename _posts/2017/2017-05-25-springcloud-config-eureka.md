@@ -50,7 +50,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+      defaultZone: https://localhost:8000/eureka/   ## 注册中心eurka地址
 ```
 
 增加了eureka注册中心的配置
@@ -71,10 +71,10 @@ public class ConfigServerApplication {
 }
 ```
 
-这样server端的改造就完成了。先启动eureka注册中心，在启动server端，在浏览器中访问：`http://localhost:8000/` 就会看到server端已经注册了到注册中心了。
+这样server端的改造就完成了。先启动eureka注册中心，在启动server端，在浏览器中访问：`https://localhost:8000/` 就会看到server端已经注册了到注册中心了。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-config01.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-config01.jpg)
 
 
 按照上篇的测试步骤对server端进行测试服务正常。
@@ -121,7 +121,7 @@ spring.cloud.config.label=master
 spring.cloud.config.discovery.enabled=true
 spring.cloud.config.discovery.serviceId=spring-cloud-config-server
 
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 主要是去掉了`spring.cloud.config.uri`直接指向server端地址的配置，增加了最后的三个配置：
@@ -147,10 +147,10 @@ public class ConfigClientApplication {
 }
 ```
 
-启动client端，在浏览器中访问：`http://localhost:8000/` 就会看到server端和client端都已经注册了到注册中心了。
+启动client端，在浏览器中访问：`https://localhost:8000/` 就会看到server端和client端都已经注册了到注册中心了。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-config02.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-config02.jpg)
 
 
 ## 高可用
@@ -158,11 +158,11 @@ public class ConfigClientApplication {
 为了模拟生产集群环境，我们改动server端的端口为8003，再启动一个server端来做服务的负载，提供高可用的server端支持。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/eureka-config03.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/eureka-config03.jpg)
 
 如上图就可发现会有两个server端同时提供配置中心的服务，防止某一台down掉之后影响整个系统的使用。
 
-我们先单独测试服务端，分别访问：`http://localhost:8001/neo-config/dev`、`http://localhost:8003/neo-config/dev`返回信息：
+我们先单独测试服务端，分别访问：`https://localhost:8001/neo-config/dev`、`https://localhost:8003/neo-config/dev`返回信息：
 
 ```
 {
@@ -186,7 +186,7 @@ public class ConfigClientApplication {
 
 说明两个server端都正常读取到了配置信息。
 
-再次访问：`http://localhost:8002/hello`，返回：`hello im dev update`。说明客户端已经读取到了server端的内容，我们随机停掉一台server端的服务，再次访问`http://localhost:8002/hello`，返回：`hello im dev update`，说明达到了高可用的目的。
+再次访问：`https://localhost:8002/hello`，返回：`hello im dev update`。说明客户端已经读取到了server端的内容，我们随机停掉一台server端的服务，再次访问`https://localhost:8002/hello`，返回：`hello im dev update`，说明达到了高可用的目的。
 
 
 **[示例代码-github](https://github.com/ityouknow/spring-cloud-examples)**

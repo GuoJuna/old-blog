@@ -24,7 +24,7 @@ spring:
     gateway:
       routes:
       - id: nameRoot
-        uri: http://nameservice
+        uri: https://nameservice
         predicates:
         - Path=/name/**
         filters:
@@ -32,7 +32,7 @@ spring:
 ```
 
 上面这个配置的例子表示，当请求路径匹配到`/name/**`会将包含name和后边的字符串接去掉转发，
-`StripPrefix=2`就代表截取路径的个数，这样配置后当请求`/name/bar/foo`后端匹配到的请求路径就会变成`http://nameservice/foo`。
+`StripPrefix=2`就代表截取路径的个数，这样配置后当请求`/name/bar/foo`后端匹配到的请求路径就会变成`https://nameservice/foo`。
 
 我们还是在 cloud-gateway-eureka 项目中进行测试，修改 application.yml 如下：
 
@@ -48,14 +48,14 @@ spring:
        - StripPrefix=2
 ```
 
-配置完后重启 cloud-gateway-eureka 项目，访问地址：`http://localhost:8888/name/foo/hello`页面会交替显示：
+配置完后重启 cloud-gateway-eureka 项目，访问地址：`https://localhost:8888/name/foo/hello`页面会交替显示：
 
 ```
 hello world!
 hello world smile!
 ```
 
-和直接访问地址 `http://localhost:8888/hello`展示的效果一致，说明请求路径中的 `name/foo/` 已经被截取。
+和直接访问地址 `https://localhost:8888/hello`展示的效果一致，说明请求路径中的 `name/foo/` 已经被截取。
 
 **PrefixPath Filter**
 
@@ -67,7 +67,7 @@ spring:
     gateway:
       routes:
       - id: prefixpath_route
-        uri: http://example.org
+        uri: https://example.org
         filters:
         - PrefixPath=/mypath
 ```
@@ -103,7 +103,7 @@ spring:
          enabled: true
      routes:
      - id: requestratelimiter_route
-       uri: http://example.org
+       uri: https://example.org
        filters:
        - name: RequestRateLimiter
          args:
@@ -144,7 +144,7 @@ public KeyResolver ipKeyResolver() {
 
 ## 熔断路由器
 
-在之前的 Spring Cloud 系列文章中，大家对熔断应该有了一定的了解，如过不了解可以先读这篇文章：[熔断器 Hystrix](http://www.guojun49.github.io/springcloud/2017/05/16/springcloud-hystrix.html)
+在之前的 Spring Cloud 系列文章中，大家对熔断应该有了一定的了解，如过不了解可以先读这篇文章：[熔断器 Hystrix](https://www.guojun49.github.io/springcloud/2017/05/16/springcloud-hystrix.html)
 
 Spring Cloud Gateway 也可以利用 Hystrix 的熔断特性，在流量过大时进行服务降级，同样我们还是首先给项目添加上依赖。
 
@@ -163,7 +163,7 @@ spring:
     gateway:
       routes:
       - id: hystrix_route
-        uri: http://example.org
+        uri: https://example.org
         filters:
         - Hystrix=myCommandName
 ```
@@ -213,9 +213,9 @@ spring:
 Retry GatewayFilter 通过这四个参数来控制重试机制： retries, statuses, methods, 和 series。
 
 - retries：重试次数，默认值是 3 次
-- statuses：HTTP 的状态返回码，取值请参考：`org.springframework.http.HttpStatus`
-- methods：指定哪些方法的请求需要进行重试逻辑，默认值是 GET 方法，取值参考：`org.springframework.http.HttpMethod`
-- series：一些列的状态码配置，取值参考：`org.springframework.http.HttpStatus.Series`。符合的某段状态码才会进行重试逻辑，默认值是 SERVER_ERROR，值是 5，也就是 5XX(5 开头的状态码)，共有5 个值。 
+- statuses：https 的状态返回码，取值请参考：`org.springframework.https.HttpStatus`
+- methods：指定哪些方法的请求需要进行重试逻辑，默认值是 GET 方法，取值参考：`org.springframework.https.HttpMethod`
+- series：一些列的状态码配置，取值参考：`org.springframework.https.HttpStatus.Series`。符合的某段状态码才会进行重试逻辑，默认值是 SERVER_ERROR，值是 5，也就是 5XX(5 开头的状态码)，共有5 个值。 
 
 以上便是项目中常用的一些网关操作，更多关于 Spring Cloud GateWay 的使用请参考官网。
 
@@ -226,6 +226,6 @@ Retry GatewayFilter 通过这四个参数来控制重试机制： retries, statu
 
 ## 参考
 
-[Spring Cloud Gateway](http://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)   
+[Spring Cloud Gateway](https://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html)   
 
 [Spring Cloud（十六）：Spring Cloud Gateway（续）](https://windmt.com/2018/05/11/spring-cloud-16-spring-cloud-gateway-others/)

@@ -13,12 +13,12 @@ tags: [arch]
 
 一直以来总是想以什么方式去记录下自己在互金行业的这段经历，趁着自己还记得清楚，还能找到一些资料原型，一方面可以分享出来供大家参考，但是更重要就是多年以后我可以根据这些文章回忆起来自己的那段激情岁月。
 
-想了很久但一直没有实施，后来觉得应该从架构的角度来梳理一篇文章，就写了《[从零到百亿互联网金融架构发展史](http://www.guojun49.github.io/arch/2017/01/10/ten-billion-architecture-history.html)》这篇文章；最后认为只有实战出来的东西以及解决问题的过程，才是工作中最宝贵的经验，应该把它分享出来，在梳理的过程中有三起事故和黑客攻击事件比较有代表性，就整理出了下面这四篇文章，本篇文章从整体来回忆一下一路走过来所经历过的救火故事。 
+想了很久但一直没有实施，后来觉得应该从架构的角度来梳理一篇文章，就写了《[从零到百亿互联网金融架构发展史](https://www.guojun49.github.io/arch/2017/01/10/ten-billion-architecture-history.html)》这篇文章；最后认为只有实战出来的东西以及解决问题的过程，才是工作中最宝贵的经验，应该把它分享出来，在梳理的过程中有三起事故和黑客攻击事件比较有代表性，就整理出了下面这四篇文章，本篇文章从整体来回忆一下一路走过来所经历过的救火故事。 
 
-- [一次生产事故的优化经历](http://www.guojun49.github.io/arch/2017/02/06/one-production-accident-optimization-experience.html)  
-- [一次dns缓存引发的惨案](http://www.guojun49.github.io/arch/2017/02/09/a-tragedy-caused-by-dns-cache.html)  
-- [一个脚本引发的血案](http://www.guojun49.github.io/arch/2017/02/12/a-script-caused-bloody-case.html)  
-- [互联网金融大战黑客](http://www.guojun49.github.io/arch/2017/02/15/internet-financial-war-hacker.html)
+- [一次生产事故的优化经历](https://www.guojun49.github.io/arch/2017/02/06/one-production-accident-optimization-experience.html)  
+- [一次dns缓存引发的惨案](https://www.guojun49.github.io/arch/2017/02/09/a-tragedy-caused-by-dns-cache.html)  
+- [一个脚本引发的血案](https://www.guojun49.github.io/arch/2017/02/12/a-script-caused-bloody-case.html)  
+- [互联网金融大战黑客](https://www.guojun49.github.io/arch/2017/02/15/internet-financial-war-hacker.html)
 
 作为一个互联网金融平台，涉及到用户资金，任何的服务（资金）差错用户都是不可容忍的，用户不懂什么是数据库，不知道什么网络不通，就是一会看不到钱在app里面展示都会觉得不安。在已经有很多P2P公司跑路的前提下，用户个个已经被锻炼成为福尔摩斯侦探，每天打开app查看收益，监控着平台一切，甚至半夜升级断网十分钟，也会被用户察觉，直接就发到群里面，更有甚者直接在QQ群或者微信群中说你们的技术行不行!
 
@@ -36,7 +36,7 @@ tags: [arch]
 购买标的流程图，不知道大家是否能根据此图发现问题呢？
 
  
-![](http://www.itmind.net/assets/images/2017/optimize/buy.png)
+![](https://www.itmind.net/assets/images/2017/optimize/buy.png)
 
 **超募**
 
@@ -109,7 +109,7 @@ tags: [arch]
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[www.guojun49.github.io](http://www.guojun49.github.io)**     
+**出处：[www.guojun49.github.io](https://www.guojun49.github.io)**     
 **版权归作者所有，转载请注明出处** 
 
 

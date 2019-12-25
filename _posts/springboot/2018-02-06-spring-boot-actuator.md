@@ -34,7 +34,7 @@ Actuator 监控分成两类：原生端点和用户自定义端点；自定义�
 
 Actuator 提供了 13 个接口，具体如下表所示。
 
-| HTTP 方法 | 路径 | 描述 |
+| https 方法 | 路径 | 描述 |
 | --- | --- | --- |
 | GET | /auditevents  | 显示应用暴露的审计事件 (比如认证进入、订单失败) |
 | GET | /beans | 描述应用程序上下文里全部的 Bean，以及它们的关系 |
@@ -53,7 +53,7 @@ Actuator 提供了 13 个接口，具体如下表所示。
 | GET | /metrics | 报告各种应用程序度量信息，比如内存用量和HTTP请求计数 |
 | GET | /metrics/{name} | 报告指定名称的应用程序度量值 |
 | GET | /scheduledtasks | 展示应用中的定时任务信息 |
-| GET | /sessions  | 如果我们使用了 Spring Session 展示应用中的 HTTP sessions 信息 |
+| GET | /sessions  | 如果我们使用了 Spring Session 展示应用中的 https sessions 信息 |
 | POST| /shutdown | 关闭应用程序，要求endpoints.shutdown.enabled设置为true |
 | GET | /mappings | 描述全部的 URI路径，以及它们和控制器(包含Actuator端点)的映射关系 |
 | GET | /threaddump | 获取线程活动的快照 |
@@ -130,7 +130,7 @@ Actuator 几乎监控了应用涉及的方方面面，我们重点讲述一些�
 
 health 主要用来检查应用的运行状态，这是我们使用最高频的一个监控点。通常使用此接口提醒我们应用实例的运行状态，以及应用不”健康“的原因，比如数据库连接、磁盘空间不够等。
 
-默认情况下 health 的状态是开放的，添加依赖后启动项目，访问：`http://localhost:8080/actuator/health`即可看到应用的状态。
+默认情况下 health 的状态是开放的，添加依赖后启动项目，访问：`https://localhost:8080/actuator/health`即可看到应用的状态。
 
 ```
 {
@@ -169,7 +169,7 @@ info.app.version= 1.0.0
 info.app.test= test
 ```
 
-启动示例项目，访问：`http://localhost:8080/actuator/info`返回部分信息如下：
+启动示例项目，访问：`https://localhost:8080/actuator/info`返回部分信息如下：
 
 ```
 {
@@ -185,7 +185,7 @@ info.app.test= test
 
 根据示例就可以看出，展示了 bean 的别名、类型、是否单例、类的地址、依赖等信息。
 
-启动示例项目，访问：`http://localhost:8080/actuator/beans`返回部分信息如下：
+启动示例项目，访问：`https://localhost:8080/actuator/beans`返回部分信息如下：
 
 
 ```
@@ -226,7 +226,7 @@ info.app.test= test
 
 Spring Boot 的自动配置功能非常便利，但有时候也意味着出问题比较难找出具体的原因。使用 conditions 可以在应用运行时查看代码了某个配置在什么条件下生效，或者某个自动配置为什么没有生效。
 
-启动示例项目，访问：`http://localhost:8080/actuator/conditions`返回部分信息如下：
+启动示例项目，访问：`https://localhost:8080/actuator/conditions`返回部分信息如下：
 
 ``` json
 {
@@ -250,7 +250,7 @@ Spring Boot 的自动配置功能非常便利，但有时候也意味着出问�
             "matched": [
                 {
                     "condition": "OnClassCondition", 
-                    "message": "@ConditionalOnClass found required classes 'javax.servlet.Filter', 'org.springframework.http.server.ServerHttpRequest'; @ConditionalOnMissingClass did not find unwanted class"
+                    "message": "@ConditionalOnClass found required classes 'javax.servlet.Filter', 'org.springframework.https.server.ServerHttpRequest'; @ConditionalOnMissingClass did not find unwanted class"
                 }
             ]
         }
@@ -262,9 +262,9 @@ Spring Boot 的自动配置功能非常便利，但有时候也意味着出问�
 
 返回一个 GZip 压缩的 JVM 堆 dump
 
-启动示例项目，访问：`http://localhost:8080/actuator/heapdump`会自动生成一个 Jvm 的堆文件 heapdump，我们可以使用 JDK 自带的 Jvm 监控工具 VisualVM 打开此文件查看内存快照。类似如下图：
+启动示例项目，访问：`https://localhost:8080/actuator/heapdump`会自动生成一个 Jvm 的堆文件 heapdump，我们可以使用 JDK 自带的 Jvm 监控工具 VisualVM 打开此文件查看内存快照。类似如下图：
 
-![](http://www.guojun49.github.io/assets/images/2018/springboot/heapdump.png) 
+![](https://www.guojun49.github.io/assets/images/2018/springboot/heapdump.png) 
 
 ### shutdown
 
@@ -278,7 +278,7 @@ management.endpoint.shutdown.enabled=true
 > shutdown 接口默认只支持 post 请求。
 
 ```
-curl -X POST "http://localhost:8080/actuator/shutdown" 
+curl -X POST "https://localhost:8080/actuator/shutdown" 
 {
     "message": "Shutting down, bye..."
 }
@@ -292,7 +292,7 @@ curl -X POST "http://localhost:8080/actuator/shutdown"
 
 描述全部的 URI 路径，以及它们和控制器的映射关系
 
-启动示例项目，访问：`http://localhost:8080/actuator/mappings`返回部分信息如下：
+启动示例项目，访问：`https://localhost:8080/actuator/mappings`返回部分信息如下：
 
 ``` json
 {
@@ -305,7 +305,7 @@ curl -X POST "http://localhost:8080/actuator/shutdown"
   },
   "{[/error]}": {
     "bean": "requestMappingHandlerMapping",
-    "method": "public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)"
+    "method": "public org.springframework.https.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.https.HttpServletRequest)"
   }
 }
 ```
@@ -315,12 +315,12 @@ curl -X POST "http://localhost:8080/actuator/shutdown"
 /threaddump 接口会生成当前线程活动的快照。这个功能非常好，方便我们在日常定位问题的时候查看线程的情况。
 主要展示了线程名、线程ID、线程的状态、是否等待锁资源等信息。
 
-启动示例项目，访问：`http://localhost:8080/actuator/threaddump`返回部分信息如下：
+启动示例项目，访问：`https://localhost:8080/actuator/threaddump`返回部分信息如下：
 
 ```
 [
   {
-    "threadName": "http-nio-8088-exec-6",
+    "threadName": "https-nio-8088-exec-6",
     "threadId": 49,
     "blockedTime": -1,
     "blockedCount": 0,
@@ -371,7 +371,7 @@ curl -X POST "http://localhost:8080/actuator/shutdown"
 ## 参考
 
 [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready)  
-[对没有监控的微服务Say No！](http://mp.163.com/v2/article/detail/D7SQCHGT0511FQO9.html)    
+[对没有监控的微服务Say No！](https://mp.163.com/v2/article/detail/D7SQCHGT0511FQO9.html)    
 [Spring Boot Actuator 使用](https://www.jianshu.com/p/af9738634a21)
 
 

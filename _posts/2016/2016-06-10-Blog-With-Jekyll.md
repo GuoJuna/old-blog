@@ -35,10 +35,10 @@ If you are able to see similar messages as below, you are lucky:
     gem 'wdm', '>= 0.1.0' if Gem.win_platform?  
 > Auto-regeneration: enabled for 'C:/**/Blog'  
 > Configuration file: C:/**/Blog/_config.yml  
-    Server address: http://127.0.0.1:4000/  
+    Server address: https://127.0.0.1:4000/  
   Server running... press ctrl-c to stop.  
 
-it says your sample site is being served at : **http://127.0.0.1:4000/**  
+it says your sample site is being served at : **https://127.0.0.1:4000/**  
 Check it with your browser:    
 ![Sample Blog Site in Browser](/assets/images/2016/BrowsingSampleSite.PNG)  
 
@@ -86,13 +86,13 @@ Finally, my blog site is able to be served successfully after I installed the de
 in some case ,you must change gem source 
 
 ~~~
-gem sources --add http://gems.ruby-china.org/ --remove https://rubygems.org/
+gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
 ~~~
 
 congig bundle  miroor
 
 ~~~
-bundle config mirror.https://rubygems.org http://gems.ruby-china.org
+bundle config mirror.https://rubygems.org https://gems.ruby-china.org
 ~~~
 
 then  excute bundle command

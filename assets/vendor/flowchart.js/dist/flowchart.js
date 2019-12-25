@@ -1,7 +1,7 @@
 // flowchart.js, v1.7.0
 // Copyright (c)2017 Adriano Raiano (adrai).
 // Distributed under MIT license
-// http://adrai.github.io/flowchart.js
+// https://adrai.github.io/flowchart.js
 
 !function(root, factory) {
     if ("object" == typeof exports && "object" == typeof module) module.exports = factory(require("Raphael")); else if ("function" == typeof define && define.amd) define([ "Raphael" ], factory); else {

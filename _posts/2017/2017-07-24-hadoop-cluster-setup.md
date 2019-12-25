@@ -19,7 +19,7 @@ Hadoop的搭建有三种方式，单机版适合开发调试；伪分布式版�
 四台服务器分配的IP地址：192.168.0.71/72/73/74  
 规划：71用作主节点用作hadoop-master，其它三台为数据节点72、73、74用作hadoop-salve1~3    
 jdk和生成保持一致使用1.7版本    
-hadoop使用2.7.3版本，下载地址：http://apache.claz.org/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+hadoop使用2.7.3版本，下载地址：https://apache.claz.org/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
 
 2、host配置和主机名（四台）
 
@@ -183,7 +183,7 @@ ssh  hadoop-master
 
 ``` shell 
 #下载  
-wget http://apache.claz.org/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+wget https://apache.claz.org/hadoop/common/hadoop-2.7.3/hadoop-2.7.3.tar.gz
 #解压  
 tar -xzvf  hadoop-2.7.3.tar.gz    -C /usr/local 
 #重命名   
@@ -265,7 +265,7 @@ vim /usr/local/hadoop/etc/hadoop/mapred-site.xml
   </property>
    <property>
       <name>mapred.job.tracker</name>
-      <value>http://hadoop-master:9001</value>
+      <value>https://hadoop-master:9001</value>
   </property>
 </configuration>
 ```
@@ -435,6 +435,6 @@ SELINUX=disabled
 
 
 参考：
-[Hadoop之完全分布式环境搭建](http://www.linuxidc.com/Linux/2015-03/114669p4.htm)
+[Hadoop之完全分布式环境搭建](https://www.linuxidc.com/Linux/2015-03/114669p4.htm)
 
 

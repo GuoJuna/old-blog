@@ -13,7 +13,7 @@ Java GC（Garbage Collection，垃圾收集，垃圾回收）机制，是Java与
 
 在Java语言出现之前，就有GC机制的存在，如Lisp语言），Java GC机制已经日臻完善，几乎可以自动的为我们做绝大多数的事情。然而，如果我们从事较大型的应用软件开发，曾经出现过内存优化的需求，就必定要研究Java GC机制。
 
-简单总结一下，Java GC就是通过GC收集器回收不在存活的对象，保证JVM更加高效的运转。如果不了解GC算法和垃圾回收器可以参考这篇文章：[jvm系列(三):GC算法 垃圾收集器](http://www.guojun49.github.io/jvm/2017/08/29/GC-garbage-collection.html)。
+简单总结一下，Java GC就是通过GC收集器回收不在存活的对象，保证JVM更加高效的运转。如果不了解GC算法和垃圾回收器可以参考这篇文章：[jvm系列(三):GC算法 垃圾收集器](https://www.guojun49.github.io/jvm/2017/08/29/GC-garbage-collection.html)。
 
 
 ## 如何获取 Java GC日志
@@ -40,7 +40,7 @@ $ jstat -gc 1262 2000 20
 
 这个命令意思就是每隔2000ms输出1262的gc情况，一共输出20次
 
-更详细的内容参考这篇文章：[jvm系列(四):jvm调优-命令篇](http://www.guojun49.github.io/jvm/2017/09/03/jvm-command.html)
+更详细的内容参考这篇文章：[jvm系列(四):jvm调优-命令篇](https://www.guojun49.github.io/jvm/2017/09/03/jvm-command.html)
 
 
 ### GC参数
@@ -114,10 +114,10 @@ Full GC回收日志:
 通过两张图非常明显看出gc日志构成：
 
 Young GC日志:
-![](http://guojun49.github.io/assets/images/2017/jvm/Young GC.png)
+![](https://guojun49.github.io/assets/images/2017/jvm/Young GC.png)
 
 Full GC日志:
-![](http://guojun49.github.io/assets/images/2017/jvm/Full GC.png)
+![](https://guojun49.github.io/assets/images/2017/jvm/Full GC.png)
 
 
 ## GC分析工具
@@ -129,19 +129,19 @@ GChisto是一款专业分析gc日志的工具，可以通过gc日志来分析：
 配置好本地的jdk环境之后，双击GChisto.jar,在弹出的输入框中点击 add 选择gc.log日志
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/g1.jpg)
+![](https://www.itmind.net/assets/images/2017/jvm/g1.jpg)
 
 - GC Pause Stats:可以查看GC 的次数、GC的时间、GC的开销、最大GC时间和最小GC时间等，以及相应的柱状图
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/g2.jpg)
+![](https://www.itmind.net/assets/images/2017/jvm/g2.jpg)
 
 - GC Pause Distribution:查看GC停顿的详细分布，x轴表示垃圾收集停顿时间，y轴表示是停顿次数。
 
 - GC Timeline：显示整个时间线上的垃圾收集
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/g3.jpg)
+![](https://www.itmind.net/assets/images/2017/jvm/g3.jpg)
 
 不过这款工具已经不再维护
 
@@ -150,16 +150,16 @@ GChisto是一款专业分析gc日志的工具，可以通过gc日志来分析：
 
 这是一个web工具,在线使用非常方便.  
 
-地址: [http://gceasy.io](http://gceasy.io)
+地址: [https://gceasy.io](https://gceasy.io)
 
 进入官网，讲打包好的zip或者gz为后缀的压缩包上传，过一会就会拿到分析结果。
 
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/gceasy1.png)
+![](https://www.itmind.net/assets/images/2017/jvm/gceasy1.png)
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/gceasy2.png)
+![](https://www.itmind.net/assets/images/2017/jvm/gceasy2.png)
 
 
 推荐使用此工具进行gc分析。

@@ -6,7 +6,7 @@ tags: [springboot]
 copyright: java
 ---
 
-Spring Boot 仍然在狂速发展，才几个多月没有关注，现在看[官网](http://projects.spring.io/spring-boot/)已经到 2.1.0.RELEASE 版本了。准备慢慢在写写 Spring Boot 相关的文章，本篇文章使用 Spring Boot 最新版本 2.1.0 进行开发。
+Spring Boot 仍然在狂速发展，才几个多月没有关注，现在看[官网](https://projects.spring.io/spring-boot/)已经到 2.1.0.RELEASE 版本了。准备慢慢在写写 Spring Boot 相关的文章，本篇文章使用 Spring Boot 最新版本 2.1.0 进行开发。
 
 发送邮件应该是网站的必备功能之一，什么注册验证，忘记密码或者是给用户发送营销信息。最早期的时候我们会使用 JavaMail 相关 api 来写发送邮件的相关代码，后来 Spring 推出了 JavaMailSender 更加简化了邮件发送的过程，在之后 Spring Boot 对此进行了封装就有了现在的 `spring-boot-starter-mail` ,本章文章的介绍主要来自于此包。
 
@@ -251,14 +251,14 @@ public void sendInlineResourceMail() {
 
 ``` html
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh" xmlns:th="https://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8"/>
         <title>Title</title>
     </head>
     <body>
         您好,这是验证邮件,请点击下面的链接完成验证,<br/>
-        <a href="#" th:href="@{ http://www.guojun49.github.io/neo/{id}(id=${id}) }">激活账号</a>
+        <a href="#" th:href="@{ https://www.guojun49.github.io/neo/{id}(id=${id}) }">激活账号</a>
     </body>
 </html>
 ```
@@ -290,7 +290,7 @@ public void sendTemplateMail() {
 
 很多时候邮件发送并不是我们主业务必须关注的结果，比如通知类、提醒类的业务可以允许延时或者失败。这个时候可以采用异步的方式来发送邮件，加快主交易执行速度，在实际项目中可以采用MQ发送邮件相关参数，监听到消息队列之后启动发送邮件。
 
-可以参考前期文章：[Spring Boot(八)：RabbitMQ 详解](http://www.guojun49.github.io/springboot/2016/11/30/spring-boot-rabbitMQ.html) 来实现。
+可以参考前期文章：[Spring Boot(八)：RabbitMQ 详解](https://www.guojun49.github.io/springboot/2016/11/30/spring-boot-rabbitMQ.html) 来实现。
 
 > 文章内容已经升级到 Spring Boot 2.x 
 
@@ -300,4 +300,4 @@ public void sendTemplateMail() {
 **[示例代码-码云](https://gitee.com/ityouknow/spring-boot-examples/tree/master/spring-boot-mail)**
 
 **参考:**  
-[spring boot 发送邮件](http://blog.csdn.net/clementad/article/details/51833416)
+[spring boot 发送邮件](https://blog.csdn.net/clementad/article/details/51833416)

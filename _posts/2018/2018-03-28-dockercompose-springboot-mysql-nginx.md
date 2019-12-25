@@ -13,7 +13,7 @@ excerpt: 感受 Docker 魅力，排解决多应用部署之疼，Docker Compose 
 
 今天给大家演出的导演是 Docker 家族的 docker-compare ，主演是 Spring Boot、Nginx、Mysql 三位又红又紫的大碗，名导名演在一起的时候往往是准备搞事情，接下来又一场经典大片值得大家期待。
 
-![](http://www.itmind.net/assets/images/2018/springboot/qifen.gif)
+![](https://www.itmind.net/assets/images/2018/springboot/qifen.gif)
 
 Spring Boot + Nginx + Mysql 是实际工作中最常用的一个组合，最前端使用 Nginx 代理请求转发到后端 Spring Boot 内嵌的 Tomcat 服务，Mysql 负责业务中数据相关的交互，那么在没有 docker 之前，我们是如何来搞定这些环境的呢？
 
@@ -23,7 +23,7 @@ Spring Boot + Nginx + Mysql 是实际工作中最常用的一个组合，最前�
 
 大家看我只写了三行，但其实搭建这些环境的时候还挺费事的，但这还不是结局，在用了一段时间时候需要迁移到另外一个环境，怎么办又需要重新搞一次？正常情况下，测试环境、SIT 环境、UAT 环境、生产环境！我们需要重复搭建四次。有人说不就是搭建四次吗？也没什么大不了的，那么我想告诉你，Too yong ,Too Simple 。
 
-![](http://www.itmind.net/assets/images/2018/springboot/tooyang.jpg)
+![](https://www.itmind.net/assets/images/2018/springboot/tooyang.jpg)
 
 让我们看看以下几个因素：
 
@@ -110,7 +110,7 @@ public class VisitorController {
 
 实体类和 Repository 层代码比较简单，这里就不贴出来了，大家感兴趣可以下载源码查看。
 
-以上内容都完成后，启动项目，访问：`http://localhost:8080/` 我们就可以看到这样的返回结果：
+以上内容都完成后，启动项目，访问：`https://localhost:8080/` 我们就可以看到这样的返回结果：
 
 ``` text
 I have been seen ip 0:0:0:0:0:0:0:1 1 times.
@@ -129,7 +129,7 @@ I have been seen ip 0:0:0:0:0:0:0:1 2 times.
 
 首先我们将目录改造成这样一个结构
 
-![](http://www.itmind.net/assets/images/2018/springboot/mulu.png)
+![](https://www.itmind.net/assets/images/2018/springboot/mulu.png)
 
 我们先从最外层说起：
 
@@ -201,7 +201,7 @@ server {
     access_log off;
 
     location / {
-        proxy_pass http://app:8080;
+        proxy_pass https://app:8080;
         proxy_set_header Host $host:$server_port;
         proxy_set_header X-Forwarded-Host $server_name;
         proxy_set_header X-Real-IP $remote_addr;
@@ -217,7 +217,7 @@ server {
 }
 ```
 
-这块内容比较简单，配置请求转发，将80端口的请求转发到服务 app 的8080端口。其中`proxy_pass http://app:8080`这块的配置信息需要解释一下，这里使用是`app`而不是`localhost`，是因为他们没有在一个容器中，在一组 compose 的服务通讯需要使用 services 的名称进行访问。  
+这块内容比较简单，配置请求转发，将80端口的请求转发到服务 app 的8080端口。其中`proxy_pass https://app:8080`这块的配置信息需要解释一下，这里使用是`app`而不是`localhost`，是因为他们没有在一个容器中，在一组 compose 的服务通讯需要使用 services 的名称进行访问。  
 
 ### Spring Boot 项目改造
 
@@ -241,8 +241,8 @@ FROM maven:3.5-jdk-8
 
 我们将项目拷贝到服务器中进行测试，服务器需要先安装 Docker 和 Docker Compos 环境，如果不了解的朋友可以查看我前面的两篇文章：
 
-- [Docker(一)：Docker入门教程](http://www.guojun49.github.io/docker/2018/03/07/docker-introduction.html)
-- [Docker(四)：Docker 三剑客之 Docker Compose](http://www.guojun49.github.io/docker/2018/03/22/docker-compose.html)
+- [Docker(一)：Docker入门教程](https://www.guojun49.github.io/docker/2018/03/07/docker-introduction.html)
+- [Docker(四)：Docker 三剑客之 Docker Compose](https://www.guojun49.github.io/docker/2018/03/22/docker-compose.html)
 
 将项目拷贝到服务器中，进入目录`cd  dockercompose-springboot-mysql-nginx`
 
@@ -259,13 +259,13 @@ v-mysql  | [Entrypoint] MySQL Docker Image 5.7.21-1.1.4
 v-mysql  | [Entrypoint] Initializing database
 app_1    | [INFO] Scanning for projects...
 ... 
-app_1    | 2018-03-26 02:54:55.658  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+app_1    | 2018-03-26 02:54:55.658  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (https) with context path ''
 app_1    | 2018-03-26 02:54:55.660  INFO 1 --- [           main] com.neo.ComposeApplication               : Started ComposeApplication in 14.869 seconds (JVM running for 30.202)
 ```
 
 看到信息`Tomcat started on port(s): 8080`表示服务启动成功。也可以使用`docker-compose up -d`后台启动
 
-访问服务器地址；`http://58.87.69.230/`，返回：`I have been seen ip 172.19.0.2 1 times.` 表示整体服务启动成功
+访问服务器地址；`https://58.87.69.230/`，返回：`I have been seen ip 172.19.0.2 1 times.` 表示整体服务启动成功
 
 
 **使用`docker-compose ps`查看项目中目前的所有容器**

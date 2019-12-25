@@ -67,7 +67,7 @@ Spring Cloud Cluster将取代Spring Integration。提供在分布式系统中的
 
 ###  Spring Cloud Consul
 
-Consul 是一个支持多数据中心分布式高可用的服务发现和配置共享的服务软件,由 HashiCorp 公司用 Go 语言开发, 基于 Mozilla Public License 2.0 的协议进行开源. Consul 支持健康检查,并允许 HTTP 和 DNS 协议调用 API 存储键值对.
+Consul 是一个支持多数据中心分布式高可用的服务发现和配置共享的服务软件,由 HashiCorp 公司用 Go 语言开发, 基于 Mozilla Public License 2.0 的协议进行开源. Consul 支持健康检查,并允许 https 和 DNS 协议调用 API 存储键值对.
 
 Spring Cloud Consul 封装了Consul操作，consul是一个服务发现与配置工具，与Docker容器可以无缝集成。
 
@@ -153,7 +153,7 @@ Spring Cloud对于中小型互联网公司来说是一种福音，因为这类�
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/05/01/simple-springcloud.html)**      
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/05/01/simple-springcloud.html)**      
 **版权归作者所有，转载请注明出处** 
 
 

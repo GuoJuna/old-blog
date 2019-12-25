@@ -8,7 +8,7 @@ keywords: Spring Cloud,open source
 
 学习一门新的技术如果有优秀的开源项目，对初学者的学习将会是事半功倍，通过研究和学习优秀的开源项目，可以快速的了解此技术的相关应用场景和应用示例，参考优秀开源项目会降低将此技术引入到项目中的成本。为此抽了一些时间为大家寻找了一些非常优秀的 Spring Cloud 开源软件供大家学习参考。
 
-上次写了一篇文章[Spring Boot 2 (三)：Spring Boot 开源软件都有哪些](http://www.guojun49.github.io/springboot/2018/03/05/spring-boot-open-source.html) 给大家介绍优秀的 Spring Boot 开源项目，本篇文章给介绍 Spring Cloud 的优秀开源项目。Spring Cloud 开源项目主要集中在 Github/码云 ，本文所有项目地址也均来自于这两个网站。
+上次写了一篇文章[Spring Boot 2 (三)：Spring Boot 开源软件都有哪些](https://www.guojun49.github.io/springboot/2018/03/05/spring-boot-open-source.html) 给大家介绍优秀的 Spring Boot 开源项目，本篇文章给介绍 Spring Cloud 的优秀开源项目。Spring Cloud 开源项目主要集中在 Github/码云 ，本文所有项目地址也均来自于这两个网站。
 
 ## 1、 [awesome-spring-cloud](https://github.com/ityouknow/awesome-spring-cloud)
 
@@ -16,7 +16,7 @@ keywords: Spring Cloud,open source
 
 **产品主页**
 
-[http://springcloud.fun/](http://springcloud.fun/)  
+[https://springcloud.fun/](https://springcloud.fun/)  
 
 **项目主页**
 
@@ -24,7 +24,7 @@ keywords: Spring Cloud,open source
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/awesome-spring-cloud.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/awesome-spring-cloud.png)
 
 
 ## 2、 [PiggyMetrics](https://github.com/sqshq/PiggyMetrics)
@@ -33,11 +33,11 @@ keywords: Spring Cloud,open source
 
 PiggyMetrics 被分解为三个核心微服务。这些服务都是围绕某些业务能力组织的可独立部署的应用程序。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/PiggyMetrics_sercive.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/PiggyMetrics_sercive.png)
 
 PiggyMetrics 的项目架构图
 
-![](http://www.itmind.net/assets/images/2018/springcloud/PInfrastructure.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/PInfrastructure.png)
 
 **项目主页**
 
@@ -45,7 +45,7 @@ PiggyMetrics 的项目架构图
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/piggyMetrics.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/piggyMetrics.png)
 
 ## 3、 [spaascloud-master](https://github.com/paascloud/paascloud-master)
 
@@ -63,7 +63,7 @@ spring cloud + vue 全家桶实战，模拟商城，完整的购物流程、后�
 
 **产品主页**
 
-[http://mall.paascloud.net/index](http://mall.paascloud.net/index)  
+[https://mall.paascloud.net/index](https://mall.paascloud.net/index)  
 
 **项目主页**
 
@@ -71,7 +71,7 @@ spring cloud + vue 全家桶实战，模拟商城，完整的购物流程、后�
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/paascloud.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/paascloud.png)
 
 
 ## 4、 [Cloud-Admin](https://gitee.com/minull/ace-security)
@@ -85,7 +85,7 @@ Cloud-Admin是国内首个基于Spring Cloud微服务化开发平台，核心技
 
 **项目架构**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/ace-security.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/ace-security.png)
 
 
 
@@ -99,7 +99,7 @@ Cloud-Admin是国内首个基于Spring Cloud微服务化开发平台，核心技
 
 **项目架构**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-rest-tcc.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-cloud-rest-tcc.png) 
 
 
 ## 6、 [pig](https://gitee.com/log4j/pig)
@@ -116,7 +116,7 @@ Cloud-Admin是国内首个基于Spring Cloud微服务化开发平台，核心技
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/ping.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/ping.png) 
 
 
 ## 7、 [xxpay-master](https://gitee.com/jmdhappy/xxpay-master)
@@ -125,7 +125,7 @@ XxPay聚合支付使用Java开发，包括spring-cloud、dubbo、spring-boot三�
 
 **产品主页**
 
-[http://www.xxpay.org/](http://www.xxpay.org/)  
+[https://www.xxpay.org/](https://www.xxpay.org/)  
 
 **项目主页**
 
@@ -133,7 +133,7 @@ XxPay聚合支付使用Java开发，包括spring-cloud、dubbo、spring-boot三�
 
 **产品截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/xxpay.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/xxpay.png) 
 
 
 ## 8、 [spring-boot-cloud](https://github.com/zhangxd1989/spring-boot-cloud)
@@ -146,7 +146,7 @@ XxPay聚合支付使用Java开发，包括spring-cloud、dubbo、spring-boot三�
 
 **项目架构**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-boot-cloud.jpg) 
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-boot-cloud.jpg) 
 
 
 ## 9、 [FCat](https://gitee.com/xfdm/FCat)
@@ -159,7 +159,7 @@ FCat项目基于 Angular 4 + Spring Cloud 的企业级基础功能框架。
 
 **项目架构**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/FCat.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/FCat.png) 
 
 
 ## 10、 [spring-cloud-examples](https://github.com/ityouknow/spring-cloud-examples)
@@ -172,11 +172,11 @@ Spring Cloud 技术栈示例代码，快速简单上手教程，一个帮助大�
 
 **项目截图**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/spring-cloud-examples.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/spring-cloud-examples.png) 
 
 > 应该还有更多优秀的 Spring Cloud 开源项目，目前仅发现这些，也希望大家多反馈一些优秀的 Spring Cloud 开源项目，统一将这些项目收集到 awesome-spring-cloud 中，方便后续大家学习查找。
 
 
 ## 参考
 
-[Spring Cloud 中文索引](http://springcloud.fun/)  
+[Spring Cloud 中文索引](https://springcloud.fun/)  

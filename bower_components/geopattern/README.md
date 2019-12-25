@@ -1,6 +1,6 @@
 # GeoPattern
 
-This is a JavaScript port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern) with a [live preview page](http://btmills.github.io/geopattern/geopattern.html) and is derived from the background generator originally used for [GitHub Guides](http://guides.github.com/).
+This is a JavaScript port of [jasonlong/geo_pattern](https://github.com/jasonlong/geo_pattern) with a [live preview page](https://btmills.github.io/geopattern/geopattern.html) and is derived from the background generator originally used for [GitHub Guides](https://guides.github.com/).
 
 ## Usage
 
@@ -24,7 +24,7 @@ $('#geopattern').css('background-image', pattern.toDataUrl());
 $('#geopattern').geopattern('GitHub');
 ```
 
-For backwards compatibility with the script on the [Guides](http://guides.github.com/), the source hash for generation can be supplied with a `data-title-sha` attribute on the element. If the attribute exists, the generator will ignore the input string and use the supplied hash.
+For backwards compatibility with the script on the [Guides](https://guides.github.com/), the source hash for generation can be supplied with a `data-title-sha` attribute on the element. If the attribute exists, the generator will ignore the input string and use the supplied hash.
 
 View [`geopattern.html`](geopattern.html) for a complete example.
 

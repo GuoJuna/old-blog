@@ -53,19 +53,19 @@ public class ConsumerApplication {
 
 ### 3、测试
 
-启动工程后访问 http://localhost:9001/hystrix，将会看到如下界面：
+启动工程后访问 https://localhost:9001/hystrix，将会看到如下界面：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-1.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-1.jpg)
 
 图中会有一些提示：
 
-> Cluster via Turbine (default cluster): http://turbine-hostname:port/turbine.stream   
-> Cluster via Turbine (custom cluster): http://turbine-hostname:port/turbine.stream?cluster=[clusterName]  
-> Single Hystrix App: http://hystrix-app:port/hystrix.stream   
+> Cluster via Turbine (default cluster): https://turbine-hostname:port/turbine.stream   
+> Cluster via Turbine (custom cluster): https://turbine-hostname:port/turbine.stream?cluster=[clusterName]  
+> Single Hystrix App: https://hystrix-app:port/hystrix.stream   
 
 大概意思就是如果查看默认集群使用第一个url,查看指定集群使用第二个url,单个应用的监控使用最后一个，我们暂时只演示单个应用的所以在输入框中输入：
-http://localhost:9001/hystrix.stream ，输入之后点击 monitor，进入页面。
+https://localhost:9001/hystrix.stream ，输入之后点击 monitor，进入页面。
 
 如果没有请求会先显示```Loading ...```，访问http://localhost:9001/hystrix.stream 也会不断的显示ping。
 
@@ -85,12 +85,12 @@ data: {"type":...}
 到监控页面就会显示如下图：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-2.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-2.jpg)
 
 其实就是http://localhost:9001/hystrix.stream返回结果的图形化显示，Hystrix Dashboard Wiki上详细说明了图上每个指标的含义，如下图：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-3.png)
+![](https://www.itmind.net/assets/images/2017/springcloud/hystrix-dashboard-3.png)
 
 到此单个应用的熔断监控已经完成。
 
@@ -132,11 +132,11 @@ turbine.appConfig=node01,node02
 turbine.aggregator.clusterConfig= default
 turbine.clusterNameExpression= new String("default")
 
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 - ```turbine.appConfig``` ：配置Eureka中的serviceId列表，表明监控哪些服务
-- ```turbine.aggregator.clusterConfig``` ：指定聚合哪些集群，多个使用","分割，默认为default。可使用```http://.../turbine.stream?cluster={clusterConfig之一}```访问
+- ```turbine.aggregator.clusterConfig``` ：指定聚合哪些集群，多个使用","分割，默认为default。可使用```https://.../turbine.stream?cluster={clusterConfig之一}```访问
 - ```turbine.clusterNameExpression``` ： 1. clusterNameExpression指定集群名称，默认表达式appName；此时：```turbine.aggregator.clusterConfig```需要配置想要监控的应用名称；2. 当clusterNameExpression: default时，```turbine.aggregator.clusterConfig```可以不写，因为默认就是default；3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了```eureka.instance.metadata-map.cluster: ABC```，则需要配置，同时```turbine.aggregator.clusterConfig: ABC```
 
 ### 3、启动类
@@ -171,7 +171,7 @@ spring.application.name=node01
 server.port=9001
 feign.hystrix.enabled=true
 
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 ```
 
 spring-cloud-consumer-node2项目改动如下：
@@ -182,7 +182,7 @@ spring.application.name=node02
 server.port=9002
 feign.hystrix.enabled=true
 
-eureka.client.serviceUrl.defaultZone=http://localhost:8000/eureka/
+eureka.client.serviceUrl.defaultZone=https://localhost:8000/eureka/
 
 ```
 
@@ -205,10 +205,10 @@ public interface HelloRemote {
 打开eureka后台可以看到注册了三个服务：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/turbine-01.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/turbine-01.jpg)
 
 
-访问 http://localhost:8001/turbine.stream
+访问 https://localhost:8001/turbine.stream
 
 返回：
 
@@ -217,10 +217,10 @@ public interface HelloRemote {
 data: {"reportingHostsLast10Seconds":1,"name":"meta","type":"meta","timestamp":1494921985839}
 ```
 
-并且会不断刷新以获取实时的监控数据，说明和单个的监控类似，返回监控项目的信息。进行图形化监控查看，输入：http://localhost:8001/hystrix，返回酷酷的小熊界面，输入： http://localhost:8001/turbine.stream，然后点击 Monitor Stream ,可以看到出现了俩个监控列表
+并且会不断刷新以获取实时的监控数据，说明和单个的监控类似，返回监控项目的信息。进行图形化监控查看，输入：https://localhost:8001/hystrix，返回酷酷的小熊界面，输入： https://localhost:8001/turbine.stream，然后点击 Monitor Stream ,可以看到出现了俩个监控列表
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/turbine-02.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/turbine-02.jpg)
 
 
 **[示例代码-github](https://github.com/ityouknow/spring-cloud-examples)**
@@ -234,5 +234,5 @@ data: {"reportingHostsLast10Seconds":1,"name":"meta","type":"meta","timestamp":1
 
 -------------
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/05/18/hystrix-dashboard-turbine.html)**      
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/05/18/hystrix-dashboard-turbine.html)**      
 **版权归作者所有，转载请注明出处** 

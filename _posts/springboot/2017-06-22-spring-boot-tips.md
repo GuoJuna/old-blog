@@ -79,7 +79,7 @@ LEGACYHTML5 需要搭配一个额外的库 NekoHTML 才可用，项目中使用�
 
 参考：
 
-- [thymeleaf模板对没有结束符的HTML5标签解析出错的解决办法](http://blog.csdn.net/yalishadaa/article/details/60768811)
+- [thymeleaf模板对没有结束符的HTML5标签解析出错的解决办法](https://blog.csdn.net/yalishadaa/article/details/60768811)
 - [howto-database-initialization](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html)
 
 

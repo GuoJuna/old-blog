@@ -80,7 +80,7 @@ Octicons includes a stylesheet specifically for [Rails 4/Sprockets][sprockets].
 
 ## Installing locally
 
-It's easy to install octicons locally if you have [Homebrew](http://brew.sh/) installed. Simply run the following commands:
+It's easy to install octicons locally if you have [Homebrew](https://brew.sh/) installed. Simply run the following commands:
 
 ```
 brew install caskroom/cask/brew-cask
@@ -109,16 +109,16 @@ brew cask install "font-octicons"
 
 ### Resources
 
-- [octicons.github.com](http://octicons.github.com/) - the Octicons website
-- Read why [icon fonts are awesome](http://css-tricks.com/examples/IconFont/)
-- How to compose your [HTML for icon font usage](http://css-tricks.com/html-for-icon-font-usage/)
+- [octicons.github.com](https://octicons.github.com/) - the Octicons website
+- Read why [icon fonts are awesome](https://css-tricks.com/examples/IconFont/)
+- How to compose your [HTML for icon font usage](https://css-tricks.com/html-for-icon-font-usage/)
 - [sketch-octicons](https://github.com/JuanitoFatas/sketch-octicons) - Octicons icons as Sketch Symbols
 
 ## Why can't I see the characters in Font Book??
 
 Give this a try, you should be all set:
 
-![](http://cl.ly/image/2r1B1F2l3Q0D/content#png)
+![](https://cl.ly/image/2r1B1F2l3Q0D/content#png)
 
 ## FAQ
 
@@ -126,13 +126,13 @@ Check out [issues with the FAQ label](https://github.com/github/octicons/issues?
 
 ## Versions
 
-Octicons operates similarly to [Semver](http://semver.org/) with the following version convention:
+Octicons operates similarly to [Semver](https://semver.org/) with the following version convention:
 
 - Major: Breaking changes — removed icons, markup changes, unicode switches, css renames, icon redesigns
 - Minor: Non-breaking changes — new icons, new aliases, minor icon changes
 - Patch: Unnoticeable tweaks — slight visual changes, package updates
 
 
-[octicons]: http://octicons.github.com
-[bower]: http://bower.io/
-[sprockets]: http://guides.rubyonrails.org/asset_pipeline.html
+[octicons]: https://octicons.github.com
+[bower]: https://bower.io/
+[sprockets]: https://guides.rubyonrails.org/asset_pipeline.html

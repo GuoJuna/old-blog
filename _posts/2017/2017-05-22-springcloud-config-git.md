@@ -97,7 +97,7 @@ public class ConfigServerApplication {
 
 ### 4、测试
 
-首先我们先要测试server端是否可以读取到github上面的配置信息，直接访问：```http://localhost:8001/neo-config/dev```
+首先我们先要测试server端是否可以读取到github上面的配置信息，直接访问：```https://localhost:8001/neo-config/dev```
 
 返回信息如下：
 
@@ -123,9 +123,9 @@ public class ConfigServerApplication {
 
 上述的返回的信息包含了配置文件的位置、版本、配置文件的名称以及配置文件中的具体内容，说明server端已经成功获取了git仓库的配置信息。
 
-如果直接查看配置文件中的配置信息可访问：```http://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev```
+如果直接查看配置文件中的配置信息可访问：```https://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev```
 
-修改配置文件```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update```,再次在浏览器访问```http://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev update```。说明server端会自动读取最新提交的内容
+修改配置文件```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update```,再次在浏览器访问```https://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev update```。说明server端会自动读取最新提交的内容
 
 仓库中的配置文件会被转换成web接口，访问可以参照以下的规则：
 
@@ -179,7 +179,7 @@ bootstrap.properties如下：
 ``` properties
 spring.cloud.config.name=neo-config
 spring.cloud.config.profile=dev
-spring.cloud.config.uri=http://localhost:8001/
+spring.cloud.config.uri=https://localhost:8001/
 spring.cloud.config.label=master
 ```
 
@@ -225,9 +225,9 @@ class HelloController {
 }
 ```
 
-启动项目后访问：```http://localhost:8002/hello```，返回：```hello im dev update```说明已经正确的从server端获取到了参数。到此一个完整的服务端提供配置服务，客户端获取配置参数的例子就完成了。
+启动项目后访问：```https://localhost:8002/hello```，返回：```hello im dev update```说明已经正确的从server端获取到了参数。到此一个完整的服务端提供配置服务，客户端获取配置参数的例子就完成了。
 
-我们在进行一些小实验，手动修改```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update1```提交到github,再次在浏览器访问```http://localhost:8002/hello```，返回：```neo.hello: hello im dev update```，说明获取的信息还是旧的参数，这是为什么呢？因为springboot项目只有在启动的时候才会获取配置文件的值，修改github信息后，client端并没有在次去获取，所以导致这个问题。如何去解决这个问题呢？留到下一章我们在介绍。
+我们在进行一些小实验，手动修改```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update1```提交到github,再次在浏览器访问```https://localhost:8002/hello```，返回：```neo.hello: hello im dev update```，说明获取的信息还是旧的参数，这是为什么呢？因为springboot项目只有在启动的时候才会获取配置文件的值，修改github信息后，client端并没有在次去获取，所以导致这个问题。如何去解决这个问题呢？留到下一章我们在介绍。
 
 **[示例代码-github](https://github.com/ityouknow/spring-cloud-examples)**
 
@@ -235,6 +235,6 @@ class HelloController {
 
 -------------
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/05/22/springcloud-config-git.html)**      
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/05/22/springcloud-config-git.html)**      
 **版权归作者所有，转载请注明出处** 
 

@@ -7,11 +7,11 @@ tags: [hbase]
 
 hbase和hadoop一样也分为单机版、伪分布式版和完全分布式集群版本，这篇文件介绍如何搭建完全分布式集群环境搭建。
 
-hbase依赖于hadoop环境，搭建habase之前首先需要搭建好hadoop的完全集群环境，因此看这篇文章之前需要先看我的上一篇文章：[hadoop分布式集群搭建](http://www.guojun49.github.io/hadoop/2017/07/24/hadoop-cluster-setup.html)。本文中没有按照独立的zookeeper，使用了hbase自带的zookeeper。
+hbase依赖于hadoop环境，搭建habase之前首先需要搭建好hadoop的完全集群环境，因此看这篇文章之前需要先看我的上一篇文章：[hadoop分布式集群搭建](https://www.guojun49.github.io/hadoop/2017/07/24/hadoop-cluster-setup.html)。本文中没有按照独立的zookeeper，使用了hbase自带的zookeeper。
 
 ## 环境准备
 
-- hbase软件包: http://mirror.bit.edu.cn/apache/hbase/1.3.1/hbase-1.3.1-bin.tar.gz  
+- hbase软件包: https://mirror.bit.edu.cn/apache/hbase/1.3.1/hbase-1.3.1-bin.tar.gz  
 - 完成hadoop集群环境搭建
 
 ## 安装hbase
@@ -19,7 +19,7 @@ hbase依赖于hadoop环境，搭建habase之前首先需要搭建好hadoop的完
 > 首先在hadoop-master安装配置好之后，在复制到从节点
 
 ``` shell 
-wget http://mirror.bit.edu.cn/apache/hbase/1.3.1/hbase-1.3.1-bin.tar.gz
+wget https://mirror.bit.edu.cn/apache/hbase/1.3.1/hbase-1.3.1-bin.tar.gz
 #解压
 tar -xzvf hbase-1.3.1-bin.tar.gz  -C /usr/local/
 #重命名 
@@ -203,4 +203,4 @@ HBase配置文件hbase-siter.xml中添加连接时长的属性
 ```
 
 参考:  
-[centos 6.4下hbase 1.0.1 分布式集群搭建](http://www.ixirong.com/2015/05/25/how-to-install-hbase-cluster/)
+[centos 6.4下hbase 1.0.1 分布式集群搭建](https://www.ixirong.com/2015/05/25/how-to-install-hbase-cluster/)

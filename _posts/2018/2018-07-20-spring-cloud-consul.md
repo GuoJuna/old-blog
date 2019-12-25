@@ -16,14 +16,14 @@ excerpt: Spring Cloud Consul 使用详解
 | kv 存储服务 |  — |支持 | 支持 | 支持 |
 | 一致性 | — |raft | paxos | raft | 
 | cap | ap | cp | cp | cp | 
-| 使用接口(多语言能力) | http（sidecar） | 支持 http 和 dns | 客户端 | http/grpc | 
+| 使用接口(多语言能力) | https（sidecar） | 支持 https 和 dns | 客户端 | https/grpc | 
 | watch 支持 | 支持 long polling/大部分增量 | 全量/支持long polling | 支持 | 支持 long polling | 
 | 自身监控 | metrics | metrics | — | metrics |
 | 安全 |  — | acl /https | acl | https 支持（弱） |
 | spring cloud 集成 | 已支持 | 已支持 | 已支持 | 已支持 |
 
 在以上服务发现的软件中，Euerka 和 Consul 使用最为广泛。如果大家对注册中心的概念和 Euerka 不太了解的话， 可以参考我前期的文章：[springcloud(二)：注册中心Eureka
-](http://www.guojun49.github.io/springcloud/2017/05/10/springcloud-eureka.html)，本篇文章主要给大家介绍 Spring Cloud Consul 的使用。
+](https://www.guojun49.github.io/springcloud/2017/05/10/springcloud-eureka.html)，本篇文章主要给大家介绍 Spring Cloud Consul 的使用。
 
 
 ## Consul 介绍
@@ -36,7 +36,7 @@ Consul 是 HashiCorp 公司推出的开源工具，用于实现分布式系统�
 - 使用 Raft 算法来保证一致性, 比复杂的 Paxos 算法更直接. 相比较而言, zookeeper 采用的是 Paxos, 而 etcd 使用的则是 Raft。
 - 支持多数据中心，内外网的服务采用不同的端口进行监听。 多数据中心集群可以避免单数据中心的单点故障,而其部署则需要考虑网络延迟, 分片等情况等。 zookeeper 和 etcd 均不提供多数据中心功能的支持。
 - 支持健康检查。 etcd 不提供此功能。
-- 支持 http 和 dns 协议接口。 zookeeper 的集成较为复杂, etcd 只支持 http 协议。
+- 支持 https 和 dns 协议接口。 zookeeper 的集成较为复杂, etcd 只支持 https 协议。
 - 官方提供 web 管理界面, etcd 无此功能。
 - 综合比较, Consul 作为服务注册和配置管理的新星, 比较值得关注和研究。
 
@@ -51,16 +51,16 @@ Consul 是 HashiCorp 公司推出的开源工具，用于实现分布式系统�
 
 **Consul 角色**
 
-- client: 客户端, 无状态, 将 HTTP 和 DNS 接口请求转发给局域网内的服务端集群。 
+- client: 客户端, 无状态, 将 https 和 DNS 接口请求转发给局域网内的服务端集群。 
 - server: 服务端, 保存配置信息, 高可用集群, 在局域网内与本地客户端通讯, 通过广域网与其它数据中心通讯。 每个数据中心的 server 数量推荐为 3 个或是 5 个。
 
 Consul 客户端、服务端还支持夸中心的使用，更加提高了它的高可用性。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consul-server-client.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consul-server-client.png)
 
 **Consul 工作原理：**
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consol_service.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consol_service.png)
 
 - 1、当 Producer 启动的时候，会向 Consul 发送一个 post 请求，告诉 Consul 自己的 IP 和 Port
 - 2、Consul 接收到 Producer 的注册后，每隔10s（默认）会向 Producer 发送一个健康检查的请求，检验Producer是否健康
@@ -77,7 +77,7 @@ Eureka 提供了一个弱一致的服务视图，尽可能的提供服务可用�
 
 Consul 提供了一些列特性，包括更丰富的健康检查，键值对存储以及多数据中心。Consul 需要每个数据中心都有一套服务，以及每个客户端的 agent，类似于使用像 Ribbon 这样的服务。Consul agent 允许大多数应用程序成为 Consul 不知情者，通过配置文件执行服务注册并通过 DNS 或负载平衡器 sidecars 发现。
 
-Consul 提供强大的一致性保证，因为服务器使用 Raft 协议复制状态 。Consul 支持丰富的健康检查，包括 TCP，HTTP，Nagios / Sensu 兼容脚本或基于 Eureka 的 TTL。客户端节点参与基于 Gossip 协议的健康检查，该检查分发健康检查工作，而不像集中式心跳检测那样成为可扩展性挑战。发现请求被路由到选举出来的 leader，这使他们默认情况下强一致性。允许客户端过时读取取使任何服务器处理他们的请求，从而实现像 Eureka 这样的线性可伸缩性。
+Consul 提供强大的一致性保证，因为服务器使用 Raft 协议复制状态 。Consul 支持丰富的健康检查，包括 TCP，https，Nagios / Sensu 兼容脚本或基于 Eureka 的 TTL。客户端节点参与基于 Gossip 协议的健康检查，该检查分发健康检查工作，而不像集中式心跳检测那样成为可扩展性挑战。发现请求被路由到选举出来的 leader，这使他们默认情况下强一致性。允许客户端过时读取取使任何服务器处理他们的请求，从而实现像 Eureka 这样的线性可伸缩性。
 
 Consul 强烈的一致性意味着它可以作为领导选举和集群协调的锁定服务。Eureka 不提供类似的保证，并且通常需要为需要执行协调或具有更强一致性需求的服务运行 ZooKeeper。
 
@@ -102,12 +102,12 @@ Consul 不同于 Eureka 需要单独安装，访问[Consul 官网](https://www.c
 
 根据不同的系统类型选择不同的安装包，从下图也可以看出 Consul 支持所有主流系统。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consul_insall.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consul_insall.png)
 
 
 我这里以 Windows 为例，下载下来是一个 consul_1.2.1_windows_amd64.zip 的压缩包，解压是是一个 consul.exe 的执行文件。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consul_win.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consul_win.png)
 
 cd 到对应的目录下，使用 cmd 启动 Consul
 
@@ -126,11 +126,11 @@ pause
 
 启动结果如下：
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consol_cmd.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consol_cmd.png)
 
-启动成功之后访问：`http://localhost:8500`，可以看到 Consul 的管理界面
+启动成功之后访问：`https://localhost:8500`，可以看到 Consul 的管理界面
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consol_manage.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consol_manage.png)
 
 这样就意味着我们的 Consul 服务启动成功了。
 
@@ -243,13 +243,13 @@ public class HelloController {
 
 为了模拟注册均衡负载复制一份上面的项目重命名为 spring-cloud-consul-producer-2 ,修改对应的端口为 8502，修改 hello 方法的返回值为："hello consul two"，修改完成后依次启动两个项目。
 
-这时候我们再次在浏览器访问地址：http://localhost:8500，显示如下：
+这时候我们再次在浏览器访问地址：https://localhost:8500，显示如下：
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consol_producer.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consol_producer.png)
 
 我们发现页面多了 service-producer 服务，点击进去后页面显示有两个服务提供者：
 
-![](http://www.itmind.net/assets/images/2018/springcloud/consol_producer-2.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/consol_producer-2.png)
 
 这样服务提供者就准备好了。
 
@@ -319,20 +319,20 @@ public class ServiceController {
 
 Controller 中有俩个方法，一个是获取所有服务名为`service-producer`的服务信息并返回到页面，一个是随机从服务名为`service-producer`的服务中获取一个并返回到页面。
 
-添加完 ServiceController 之后我们启动项目，访问地址：`http://localhost:8503/services`，返回：
+添加完 ServiceController 之后我们启动项目，访问地址：`https://localhost:8503/services`，返回：
 
 
 ```
-[{"serviceId":"service-producer","host":"windows10.microdone.cn","port":8501,"secure":false,"metadata":{"secure":"false"},"uri":"http://windows10.microdone.cn:8501","scheme":null},{"serviceId":"service-producer","host":"windows10.microdone.cn","port":8502,"secure":false,"metadata":{"secure":"false"},"uri":"http://windows10.microdone.cn:8502","scheme":null}]
+[{"serviceId":"service-producer","host":"windows10.microdone.cn","port":8501,"secure":false,"metadata":{"secure":"false"},"uri":"https://windows10.microdone.cn:8501","scheme":null},{"serviceId":"service-producer","host":"windows10.microdone.cn","port":8502,"secure":false,"metadata":{"secure":"false"},"uri":"https://windows10.microdone.cn:8502","scheme":null}]
 ```
 
 发现我们刚才创建的端口为 8501 和 8502 的两个服务端都存在。
 
-多次访问地址：`http://localhost:8503/discover`，页面会交替返回下面信息：
+多次访问地址：`https://localhost:8503/discover`，页面会交替返回下面信息：
 
 ```
-http://windows10.microdone.cn:8501
-http://windows10.microdone.cn:8502
+https://windows10.microdone.cn:8501
+https://windows10.microdone.cn:8502
 ...
 ```
 
@@ -363,7 +363,7 @@ public class CallHelloController {
 }
 ```
 
-使用 RestTemplate 进行远程调用。添加完之后重启 spring-cloud-consul-consumer 项目。在浏览器中访问地址：`http://localhost:8503/call`，依次返回结果如下：
+使用 RestTemplate 进行远程调用。添加完之后重启 spring-cloud-consul-consumer 项目。在浏览器中访问地址：`https://localhost:8503/call`，依次返回结果如下：
 
 ```
 hello consul

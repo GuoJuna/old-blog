@@ -16,7 +16,7 @@ Spring Boot/Cloud都做了那些事情？他们三者之间又有什么联系？
 
 ### 什么是微服务
 
-微服务的概念源于2014年3月Martin Fowler所写的一篇文章“[Microservices](http://martinfowler.com/articles/microservices.html)”。
+微服务的概念源于2014年3月Martin Fowler所写的一篇文章“[Microservices](https://martinfowler.com/articles/microservices.html)”。
 
 微服务架构是一种架构模式，它提倡将单一应用程序划分成一组小的服务，服务之间互相协调、互相配合，为用户提供最终价值。每个服务运行在其独立的进程中，服务与服务间采用轻量级的通信机制互相沟通（通常是基于HTTP的RESTful API）。每个服务都围绕着具体业务进行构建，并且能够被独立地部署到生产环境、类生产环境等。另外，应尽量避免统一的、集中式的服务管理机制，对具体的一个服务而言，应根据业务上下文，选择合适的语言、工具对其进行构建。
 
@@ -58,7 +58,7 @@ Spring Cloud是一系列框架的有序集合。它利用Spring Boot的开发便
 
 我们再来看一张图：
 
-![](http://www.itmind.net/assets/images/2017/springcloud/spring-cloud-architecture.png)
+![](https://www.itmind.net/assets/images/2017/springcloud/spring-cloud-architecture.png)
 
 通过这张图，我们来了解一下各组件配置使用运行流程：
 
@@ -110,13 +110,13 @@ Spring Cloud 工具框架
 
 2015年初的时候，因为公司业务的大量发展，我们开始对原有的业务进行拆分，新上的业务线也全部使用独立的项目来开发，项目和项目之间通过http接口进行访问。15年的业务发展非常迅速，项目数量也就相应急剧扩大，到了15底的时候项目达60多个，当项目数达到30几个的时候，其实我们就遇到了问题，经常某个项目因为扩展增加了新的IP地址，我们就需要被动的更新好几个相关的项目。服务越来越多，服务之间的调用关系也越来越复杂，有时候想画一张图来表示项目和项目之间的依赖关系，线条密密麻麻无法看清。网上有一张图可以表达我们的心情。
 
-![](http://www.itmind.net/assets/images/2017/architecture/calling_relation.png)  
+![](https://www.itmind.net/assets/images/2017/architecture/calling_relation.png)  
 
 这个时候我们就想找一种方案，可以将我们这么多分布式的服务给管理起来，到网上进行了技术调研。我们发现有两款开源软件比较适合我们，一个是Dubbo，一个是Spring Cloud。
 
 其实刚开始我们是走了一些弯路的。这两款框架我们当时都不熟悉，当时国内使用Spring Cloud进行开发的企业非常的少，我在网上也几乎没找到太多应用的案例。但是Dubbo当时在国内的使用还是挺普遍的，相关的资料各方面都比较完善。因此在公司扩展新业务线众筹平台的时候，技术选型就先定了Dubbo，因为也是全新的业务没有什么负担，这个项目我们大概开发了六个月投产，上线之初也遇到了一些问题，但最终还比较顺利。
 
-在新业务线选型使用Dubbo的同时，我们也没有完全放弃Spring Cloud，我们抽出了一两名开发人员学习Spring Boot我也参与其中，为了验证Spring Boot是否可以到达实战的标准，我们在业余的时间使用Spring Boot开发了一款开源软件[云收藏](http://favorites.ren/)，经过这个项目的实战验证我们对Spring Boot就有了信心。最重要的是大家体会到使用Spring Boot的各种便利之后，就再也不想使用传统的方式来进行开发了。
+在新业务线选型使用Dubbo的同时，我们也没有完全放弃Spring Cloud，我们抽出了一两名开发人员学习Spring Boot我也参与其中，为了验证Spring Boot是否可以到达实战的标准，我们在业余的时间使用Spring Boot开发了一款开源软件[云收藏](https://favorites.ren/)，经过这个项目的实战验证我们对Spring Boot就有了信心。最重要的是大家体会到使用Spring Boot的各种便利之后，就再也不想使用传统的方式来进行开发了。
 
 但是还有一个问题，在选择了Spring Boot进行新业务开发的同时，并没有解决我们上面的那个问题，服务于服务直接调用仍然比较复杂和传统，这时候我们就开始研究Spring Cloud。因为大家在前期对Spring Boot有了足够的了解，因此学习Sprig Cloud就显得顺风顺水了。所以在使用Dubbo半年之后，我们又全面开始拥抱Spring Cloud。
 
@@ -142,7 +142,7 @@ Spring 推出Spring Boot/Cloud也是因为自身的很多原因。Spring最初�
 
 当我们将所有的新业务都使用Spring Cloud这套架构之后，就会出现这样一个现象，公司的系统被分成了两部分，一部分是传统架构的项目，一部分是微服务架构的项目，如何让这两套配合起来使用就成为了关键，这时候Spring Cloud里面的一个关键组件解决了我们的问题，就是Zuul。在Spring Cloud架构体系内的所有微服务都通过Zuul来对外提供统一的访问入口，所有需要和微服务架构内部服务进行通讯的请求都走统一网关。如下图：
 
-![](http://www.itmind.net/assets/images/2017/architecture/framework4.jpg)
+![](https://www.itmind.net/assets/images/2017/architecture/framework4.jpg)
 
 从上图可以看出我们对服务进行了分类，有四种：基础服务、业务服务、组合服务、前置服务。不同服务迁移的优先级不同
 
@@ -218,11 +218,11 @@ Spring 推出Spring Boot/Cloud也是因为自身的很多原因。Spring最初�
 **Spring Cloud对于中小型互联网公司来说是一种福音**，因为这类公司往往没有实力或者没有足够的资金投入去开发自己的分布式系统基础设施，使用Spring Cloud一站式解决方案能在从容应对业务发展的同时大大减少开发成本。同时，随着近几年微服务架构和Docker容器概念的火爆，也会让Spring Cloud在未来越来越“云”化的软件开发风格中立有一席之地，尤其是在目前五花八门的分布式解决方案中提供了标准化的、全站式的技术方案，意义可能会堪比当前Servlet规范的诞生，有效推进服务端软件系统技术水平的进步。
 
 
-**近期我会在GitChat分享[从架构演进的角度聊聊 Spring Cloud 都做了些什么？](http://gitbook.cn/m/mazi/activity/59d9f8f83c47cd7bb69447df?sceneId=bfbec890b01611e7b05d87f805be1357)**，如果你感兴趣也可以来听听。
+**近期我会在GitChat分享[从架构演进的角度聊聊 Spring Cloud 都做了些什么？](https://gitbook.cn/m/mazi/activity/59d9f8f83c47cd7bb69447df?sceneId=bfbec890b01611e7b05d87f805be1357)**，如果你感兴趣也可以来听听。
 
 
 -------------
 
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/10/19/micro-service-practice.html)**    
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/10/19/micro-service-practice.html)**    
 **版权所有，欢迎保留原文链接进行转载：)** 

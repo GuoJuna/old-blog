@@ -18,7 +18,7 @@ no-post-nav: true
 搭建这个博客也是无意中看到了Yummy-Jekyll这个博客的主题，比较适合程序员风格！作者也是一个coder,我在gitbook看她翻译的gradle中文手册而关注到。
 
 [Yummy-Jekyll的主题地址](https://github.com/DONGChuan/Yummy-Jekyll)<br /> 
-[我的博客园地址](http://www.cnblogs.com/ityouknow/)<br /> 
+[我的博客园地址](https://www.cnblogs.com/ityouknow/)<br /> 
 
 
 {% highlight java %}

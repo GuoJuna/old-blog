@@ -27,7 +27,7 @@ jvm体系总体分四大块：
 这里画了一个思维导图，将所有的知识点进行了陈列，因为图比较大可以点击右键下载了放大查看。
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/JVM.jpg)
+![](https://www.itmind.net/assets/images/2017/jvm/JVM.jpg)
 
 > 公众号内回复："jvm",可查看大图。
 
@@ -50,7 +50,7 @@ jvm体系总体分四大块：
 类的生命周期包括这几个部分，加载、连接、初始化、使用和卸载，其中前三部是类的加载的过程,如下图；
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/class.png)
+![](https://www.itmind.net/assets/images/2017/jvm/class.png)
 
 
 - 加载，查找并加载类的二进制数据，在Java堆中也创建一个java.lang.Class类的对象  
@@ -61,13 +61,13 @@ jvm体系总体分四大块：
 
 >  *几个小问题？*  
 >  *1、JVM初始化步骤 ？ 2、类初始化时机 ？3、哪几种情况下，Java虚拟机将结束生命周期？*  
->  *答案参考这篇文章[Jvm 系列(一):Java 类的加载机制](http://www.guojun49.github.io/jvm/2017/08/19/class-loading-principle.html)*
+>  *答案参考这篇文章[Jvm 系列(一):Java 类的加载机制](https://www.guojun49.github.io/jvm/2017/08/19/class-loading-principle.html)*
 
 
 **类加载器**
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/calssloader.png)
+![](https://www.itmind.net/assets/images/2017/jvm/calssloader.png)
 
 - 启动类加载器：Bootstrap ClassLoader，负责加载存放在JDK\jre\lib(JDK代表JDK的安装目录，下同)下，或被-Xbootclasspath参数指定的路径中的，并且能被虚拟机识别的类库  
 - 扩展类加载器：Extension ClassLoader，该加载器由sun.misc.Launcher$ExtClassLoader实现，它负责加载DK\jre\lib\ext目录中，或者由java.ext.dirs系统变量指定的路径中的所有类库（如javax.*开头的类），开发者可以直接使用扩展类加载器。  
@@ -92,7 +92,7 @@ jvm体系总体分四大块：
 **jvm内存结构**
 
  
-![](http://www.itmind.net/assets/images/2017/jvm/structure.png)  
+![](https://www.itmind.net/assets/images/2017/jvm/structure.png)  
 > 方法区和堆是所有线程共享的内存区域；而java栈、本地方法栈和程序计数器是运行是线程私有的内存区域。
 
 
@@ -112,7 +112,7 @@ jvm体系总体分四大块：
 - 空间分配担保。每次进行Minor GC时，JVM会计算Survivor区移至老年区的对象的平均大小，如果这个值大于老年区的剩余值大小则进行一次Full GC，如果小于检查HandlePromotionFailure设置，如果true则只进行Monitor GC,如果false则进行Full GC。   
 
 > *如何通过参数来控制个各个内存区域*  
-> *参考此文章：[Jvm 系列(二):Jvm 内存结构](http://www.guojun49.github.io/jvm/2017/08/25/jvm-memory-structure.html)*
+> *参考此文章：[Jvm 系列(二):Jvm 内存结构](https://www.guojun49.github.io/jvm/2017/08/25/jvm-memory-structure.html)*
 
 ## GC算法 垃圾回收
 
@@ -149,7 +149,7 @@ GC最基础的算法有三种：标记 -清除算法、复制算法、标记-压
 - G1收集器，G1 (Garbage-First)是一款面向服务器的垃圾收集器,主要针对配备多颗处理器及大容量内存的机器. 以极高概率满足GC停顿时间要求的同时,还具备高吞吐量性能特征  
 
 
-> *GC算法和垃圾回收器算法图解以及更详细内容参考 [Jvm 系列(三):GC 算法 垃圾收集器](http://www.guojun49.github.io/jvm/2017/08/29/GC-garbage-collection.html)*  
+> *GC算法和垃圾回收器算法图解以及更详细内容参考 [Jvm 系列(三):GC 算法 垃圾收集器](https://www.guojun49.github.io/jvm/2017/08/29/GC-garbage-collection.html)*  
 
 
 ## GC分析 命令调优
@@ -173,11 +173,11 @@ GC最基础的算法有三种：标记 -清除算法、复制算法、标记-压
 
 Young GC日志:
  
-![](http://guojun49.github.io/assets/images/2017/jvm/Young GC.png)
+![](https://guojun49.github.io/assets/images/2017/jvm/Young GC.png)
 
 Full GC日志:
  
-![](http://guojun49.github.io/assets/images/2017/jvm/Full GC.png)
+![](https://guojun49.github.io/assets/images/2017/jvm/Full GC.png)
 
 **调优命令**  
 
@@ -190,7 +190,7 @@ Sun JDK监控和故障处理命令有jps jstat jmap jhat jstack jinfo
 - jstack，用于生成java虚拟机当前时刻的线程快照。
 - jinfo，JVM Configuration info 这个命令作用是实时查看和调整虚拟机运行参数。
 
->  *详细的命令使用参考这里[Jvm 系列(四):Jvm 调优-命令篇](http://www.guojun49.github.io/jvm/2017/09/03/jvm-command.html)*
+>  *详细的命令使用参考这里[Jvm 系列(四):Jvm 调优-命令篇](https://www.guojun49.github.io/jvm/2017/09/03/jvm-command.html)*
 
 **调优工具**  
 
@@ -201,6 +201,6 @@ Sun JDK监控和故障处理命令有jps jstat jmap jhat jstack jinfo
 - MAT，Memory Analyzer Tool，一个基于Eclipse的内存分析工具，是一个快速、功能丰富的Java heap分析工具，它可以帮助我们查找内存泄漏和减少内存消耗  
 - GChisto，一款专业分析gc日志的工具  
 
->  *工具使用参考 [Jvm 系列(七):Jvm 调优-工具篇](http://www.guojun49.github.io/jvm/2017/09/22/jvm-tool.html)*
+>  *工具使用参考 [Jvm 系列(七):Jvm 调优-工具篇](https://www.guojun49.github.io/jvm/2017/09/22/jvm-tool.html)*
 
 

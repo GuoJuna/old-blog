@@ -8,7 +8,7 @@ tags: [pay]
 在互联网行业中只要涉及到支付，必然就会有对账的需求，几乎所有互联网公司的业务中多多少少的都会涉及到支付，大一点的公司甚至都标配有了自己的第三方支付公司，因此对账具有普遍性。对账系统是支付体系中最重要的一环，也是保证交易、资金安全的最后一道防线。在大多数的互联网公司中，一般都会有独立的对账系统来处理，比如：电商平台、互联网金融、第三方支付公司等。
 
  
-![](http://www.itmind.net/assets/images/2017/pay/reconciliation.jpg)
+![](https://www.itmind.net/assets/images/2017/pay/reconciliation.jpg)
 
 对账是支付系统中的一环，因此在对账前我们先了解一下相关的业务知识
 
@@ -75,7 +75,7 @@ tags: [pay]
 ### 对账设计
 
  
-![](http://www.itmind.net/assets/images/2017/pay/reconciliation_design.jpg)
+![](https://www.itmind.net/assets/images/2017/pay/reconciliation_design.jpg)
 
 
 对账系统的设计阶段，将对账系统分为四个模块，每个模块的负责自己的职能。
@@ -114,7 +114,7 @@ tags: [pay]
 ### 对账流程
 
  
-![](http://www.itmind.net/assets/images/2017/pay/reconciliation_process.jpg)
+![](https://www.itmind.net/assets/images/2017/pay/reconciliation_process.jpg)
 
 
 **1、下载对账单**
@@ -122,9 +122,9 @@ tags: [pay]
 大多数银行都要求接入方提供ftp服务，银行定时将对账单推送到接入方提供的ftp服务器上面；还有一部分银行会提供对账单的下载服务，通过ftp/http的都有，ftp方式居多；另外网银的对账单比较特殊，一般都需要结算登录网银的后台管理系统中，手动下载，结算下载完对账单后在导入到对账系统。
 
 
-技术实现上可以做成工厂模式，不同的支付渠道有不同的下载类，如果是http接口将文件写入到对账单，如果是ftp服务器，将服务器中的对账单下载到本地带解析的目录中。主要涉及的代码ftp工具类、http(s)工具类，相关IO读写。
+技术实现上可以做成工厂模式，不同的支付渠道有不同的下载类，如果是http接口将文件写入到对账单，如果是ftp服务器，将服务器中的对账单下载到本地带解析的目录中。主要涉及的代码ftp工具类、https(s)工具类，相关IO读写。
 
-技术选型上，HTTP(S)用apache httpclient即可实现链接池和断点续传， FTP也可以使用Apache Commons Net API。 但不管是哪一个，都需要设置重试次数和链接超时间。重试次数和间隔的设置需要小心，重试太频繁，容易把服务器打死.；时间间隔太大，又会阻塞后续处理步骤。5～10分钟是一个合适的重试间隔区间。
+技术选型上，https(S)用apache httpclient即可实现链接池和断点续传， FTP也可以使用Apache Commons Net API。 但不管是哪一个，都需要设置重试次数和链接超时间。重试次数和间隔的设置需要小心，重试太频繁，容易把服务器打死.；时间间隔太大，又会阻塞后续处理步骤。5～10分钟是一个合适的重试间隔区间。
 
 
 **2、创建批次**
@@ -183,10 +183,10 @@ tags: [pay]
 
 参考：
 
-[支付系统的对账处理](http://blog.lixf.cn/essay/2016/10/10/account-2-reconciliation/)
+[支付系统的对账处理](https://blog.lixf.cn/essay/2016/10/10/account-2-reconciliation/)
 
-[账户体系架构设计相关思路记录](http://dinguangx.iteye.com/blog/2271566)
+[账户体系架构设计相关思路记录](https://dinguangx.iteye.com/blog/2271566)
 
-[对账系统–项目总览](http://www.changsheng.pub/archives/120)
+[对账系统–项目总览](https://www.changsheng.pub/archives/120)
 
 

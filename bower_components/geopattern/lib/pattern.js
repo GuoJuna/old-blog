@@ -53,7 +53,7 @@ function hexVal(hash, index, len) {
 
 /*
  * Re-maps a number from one range to another
- * http://processing.org/reference/map_.html
+ * https://processing.org/reference/map_.html
  */
 function map(value, vMin, vMax, dMin, dMax) {
 	var vValue = parseFloat(value);

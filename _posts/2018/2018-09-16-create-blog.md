@@ -35,23 +35,23 @@ Github Pages 使用 Jekyll 来构建内容，那么 Jekyll 是什么呢？
 
 Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和我们的 Liquid 渲染器转化成一个完整的可发布的静态网站，你可以发布在任何你喜爱的服务器上。Jekyll 也可以运行在 GitHub Page 上，也就是说，你可以使用 GitHub 的服务来搭建你的项目页面、博客或者网站，而且是完全免费的。
 
-但如果我们只是在 GitHub 上面使用的话，到不需要知道 Jekyll 的语法，一般 Github 会自动将我们写的 Markdown  文件转换成静态页面。使用 Jekyll 需要使用 Markdown 语法来写你的文章，不过 Markdown 语法非常简单，做为程序员来讲基本上两三天就掌握了，大家也可以参考这篇文章：[markdown 使用总结](http://www.guojun49.github.io/other/2015/10/18/markdown-summary.html)。
+但如果我们只是在 GitHub 上面使用的话，到不需要知道 Jekyll 的语法，一般 Github 会自动将我们写的 Markdown  文件转换成静态页面。使用 Jekyll 需要使用 Markdown 语法来写你的文章，不过 Markdown 语法非常简单，做为程序员来讲基本上两三天就掌握了，大家也可以参考这篇文章：[markdown 使用总结](https://www.guojun49.github.io/other/2015/10/18/markdown-summary.html)。
 
-给大家分享一些 Jekyll 主题，这个网站下有很多 [http://jekyllthemes.org/](http://jekyllthemes.org/) 主题，大家可以根据自己的爱好去选择博客主题。
+给大家分享一些 Jekyll 主题，这个网站下有很多 [https://jekyllthemes.org/](https://jekyllthemes.org/) 主题，大家可以根据自己的爱好去选择博客主题。
 
 ## 我的个人博客
 
 我的博客经过了三个阶段，第一个阶段，完全依托于使用 GitHub Pages 来构建；第二个阶段，将博客托管于国外的一个服务商；第三个阶段，服务器迁移回到国内、域名备案。之前也写过几篇关于技术博客的文章，如下：
 
-- [千里追踪博客之殇](http://www.guojun49.github.io/other/2017/09/10/blog-stop-a-month.html)
-- [历时25天，我的博客（www.guojun49.github.io）终于又活了过来](http://www.guojun49.github.io/life/2018/06/10/my-blog-back.html)
-- [技术博客那些事儿](http://www.guojun49.github.io/other/2017/07/16/operating-technology-blog.html)
+- [千里追踪博客之殇](https://www.guojun49.github.io/other/2017/09/10/blog-stop-a-month.html)
+- [历时25天，我的博客（www.guojun49.github.io）终于又活了过来](https://www.guojun49.github.io/life/2018/06/10/my-blog-back.html)
+- [技术博客那些事儿](https://www.guojun49.github.io/other/2017/07/16/operating-technology-blog.html)
 
 使用 Github Pages + Jekyll 构建一个技术博客很简单，基本上步骤就是网上找一个自己喜欢的主题，直接 Fork 到自己的 Github ，然后在删掉原博客中的内容，在上传自己的文章即可，以我自己的博客为例。
 
 我的博客最初使用的是[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)，但这个主题已经尽两年多都没有更新了。因此后期我在这个主题的基础上做了一些改动，其中有依赖组件的更新，结合个人情况对个别页面进行了改版，就成为了现在的样子：
 
-![](http://www.itmind.net/assets/images/2018/it/blog1.png)
+![](https://www.itmind.net/assets/images/2018/it/blog1.png)
 
 使用这个主题的原因是，我比较喜欢简洁大气的风格，并且此博客主题对代码展示支持良好。
 
@@ -61,7 +61,7 @@ Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个�
 
 1、首先打开地址[https://github.com/ityouknow/ityouknow.github.io](https://github.com/ityouknow/ityouknow.github.io)，点击 Fork 按钮将代码复制一份到自己的仓库。
 
-![](http://www.itmind.net/assets/images/2018/it/blog8.png)
+![](https://www.itmind.net/assets/images/2018/it/blog8.png)
 
 过上一分钟，你的 github 仓库发现一个 ityouknow.github.io 项目。
 
@@ -73,13 +73,13 @@ Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个�
 
 点击 Settings 按钮打开设置页面，页面往下拉到 GitHub Pages 相关设置，在 Source 下面的复选框中选择 master branch ，然后点击旁边的 Save 按钮保存设置。
 
-![](http://www.itmind.net/assets/images/2018/it/blog9.png)
+![](https://www.itmind.net/assets/images/2018/it/blog9.png)
 
 4、重命名项目
 
 点击 Settings 按钮打开设置页面，重命名项目名称为：github_username.github.io。
 
-![](http://www.itmind.net/assets/images/2018/it/blog11.png)
+![](https://www.itmind.net/assets/images/2018/it/blog11.png)
 
 > github_username 是你的 github 登录用户名
 
@@ -87,7 +87,7 @@ Jekyll 是一个简单的博客形态的静态站点生产机器。它有一个�
 
 会发现存在这样一个地址： https://github_username.github.io
 
-![](http://www.itmind.net/assets/images/2018/it/blog10.png)
+![](https://www.itmind.net/assets/images/2018/it/blog10.png)
 
 这个时候，你访问此地址已经可以看到博客的首页，但是点击文章的时链接跳转地址不对，这是因为少配置了一个文件。
 
@@ -111,20 +111,20 @@ url: https://github_username.github.io
 
 首先需要设置域名解析，将域名的地址指向自己的 github 博客地址。这里以万网的域名配置为例，选择需要设置的域名点击解析，在域名解析页面添加以下两条记录
 
-![](http://www.itmind.net/assets/images/2018/it/blogcdn.png)
+![](https://www.itmind.net/assets/images/2018/it/blogcdn.png)
 
 > 红框内，需要填写自己`github_username`值。
 
 然后重新打开项目的 Settings > GitHub Pages 页面，Custom domain 下的输入框输入刚才设置的域名：xxx.com，点击保存即可。
 
-![](http://www.itmind.net/assets/images/2018/it/jiexi.png)
+![](https://www.itmind.net/assets/images/2018/it/jiexi.png)
 
 重新配置 _config.yml 
 
 打开项目目录下的 _config.yml 文件，修改以下配置：
 
 ```
-url: http://www.xxx.com
+url: https://www.xxx.com
 ```
 
 等待一分钟之后，浏览器访问地址：`www.xxx.com` 即可访问博客。
@@ -145,7 +145,7 @@ url: http://www.xxx.com
 
 ```
 cd /usr/local/ityouknow.github.io
-git pull http://github.com/ityouknow/ityouknow.github.io.git
+git pull https://github.com/ityouknow/ityouknow.github.io.git
 jekyll build --destination=/usr/share/nginx/html
 ```
 
@@ -160,7 +160,7 @@ jekyll build --destination=/usr/share/nginx/html
 
 这是很多读者反馈的第一个问题，因为我的博客 css 和 图片是放到另外一个域名下的：www.itmind.net ，因此这块大家克隆过去需要改成本地的。
 
-主要涉及的文件 `ityouknow.github.io\_includes` 目录下 head.html 和 footer.html 两个文件夹，将文件中的 `http://www.itmind.net/xxx/xxx` 改为相对路径`/xxx/xxx`即可。
+主要涉及的文件 `ityouknow.github.io\_includes` 目录下 head.html 和 footer.html 两个文件夹，将文件中的 `https://www.itmind.net/xxx/xxx` 改为相对路径`/xxx/xxx`即可。
 
 
 2、留言功能丢失

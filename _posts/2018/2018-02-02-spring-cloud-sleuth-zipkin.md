@@ -15,7 +15,7 @@ excerpt: 利用Sleuth、Zipkin对Spring Cloud应用进行服务追踪分析
 
 一般的，一个分布式服务跟踪系统，主要有三部分：数据收集、数据存储和数据展示。根据系统大小不同，每一部分的结构又有一定变化。譬如，对于大规模分布式系统，数据存储可分为实时数据和全量数据两部分，实时数据用于故障排查（troubleshooting），全量数据用于系统优化；数据收集除了支持平台无关和开发语言无关系统的数据收集，还包括异步数据收集（需要跟踪队列中的消息，保证调用的连贯性），以及确保更小的侵入性；数据展示又涉及到数据挖掘和分析。虽然每一部分都可能变得很复杂，但基本原理都类似。
 
-![](http://www.itmind.net/assets/images/2018/springcloud/tracing1.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/tracing1.png)
 
 服务追踪的追踪单元是从客户发起请求（request）抵达被追踪系统的边界开始，到被追踪系统向客户返回响应（response）为止的过程，称为一个“trace”。每个 trace 中会调用若干个服务，为了记录调用了哪些服务，以及每次调用的消耗时间等信息，在每次调用服务时，埋入一个调用记录，称为一个“span”。这样，若干个有序的 span 就组成了一个 trace。在系统向外界提供服务的过程中，会不断地有请求和响应发生，也就会不断生成 trace，把这些带有span 的 trace 记录下来，就可以描绘出一幅系统的服务拓扑图。附带上 span 中的响应时间，以及请求成功与否等信息，就可以在发生问题的时候，找到异常的服务；根据历史数据，还可以从系统整体层面分析出哪里性能差，定位性能优化的目标。
 
@@ -29,7 +29,7 @@ spring cloud sleuth可以结合zipkin，将信息发送到zipkin，利用zipkin�
 
 这是Spring Cloud Sleuth的概念图：
 
-![](http://www.itmind.net/assets/images/2018/springcloud/tracing2.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/tracing2.png)
 
 
 ## ZipKin
@@ -86,7 +86,7 @@ public class ZipkinApplication {
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: https://localhost:8761/eureka/
 server:
   port: 9000
 spring:
@@ -94,9 +94,9 @@ spring:
     name: zipkin-server
 ```
 
-配置完成后依次启动示例项目：`spring-cloud-eureka`、`zipkin-server`项目。刚问地址:`http://localhost:9000/zipkin/`可以看到Zipkin后台页面
+配置完成后依次启动示例项目：`spring-cloud-eureka`、`zipkin-server`项目。刚问地址:`https://localhost:9000/zipkin/`可以看到Zipkin后台页面
 
-![](http://www.itmind.net/assets/images/2018/springcloud/tracing3.png)
+![](https://www.itmind.net/assets/images/2018/springcloud/tracing3.png)
 
 ### 项目添加zipkin支持
 
@@ -116,7 +116,7 @@ Spring应用在监测到Java依赖包中有sleuth和zipkin后，会自动在Rest
 ``` xml
 spring:
   zipkin:
-    base-url: http://localhost:9000
+    base-url: https://localhost:9000
   sleuth:
     sampler:
       percentage: 1.0
@@ -132,20 +132,20 @@ Spring Cloud Sleuth有一个Sampler策略，可以通过这个实现类来控制
 
 这样我们就模拟了这样一个场景，通过外部请求访问Zuul网关，Zuul网关去调用`spring-cloud-producer`对外提供的服务。
 
-四个项目均启动后，在浏览器中访问地址：`http://localhost:8888/producer/hello?name=neo` 两次，然后再打开地址：
-`http://localhost:9000/zipkin/`点击对应按钮进行查看。
+四个项目均启动后，在浏览器中访问地址：`https://localhost:8888/producer/hello?name=neo` 两次，然后再打开地址：
+`https://localhost:9000/zipkin/`点击对应按钮进行查看。
 
 点击查找看到有两条记录
 
-![](http://www.itmind.net/assets/images/2018/springcloud/zipkin1.png)  
+![](https://www.itmind.net/assets/images/2018/springcloud/zipkin1.png)  
 
 点击记录进去页面，可以看到每一个服务所耗费的时间和顺序
 
-![](http://www.itmind.net/assets/images/2018/springcloud/zipkin2.png)  
+![](https://www.itmind.net/assets/images/2018/springcloud/zipkin2.png)  
 
 点击依赖分析，可以看到项目之间的调用关系
 
-![](http://www.itmind.net/assets/images/2018/springcloud/zipkin3.png) 
+![](https://www.itmind.net/assets/images/2018/springcloud/zipkin3.png) 
 
 
 **[示例代码-github](https://github.com/ityouknow/spring-cloud-examples)**
@@ -155,4 +155,4 @@ Spring Cloud Sleuth有一个Sampler策略，可以通过这个实现类来控制
 
 **参考：**
 
-[分布式服务跟踪及Spring Cloud的实现](http://daixiaoyu.com/distributed-tracing.html)       
+[分布式服务跟踪及Spring Cloud的实现](https://daixiaoyu.com/distributed-tracing.html)       

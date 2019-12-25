@@ -12,14 +12,14 @@ no-post-nav: true
 
 ## 博客
 
-- [纯洁的微笑](http://www.guojun49.github.io)
+- [纯洁的微笑](https://www.guojun49.github.io)
 
-- [粉丝日志](http://blog.fens.me/series-hadoop-family/)
+- [粉丝日志](https://blog.fens.me/series-hadoop-family/)
 
 
 ## 网站
 
-http://bigdata.evget.com/
+https://bigdata.evget.com/
 
 
 ## 开源项目

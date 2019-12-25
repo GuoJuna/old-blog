@@ -6,7 +6,7 @@ tags: [springcloud]
 ---
 
 
-我们在[springcloud(七)：配置中心svn示例和refresh](http://www.guojun49.github.io/springcloud/2017/05/23/springcloud-config-svn-refresh.html)中讲到，如果需要客户端获取到最新的配置信息需要执行```refresh```，我们可以利用webhook的机制每次提交代码发送请求来刷新客户端，当客户端越来越多的时候，需要每个客户端都执行一遍，这种方案就不太适合了。使用Spring Cloud Bus可以完美解决这一问题。
+我们在[springcloud(七)：配置中心svn示例和refresh](https://www.guojun49.github.io/springcloud/2017/05/23/springcloud-config-svn-refresh.html)中讲到，如果需要客户端获取到最新的配置信息需要执行```refresh```，我们可以利用webhook的机制每次提交代码发送请求来刷新客户端，当客户端越来越多的时候，需要每个客户端都执行一遍，这种方案就不太适合了。使用Spring Cloud Bus可以完美解决这一问题。
 
 
 ## Spring Cloud Bus
@@ -16,7 +16,7 @@ Spring cloud bus通过轻量消息代理连接各个分布的节点。这会用�
 Spring cloud bus被国内很多都翻译为消息总线，也挺形象的。大家可以将它理解为管理和传播所有分布式项目中的消息既可，其实本质是利用了MQ的广播机制在分布式的系统中传播消息，目前常用的有Kafka和RabbitMQ。利用bus的机制可以做很多的事情，其中配置中心客户端刷新就是典型的应用场景之一，我们用一张图来描述bus在配置中心使用的机制。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/configbus1.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/configbus1.jpg)
 
 根据此图我们可以看出利用Spring Cloud Bus做配置更新的步骤:
 
@@ -30,7 +30,7 @@ Spring cloud bus被国内很多都翻译为消息总线，也挺形象的。大�
 ## 项目示例
 
 
-我们选择上一篇文章[springcloud(八)：配置中心服务化和高可用](http://www.guojun49.github.io/springcloud/2017/05/25/springcloud-config-eureka.html)版本的[示例代码](https://github.com/ityouknow/spring-cloud-starter/tree/master/spring-cloud-config-eureka)来改造,MQ我们使用RabbitMQ来做示例。
+我们选择上一篇文章[springcloud(八)：配置中心服务化和高可用](https://www.guojun49.github.io/springcloud/2017/05/25/springcloud-config-eureka.html)版本的[示例代码](https://github.com/ityouknow/spring-cloud-starter/tree/master/spring-cloud-config-eureka)来改造,MQ我们使用RabbitMQ来做示例。
 
 **客户端spring-cloud-config-client改造**
 
@@ -72,9 +72,9 @@ spring.rabbitmq.password=123456
 说明客户端已经具备了消息总线通知的能力了，为了更好的模拟消息总线的效果，我们更改客户端spring-cloud-config-client项目的端口为8003、8004依次启动，这样测试环境就准备好了。启动后eureka后台效果图如下：
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/configbus3.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/configbus3.jpg)
 
-我们先分别测试一下服务端和客户端是否正确运行，访问：```http://localhost:8001/neo-config/dev```，返回信息：
+我们先分别测试一下服务端和客户端是否正确运行，访问：```https://localhost:8001/neo-config/dev```，返回信息：
 
 ```
 {
@@ -98,15 +98,15 @@ spring.rabbitmq.password=123456
 
 说明server端都正常读取到了配置信息。
 
-依次访问：```http://localhost:8002/hello```、```http://localhost:8003/hello```、```http://localhost:8004/hello```，返回：```hello im dev```。说明客户端都已经读取到了server端的内容。
+依次访问：```https://localhost:8002/hello```、```https://localhost:8003/hello```、```https://localhost:8004/hello```，返回：```hello im dev```。说明客户端都已经读取到了server端的内容。
 
-现在我们更新```neo-config-dev.properties``` 中```neo.hello```的值为```hello im dev update```并提交到代码库中，访问：```http://localhost:8002/hello``` 依然返回```hello im dev```。我们对端口为8002的客户端发送一个```/bus/refresh```的post请求。在win下使用下面命令来模拟webhook.
+现在我们更新```neo-config-dev.properties``` 中```neo.hello```的值为```hello im dev update```并提交到代码库中，访问：```https://localhost:8002/hello``` 依然返回```hello im dev```。我们对端口为8002的客户端发送一个```/bus/refresh```的post请求。在win下使用下面命令来模拟webhook.
 
 ```
-curl -X POST http://localhost:8002/bus/refresh
+curl -X POST https://localhost:8002/bus/refresh
 ```
 
-执行完成后，依次访问：```http://localhost:8002/hello```、```http://localhost:8003/hello```、```http://localhost:8004/hello```，返回：```hello im dev update```。说明三个客户端均已经拿到了最新配置文件的信息，这样我们就实现了图一中的示例。
+执行完成后，依次访问：```https://localhost:8002/hello```、```https://localhost:8003/hello```、```https://localhost:8004/hello```，返回：```hello im dev update```。说明三个客户端均已经拿到了最新配置文件的信息，这样我们就实现了图一中的示例。
 
 
 ## 改进版本
@@ -122,7 +122,7 @@ curl -X POST http://localhost:8002/bus/refresh
 
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/configbus2.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/configbus2.jpg)
 
 这时Spring Cloud Bus做配置更新步骤如下:
 
@@ -182,7 +182,7 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8000/eureka/   ## 注册中心eurka地址
+      defaultZone: https://localhost:8000/eureka/   ## 注册中心eurka地址
 
 
 management:
@@ -200,10 +200,10 @@ management:
 按照上面的测试方式，访问server端和三个客户端测试均可以正确返回信息。同样修改```neo-config-dev.properties``` 中```neo.hello```的值为```hello im dev update```并提交到代码库中。在win下使用下面命令来模拟webhook触发server端```bus/refresh```.
 
 ```
-curl -X POST http://localhost:8001/bus/refresh
+curl -X POST https://localhost:8001/bus/refresh
 ```
 
-执行完成后，依次访问：```http://localhost:8002/hello```、```http://localhost:8003/hello```、```http://localhost:8004/hello```，返回：```hello im dev update```。说明三个客户端均已经拿到了最新配置文件的信息，这样我们就实现了上图中的示例。
+执行完成后，依次访问：```https://localhost:8002/hello```、```https://localhost:8003/hello```、```https://localhost:8004/hello```，返回：```hello im dev update```。说明三个客户端均已经拿到了最新配置文件的信息，这样我们就实现了上图中的示例。
 
 
 
@@ -297,9 +297,9 @@ BUG的讨论和解决过程可以看github上面这两个issue:
 参考：
 
 
-[Config Server——使用Spring Cloud Bus自动刷新配置](http://www.itmuch.com/spring-cloud/spring-cloud-bus-auto-refresh-configuration/)
+[Config Server——使用Spring Cloud Bus自动刷新配置](https://www.itmuch.com/spring-cloud/spring-cloud-bus-auto-refresh-configuration/)
 
-[Spring Cloud构建微服务架构（七）消息总线](http://blog.didispace.com/springcloud7/)
+[Spring Cloud构建微服务架构（七）消息总线](https://blog.didispace.com/springcloud7/)
 
 **[示例代码-github](https://github.com/ityouknow/spring-cloud-examples)**
 

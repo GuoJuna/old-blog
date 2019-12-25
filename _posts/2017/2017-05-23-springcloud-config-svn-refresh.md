@@ -6,7 +6,7 @@ tags: [springcloud]
 ---
 
 
-上一篇[springcloud(六)：配置中心git示例](http://www.guojun49.github.io/springcloud/2017/05/22/springcloud-config-git.html)留了一个小问题，当重新修改配置文件提交后，客户端获取的仍然是修改前的信息，这个问题我们先放下，待会再讲。国内很多公司都使用的svn来做代码的版本控制，我们先介绍以下如何使用svn+Spring Cloud Config来做配置中心。
+上一篇[springcloud(六)：配置中心git示例](https://www.guojun49.github.io/springcloud/2017/05/22/springcloud-config-git.html)留了一个小问题，当重新修改配置文件提交后，客户端获取的仍然是修改前的信息，这个问题我们先放下，待会再讲。国内很多公司都使用的svn来做代码的版本控制，我们先介绍以下如何使用svn+Spring Cloud Config来做配置中心。
 
 
 ## svn版本
@@ -41,7 +41,7 @@ spring:
     config:
       server:
         svn:
-          uri: http://192.168.0.6/svn/repo/config-repo
+          uri: https://192.168.0.6/svn/repo/config-repo
           username: username
           password: password
         default-label: trunk
@@ -72,12 +72,12 @@ public class ConfigServerApplication {
 
 **服务端测试**
 
-访问：```http://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev```，说明服务端可以正常读取到svn代码库中的配置信息。修改配置文件```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update```,再次在浏览器访问```http://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev update```。说明server端会自动读取最新提交的内容
+访问：```https://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev```，说明服务端可以正常读取到svn代码库中的配置信息。修改配置文件```neo-config-dev.properties```中配置信息为：```neo.hello=hello im dev update```,再次在浏览器访问```https://localhost:8001/neo-config-dev.properties```，返回：```neo.hello: hello im dev update```。说明server端会自动读取最新提交的内容
 
 
 **客户端测试**
 
-客户端直接使用上一篇示例项目```spring-cloud-config-client```来测试，配置基本不用变动。启动项目后访问：```http://localhost:8002/hello，返回：```hello im dev update``说明已经正确的从server端获取到了参数。同样修改svn配置并提交，再次访问```http://localhost:8002/hello```依然获取的是旧的信息，和git版本的问题一样。
+客户端直接使用上一篇示例项目```spring-cloud-config-client```来测试，配置基本不用变动。启动项目后访问：```https://localhost:8002/hello，返回：```hello im dev update``说明已经正确的从server端获取到了参数。同样修改svn配置并提交，再次访问```https://localhost:8002/hello```依然获取的是旧的信息，和git版本的问题一样。
 
 
 ## refresh
@@ -126,9 +126,9 @@ class HelloController {
 management.security.enabled=false
 ```
 
-OK 这样就改造完了，以post请求的方式来访问```http://localhost:8002/refresh``` 就会更新修改后的配置文件。
+OK 这样就改造完了，以post请求的方式来访问```https://localhost:8002/refresh``` 就会更新修改后的配置文件。
 
-我们再次来测试，首先访问```http://localhost:8002/hello```，返回：```hello im dev```，我将库中的值修改为```hello im dev update```。在win上面打开cmd执行```curl -X POST http://localhost:8002/refresh```，返回```["neo.hello"]```说明已经更新了```neo.hello```的值。我们再次访问```http://localhost:8002/hello```，返回：```hello im dev update```,客户端已经得到了最新的值。
+我们再次来测试，首先访问```https://localhost:8002/hello```，返回：```hello im dev```，我将库中的值修改为```hello im dev update```。在win上面打开cmd执行```curl -X POST https://localhost:8002/refresh```，返回```["neo.hello"]```说明已经更新了```neo.hello```的值。我们再次访问```https://localhost:8002/hello```，返回：```hello im dev update```,客户端已经得到了最新的值。
 
 每次手动刷新客户端也很麻烦，有没有什么办法只要提交代码就自动调用客户端来更新呢，github的webhook是一个好的办法。
 
@@ -140,7 +140,7 @@ WebHook是当某个事件发生时，通过发送http post请求的方式来通�
 如此一来，你就可以通过这种方式去自动完成一些重复性工作，比如，你可以用Webhook来自动触发一些持续集成（CI）工具的运作，比如Travis CI；又或者是通过 Webhook 去部署你的线上服务器。下图就是github上面的webhook配置。
 
  
-![](http://www.itmind.net/assets/images/2017/springcloud/webhook.jpg)
+![](https://www.itmind.net/assets/images/2017/springcloud/webhook.jpg)
 
 
 - ```Payload URL``` ：触发后回调的URL  
@@ -165,5 +165,5 @@ delete | 当有分支或标签被删除时触发
 
 -------------
 **作者：纯洁的微笑**  
-**出处：[http://www.guojun49.github.io/](http://www.guojun49.github.io/springcloud/2017/05/23/springcloud-config-svn-refresh.html)**      
+**出处：[https://www.guojun49.github.io/](https://www.guojun49.github.io/springcloud/2017/05/23/springcloud-config-svn-refresh.html)**      
 **版权归作者所有，转载请注明出处** 

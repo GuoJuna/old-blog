@@ -122,7 +122,7 @@ Diagram.PLACEMENT = {
 // Some older browsers don't have getPrototypeOf, thus we polyfill it
 // https://github.com/bramp/js-sequence-diagrams/issues/57
 // https://github.com/zaach/jison/issues/194
-// Taken from http://ejohn.org/blog/objectgetprototypeof/
+// Taken from https://ejohn.org/blog/objectgetprototypeof/
 if (typeof Object.getPrototypeOf !== 'function') {
   /* jshint -W103 */
   if (typeof 'test'.__proto__ === 'object') {
@@ -1484,10 +1484,10 @@ if (typeof Raphael != 'undefined') {
  * Daniel Midgley
  * 
  * Vendor URL:
- * http://goodreasonblog.blogspot.com/p/fontery.html
+ * https://goodreasonblog.blogspot.com/p/fontery.html
  * 
  * License information:
- * http://creativecommons.org/licenses/by-nd/3.0/
+ * https://creativecommons.org/licenses/by-nd/3.0/
  */
 if (typeof Raphael != 'undefined') {
 Raphael.registerFont({

@@ -122,7 +122,7 @@ Diagram.PLACEMENT = {
 // Some older browsers don't have getPrototypeOf, thus we polyfill it
 // https://github.com/bramp/js-sequence-diagrams/issues/57
 // https://github.com/zaach/jison/issues/194
-// Taken from http://ejohn.org/blog/objectgetprototypeof/
+// Taken from https://ejohn.org/blog/objectgetprototypeof/
 if (typeof Object.getPrototypeOf !== 'function') {
   /* jshint -W103 */
   if (typeof 'test'.__proto__ === 'object') {
@@ -1278,7 +1278,7 @@ _.extend(BaseTheme.prototype, {
 // TODO Move defintion of font onto the <svg>, so it can easily be override at each level
 if (typeof Snap != 'undefined') {
 
-  var xmlns = 'http://www.w3.org/2000/svg';
+  var xmlns = 'https://www.w3.org/2000/svg';
 
   var LINE = {
     'stroke': '#000000',

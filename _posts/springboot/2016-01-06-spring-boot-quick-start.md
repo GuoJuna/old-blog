@@ -31,7 +31,7 @@ Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用�
 
 使用 Spring Boot 到底有多爽，用下面这幅图来表达
  
-![](http://www.itmind.net/assets/images/2016/dog.jpg)  
+![](https://www.itmind.net/assets/images/2016/dog.jpg)  
 
 ## 快速入门
 
@@ -39,10 +39,10 @@ Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用�
 
 **Maven 构建项目**
 
-- 1、访问 http://start.spring.io/  
+- 1、访问 https://start.spring.io/  
 - 2、选择构建工具 Maven Project、Java、Spring Boot 版本 2.1.3 以及一些工程基本信息，可参考下图所示：
 
-![](http://www.itmind.net/assets/images/2019/springboot/spring-boot-start.png)
+![](https://www.itmind.net/assets/images/2019/springboot/spring-boot-start.png)
 
 - 3、点击 Generate Project 下载项目压缩包
 - 4、解压后，使用 Idea 导入项目，File -> New -> Model from Existing Source.. -> 选择解压后的文件夹 -> OK，选择 Maven 一路 Next，OK done! 
@@ -56,7 +56,7 @@ Spring Boot 是由 Pivotal 团队提供的全新框架，其设计目的是用�
 
 **项目结构介绍**
  
-![](http://www.itmind.net/assets/images/2016/springboot2.png)  
+![](https://www.itmind.net/assets/images/2016/springboot2.png)  
 
 
 如上图所示，Spring Boot 的基础结构共三个文件:
@@ -124,12 +124,12 @@ public class HelloWorldController {
 
 `@RestController` 的意思就是 Controller 里面的方法都以 json 格式输出，不用再写什么 jackjson 配置的了！
 
-3、启动主程序，打开浏览器访问 `http://localhost:8080/hello`，就可以看到效果了，有木有很简单！
+3、启动主程序，打开浏览器访问 `https://localhost:8080/hello`，就可以看到效果了，有木有很简单！
 
 
 **如何做单元测试**
 
-打开的`src/test/`下的测试入口，编写简单的 http 请求来测试；使用 mockmvc 进行，利用`MockMvcResultHandlers.print()`打印出执行结果。
+打开的`src/test/`下的测试入口，编写简单的 https 请求来测试；使用 mockmvc 进行，利用`MockMvcResultHandlers.print()`打印出执行结果。
 
 ``` java
 @RunWith(SpringRunner.class)

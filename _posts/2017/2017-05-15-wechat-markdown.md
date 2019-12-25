@@ -67,7 +67,7 @@ public static void main(String[] args) {
 - 就算代码格式正常，使用苹果微信查看代码的时候会被自动折行，效果很差。
 
 第一个问题也有解决方案，网上有开源精神的朋友写了插件来支持，具体可以参考这篇文章：[微信公众号代码区域换行问题（解决）
-](http://www.jianshu.com/p/ea588ec043ab),但是第二个问题还是不能解决，然后我只能每次贴心的给推送的文章下面加这么一句话：
+](https://www.jianshu.com/p/ea588ec043ab),但是第二个问题还是不能解决，然后我只能每次贴心的给推送的文章下面加这么一句话：
 
 > 苹果手机代码会折行，建议苹果用户点击阅读原文查看，效果会更好一些。
 
@@ -76,11 +76,11 @@ public static void main(String[] args) {
 我在网上查找解决方案的时候，偶然看到小胡子哥作者写了一个开源软件:online-markdown,界面如下；
 
  
-![](http://www.itmind.net/assets/images/2017/online-markdown.png)
+![](https://www.itmind.net/assets/images/2017/online-markdown.png)
 
 使用方式很简单，将写好的markdown格式的代码直接复制粘贴到这个页面里面，点击预览就可以看到渲染后的效果了，根据自己的需要也可以在上面选择不同的样式和代码高亮的格式，选完之后点击复制，直接粘贴到微信公号的编辑器中既可，我试着用了一下效果不错。
 
-大家可以使用这个地址来测试[http://md.guojun49.github.io/](http://md.guojun49.github.io/)
+大家可以使用这个地址来测试[https://md.guojun49.github.io/](https://md.guojun49.github.io/)
 
 但是还是有一些小瑕疵，作者也会去完善，感兴趣的可以去github上面star一下。小瑕疵有三个：
 

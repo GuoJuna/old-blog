@@ -4,8 +4,8 @@
 
 A collection of CSS3 powered hover effects to be applied to links, buttons, logos, SVG, featured images and so on. Easily apply to your own elements, modify or just use for inspiration. Available in CSS, Sass, and LESS.
 
-[Demo](http://ianlunn.github.io/Hover)  |
-[Tutorial](http://ianlunn.co.uk/articles/hover-css-tutorial-introduction/)
+[Demo](https://ianlunn.github.io/Hover)  |
+[Tutorial](https://ianlunn.co.uk/articles/hover-css-tutorial-introduction/)
 
 ## Download/Install
 
@@ -101,7 +101,7 @@ vertical-align: middle;
 
 Should you wish to override this behavior, either remove the above CSS from Hover.css or change the `display` property for the element. Be sure to declare the override after the Hover.css declarations so the CSS cascade will take effect. Alternatively, if you are using the Sass/LESS version of Hover.css, you can remove/comment out the `forceBlockLevel()` mixin found in `scss/_hacks.scss` or `less/_hacks.less`.
 
-For more information about Transformable elements, see the [CSS Transforms Module](http://www.w3.org/TR/css3-transforms/#transformable-element).
+For more information about Transformable elements, see the [CSS Transforms Module](https://www.w3.org/TR/css3-transforms/#transformable-element).
 
 ### Using FontAwesome with Icon Effects
 
@@ -127,7 +127,7 @@ Hover.css icons are added to elements via the `:before` pseudo-element. Let's ta
 }
 ```
 
-What's important in the above example are the `font-family` and `content` declarations. `font-family: FontAwesome` tells the browser we want to use a FontAwesome icon in this pseudo-element, and the `content` value says which one. Should you wish to change the icon, change the value of the `content` property. A [full list of the values and the icon they represent can be found here](http://astronautweb.co/snippet/font-awesome/#font-awesome-list).
+What's important in the above example are the `font-family` and `content` declarations. `font-family: FontAwesome` tells the browser we want to use a FontAwesome icon in this pseudo-element, and the `content` value says which one. Should you wish to change the icon, change the value of the `content` property. A [full list of the values and the icon they represent can be found here](https://astronautweb.co/snippet/font-awesome/#font-awesome-list).
 
 If you'd rather not tamper with Hover.css itself, you can override the default content value simply by declaring the same declaration again (providing it be declared after the default one either in Hover.css or another stylesheet):
 
@@ -165,15 +165,15 @@ Other files of note include:
 ## Browser Support
 Many Hover.css effects rely on CSS3 features such as transitions, animations, transforms and pseudo-elements, for that reason, effects may not fully work in older browsers.
 
-- [Transitions](http://caniuse.com/#search=transitions) and [Animations](http://caniuse.com/#search=animations) - not supported below Internet Explorer 9
-- [Transforms](http://caniuse.com/#search=transforms) - not supported below Internet Explorer 10
-- [Generated Content (pseudo-elements)](http://caniuse.com/#search=pseudo-elements) - not supported below Internet Explorer 8
+- [Transitions](https://caniuse.com/#search=transitions) and [Animations](https://caniuse.com/#search=animations) - not supported below Internet Explorer 9
+- [Transforms](https://caniuse.com/#search=transforms) - not supported below Internet Explorer 10
+- [Generated Content (pseudo-elements)](https://caniuse.com/#search=pseudo-elements) - not supported below Internet Explorer 8
 
-Aside from the above mentioned browsers, Hover.css is supported across all major browsers. Please see [caniuse.com](http://caniuse.com/) for full support for many web technologies and test your webpages accordingly. It is recommended to apply fallback effects for older browsers, using CSS supported by those browsers or a feature testing library such as [Modernizr](http://modernizr.com/).
+Aside from the above mentioned browsers, Hover.css is supported across all major browsers. Please see [caniuse.com](https://caniuse.com/) for full support for many web technologies and test your webpages accordingly. It is recommended to apply fallback effects for older browsers, using CSS supported by those browsers or a feature testing library such as [Modernizr](https://modernizr.com/).
 
 ## Using Grunt for Development
 
-Grunt is non-essential but can speed up development. With [Grunt installed](http://gruntjs.com/getting-started), run `grunt` from the command line to set up a development server accessed at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). With Grunt running, Sass or LESS will be preprocessed (depending on whether you work out of the `scss` or `less` folder) and CSS files will be minified.
+Grunt is non-essential but can speed up development. With [Grunt installed](https://gruntjs.com/getting-started), run `grunt` from the command line to set up a development server accessed at [https://127.0.0.1:8000/](https://127.0.0.1:8000/). With Grunt running, Sass or LESS will be preprocessed (depending on whether you work out of the `scss` or `less` folder) and CSS files will be minified.
 
 **Note:** Originally Grunt was set up to autoprefix CSS properties but to make the project as accessible as possible, this is no longer the case. The `prefixed(property, value)` Sass/LESS mixin should be used for browser prefixing instead. See [Using Sass/LESS for Development](#using-sassless-for-development) and [Using LESS for Development].
 
@@ -238,15 +238,15 @@ The `$includeClasses` / `@includeClasses` option by default is set to `true` and
 If you'd like to contribute your own effects, please see the [Contributing Guide](https://github.com/IanLunn/Hover/blob/master/CONTRIBUTING.md).
 
 ## License
-Hover.css is open source, and made available under a [MIT License](http://www.opensource.org/licenses/mit-license.php). Distribute, use as-is, or modify to your liking in personal and commercial projects. Please retain the original readme and license files.
+Hover.css is open source, and made available under a [MIT License](https://www.opensource.org/licenses/mit-license.php). Distribute, use as-is, or modify to your liking in personal and commercial projects. Please retain the original readme and license files.
 
 Retaining the author information at the top of `css/hover.css` and placing it on your credits page or humans.txt is much appreciated.
 
 ## Hire Ian Lunn
 
-[Ian Lunn](http://ianlunn.co.uk) is a Freelance Front-end Developer and author of [CSS3 Foundations](http://css3foundations.com/).
+[Ian Lunn](https://ianlunn.co.uk) is a Freelance Front-end Developer and author of [CSS3 Foundations](https://css3foundations.com/).
 
-Hire [Ian](http://ianlunn.co.uk) for responsive websites, WordPress websites, JavaScript, animation, and optimization.
+Hire [Ian](https://ianlunn.co.uk) for responsive websites, WordPress websites, JavaScript, animation, and optimization.
 
 ## Support Future Development
 
@@ -261,6 +261,6 @@ Thank you.
 Bitcoin donations may be sent to the following address:
 
 <div style="text-align: center;">
-<a href="bitcoin:1KEbFvcXL8m6LogG2wjSUFz2xH6PeN6jRd?label=Hover.css%20Development"><img src="http://ianlunn.co.uk/images/btc-donate.jpg" /></a>
+<a href="bitcoin:1KEbFvcXL8m6LogG2wjSUFz2xH6PeN6jRd?label=Hover.css%20Development"><img src="https://ianlunn.co.uk/images/btc-donate.jpg" /></a>
 <p>1KEbFvcXL8m6LogG2wjSUFz2xH6PeN6jRd</p>
 </div>

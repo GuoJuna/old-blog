@@ -8,13 +8,13 @@ keywords: Spring Boot Admin，监控，应用，图形化
 copyright: java
 ---
 
-上一篇文章[《Spring Boot(十九)：使用 Spring Boot Actuator 监控应用》](http://www.guojun49.github.io/springboot/2018/02/06/spring-boot-actuator.html)介绍了 Spring Boot Actuator 的使用，Spring Boot Actuator 提供了对单个 Spring Boot 的监控，信息包含：应用状态、内存、线程、堆栈等等，比较全面的监控了 Spring Boot 应用的整个生命周期。
+上一篇文章[《Spring Boot(十九)：使用 Spring Boot Actuator 监控应用》](https://www.guojun49.github.io/springboot/2018/02/06/spring-boot-actuator.html)介绍了 Spring Boot Actuator 的使用，Spring Boot Actuator 提供了对单个 Spring Boot 的监控，信息包含：应用状态、内存、线程、堆栈等等，比较全面的监控了 Spring Boot 应用的整个生命周期。
 
 但是这样监控也有一些问题：第一，所有的监控都需要调用固定的接口来查看，如果全面查看应用状态需要调用很多接口，并且接口返回的 Json 信息不方便运营人员理解；第二，如果 Spring Boot 应用集群非常大，每个应用都需要调用不同的接口来查看监控信息，操作非常繁琐低效。在这样的背景下，就诞生了另外一个开源软件：**Spring Boot Admin**。
 
 ## 什么是 Spring Boot Admin?
 
-Spring Boot Admin 是一个管理和监控 Spring Boot 应用程序的开源软件。每个应用都认为是一个客户端，通过 HTTP 或者使用 Eureka 注册到 admin server 中进行展示，Spring Boot Admin UI 部分使用 VueJs 将数据展示在前端。
+Spring Boot Admin 是一个管理和监控 Spring Boot 应用程序的开源软件。每个应用都认为是一个客户端，通过 https 或者使用 Eureka 注册到 admin server 中进行展示，Spring Boot Admin UI 部分使用 VueJs 将数据展示在前端。
 
 这篇文章给大家介绍如何使用 Spring Boot Admin 对 Spring Boot 应用进行监控。
 
@@ -61,9 +61,9 @@ public class AdminServerApplication {
 }
 ```
 
-完成上面三步之后，启动服务端，浏览器访问`http://localhost:8000`可以看到以下界面：
+完成上面三步之后，启动服务端，浏览器访问`https://localhost:8000`可以看到以下界面：
 
-![](http://www.itmind.net/assets/images/2018/springboot/admin21.png)
+![](https://www.itmind.net/assets/images/2018/springboot/admin21.png)
 
 
 ### Admin Client 端
@@ -89,7 +89,7 @@ public class AdminServerApplication {
 ``` properties
 server.port=8001
 spring.application.name=Admin Client
-spring.boot.admin.client.url=http://localhost:8000  
+spring.boot.admin.client.url=https://localhost:8000  
 management.endpoints.web.exposure.include=*
 ```
 
@@ -110,11 +110,11 @@ public class AdminClientApplication {
 
 配置完成之后，启动 Client 端，Admin 服务端会自动检查到客户端的变化，并展示其应用
 
-![](http://www.itmind.net/assets/images/2018/springboot/admin22.png)
+![](https://www.itmind.net/assets/images/2018/springboot/admin22.png)
 
 页面会展示被监控的服务列表，点击详项目名称会进入此应用的详细监控信息。
 
-![](http://www.itmind.net/assets/images/2018/springboot/admin23.png)
+![](https://www.itmind.net/assets/images/2018/springboot/admin23.png)
 
 通过上图可以看出，Spring Boot Admin 以图形化的形式展示了应用的各项信息，这些信息大多都来自于 Spring Boot Actuator 提供的接口。
 
@@ -151,8 +151,8 @@ public class SpringBootAdminApplication {
     @Configuration
     public static class SecurityPermitAllConfig extends WebSecurityConfigurerAdapter {
         @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http.authorizeRequests().anyRequest().permitAll()  
+        protected void configure(HttpSecurity https) throws Exception {
+            https.authorizeRequests().anyRequest().permitAll()  
                 .and().csrf().disable();
         }
     }
@@ -173,7 +173,7 @@ eureka:
   client:
     registryFetchIntervalSeconds: 5
     serviceUrl:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+      defaultZone: ${EUREKA_SERVICE_URL:https://localhost:8761}/eureka/
 
 management:
   endpoints:
@@ -199,6 +199,6 @@ Spring Cloud 提供了示例代码可以参考这里：[spring-boot-admin-sample
 
 ## 参考
 
-[Spring Boot Admin Reference Guide](http://codecentric.github.io/spring-boot-admin/1.5.6/#getting-started)  
+[Spring Boot Admin Reference Guide](https://codecentric.github.io/spring-boot-admin/1.5.6/#getting-started)  
 
 

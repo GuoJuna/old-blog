@@ -13,7 +13,7 @@ keywords: Spring Boot,Spring Boot2.0,发布,Spring Boot 2.0新特性
 
 熟悉Spring Boot/Cloud的技术者们都知道，Spring Boot依赖于Spring，而Spring Cloud又依赖于Spring Boot，因此Spring Boot2.0的发布正式整合了Spring5.0的很多特性，同样后面Spring Cloud最新版本的发布也需要整合最新的Spring Boot2.0内容。
 
-![](http://www.itmind.net/assets/images/2018/springboot/new.jpg)
+![](https://www.itmind.net/assets/images/2018/springboot/new.jpg)
 
 ## 新版本特性
 
@@ -29,9 +29,9 @@ keywords: Spring Boot,Spring Boot2.0,发布,Spring Boot 2.0新特性
 
 Spring Boot2.0也提供对响应式编程的自动化配置，如：Reactive Spring Data、Reactive Spring Security 等
 
-**HTTP/2支持**
+**https/2支持**
 
-在Tomcat, Undertow 和 Jetty 中均已支持 HTTP/2
+在Tomcat, Undertow 和 Jetty 中均已支持 https/2
 
 **对Kotlin支持**
 
@@ -97,20 +97,20 @@ WebFlux 模块的名称是 spring-webflux，名称中的 Flux 来源于 Reactor 
 - 基于注解的 @Controller 和其他注解也支持 Spring MVC
 - Functional 、Java 8 lambda 风格的路由和处理
 
-![](http://www.itmind.net/assets/images/2018/springboot/webflux.jpg)
+![](https://www.itmind.net/assets/images/2018/springboot/webflux.jpg)
 
 默认情况下，Spring Boot 2使用Netty WebFlux，因为Netty在异步非阻塞空间中被广泛使用，异步非阻塞连接可以节省更多的资源，提供更高的响应度。通过比较Servlet 3.1非阻塞I / O没有太多的使用，因为使用它的成本比较高，Spring WebFlux打开了一条实用的通路。
 
 值得注意的是：支持reactive编程的数据库只有MongoDB, redis, Cassandra, Couchbase 
 
 
-**HTTP/2**
+**https/2**
 
-相比 HTTP/1.x，HTTP/2 在底层传输做了很大的改动和优化：
+相比 https/1.x，https/2 在底层传输做了很大的改动和优化：
 
-- HTTP/2 采用二进制格式传输数据，而非 HTTP/1.x 的文本格式。二进制格式在协议的解析和优化扩展上带来更多的优势和可能。
-- HTTP/2 对消息头采用 HPACK 进行压缩传输，能够节省消息头占用的网络的流量。而 HTTP/1.x 每次请求，都会携带大量冗余头信息，浪费了很多带宽资源。头压缩能够很好的解决该问题。
-- 多路复用，直白的说就是所有的请求都是通过一个 TCP 连接并发完成。HTTP/1.x 虽然通过 pipeline 也能并发请求，但是多个请求之间的响应会被阻塞的，所以 pipeline 至今也没有被普及应用，而 HTTP/2 做到了真正的并发请求。同时，流还支持优先级和流量控制。
+- https/2 采用二进制格式传输数据，而非 https/1.x 的文本格式。二进制格式在协议的解析和优化扩展上带来更多的优势和可能。
+- https/2 对消息头采用 HPACK 进行压缩传输，能够节省消息头占用的网络的流量。而 https/1.x 每次请求，都会携带大量冗余头信息，浪费了很多带宽资源。头压缩能够很好的解决该问题。
+- 多路复用，直白的说就是所有的请求都是通过一个 TCP 连接并发完成。https/1.x 虽然通过 pipeline 也能并发请求，但是多个请求之间的响应会被阻塞的，所以 pipeline 至今也没有被普及应用，而 https/2 做到了真正的并发请求。同时，流还支持优先级和流量控制。
 - Server Push：服务端能够更快的把资源推送给客户端。例如服务端可以主动把 JS 和 CSS 文件推送给客户端，而不需要客户端解析 HTML 再发送这些请求。当客户端需要的时候，它已经在客户端了。
 
 **JOOQ**
@@ -161,11 +161,11 @@ Gson 是google解析Json的一个开源框架,同类的框架fastJson,JackJson�
 
 从2002年Rod Johnson的`interface21`到如今的`Spring Boot2.0`，Spring 走过了16年的春秋，经历了N多的贡献者，Spring 也从一个小小的开源框架，发展成Java领域最成功的开源软件没有之一！同时做为一名Java开发从业者，也特别的感谢Spring这类的开源组织，为推动企业级开发做了巨大的贡献，全世界的Java开发者都是它的受益者！
 
-![](http://www.itmind.net/assets/images/2018/life/spring.jpg)
+![](https://www.itmind.net/assets/images/2018/life/spring.jpg)
 
 **向Spring致敬，向开源致敬！**
 
-[点我了解更多Spring Boot系列文章](http://www.guojun49.github.io/spring-boot.html)
+[点我了解更多Spring Boot系列文章](https://www.guojun49.github.io/spring-boot.html)
 
 ## 参考
 

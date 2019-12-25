@@ -89,7 +89,7 @@ DELIMITER $$
 USE `pv_web2`$$
 
 DROP FUNCTION
-IF EXISTS `getChildList`$$
+IF EXISTS `getSupList`$$
 
 CREATE DEFINER = `root`@`%` FUNCTION `getSupList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
 BEGIN

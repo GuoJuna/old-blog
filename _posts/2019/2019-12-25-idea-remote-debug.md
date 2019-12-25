@@ -3,7 +3,7 @@ layout: post
 title: IDEA 远程debug
 category: idea
 tags: [java,idea]
-excerpt: 通过IDEA远程调试服务器代码 宠辱不惊，看庭前花开花落；去留无意，望天上云卷云舒
+excerpt: 宠辱不惊，看庭前花开花落；去留无意，望天上云卷云舒
 ---
 
 ## 远程debug

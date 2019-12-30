@@ -123,5 +123,9 @@ DELIMITER ;
 select * from sp_member_relation where FIND_IN_SET(open_id, getSupList("44"));
 ```
 
+## 问题
+- 如果数据链成环,会产出死循环问题
+- 导入阿里云会提示**Access denied; you need (at least one of) the SUPER privilege(s) for this operation** 阿里云这边不支持 这样的操作 把代码**DEFINER=root@%** 去掉之后，重新导入。
+
 > https://blog.csdn.net/sinat_33261247/article/details/91492396
 

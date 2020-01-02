@@ -9,7 +9,7 @@ function SVG() {
 	this.svg = XMLNode('svg');
 	this.context = []; // Track nested nodes
 	this.setAttributes(this.svg, {
-		xmlns: 'https://www.w3.org/2000/svg',
+		xmlns: 'http://www.w3.org/2000/svg',
 		width: this.width,
 		height: this.height
 	});

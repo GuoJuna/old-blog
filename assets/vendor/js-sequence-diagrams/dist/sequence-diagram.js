@@ -1278,7 +1278,7 @@ _.extend(BaseTheme.prototype, {
 // TODO Move defintion of font onto the <svg>, so it can easily be override at each level
 if (typeof Snap != 'undefined') {
 
-  var xmlns = 'https://www.w3.org/2000/svg';
+  var xmlns = 'http://www.w3.org/2000/svg';
 
   var LINE = {
     'stroke': '#000000',

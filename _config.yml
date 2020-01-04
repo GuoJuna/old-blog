@@ -124,6 +124,9 @@ navs:
      - subHref: /java.html
        subLabel: Java
 
+     - subHref: /idea.html
+       subLabel: Idea
+
      - subHref: /git.html
        subLabel: Git
 

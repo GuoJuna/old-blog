@@ -124,6 +124,9 @@ navs:
      - subHref: /java.html
        subLabel: Java
 
+     - subHref: /life.html
+       subLabel: Life
+
      - subHref: /idea.html
        subLabel: Idea
 

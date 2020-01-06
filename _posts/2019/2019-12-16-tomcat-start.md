@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Tomcat 异常:无法启动
-category: java
-tags: [java,github]
+category: tomcat
+tags: [java,tomcat]
 excerpt: tomcat 启动很慢,一直卡在Starting Servlet Engine
 ---
 

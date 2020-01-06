@@ -2,7 +2,7 @@
 layout: page
 title: Tomcat
 titlebar: java
-subtitle: <span class="mega-octicon octicon-clippy"></span> &nbsp;&nbsp; Java 人的精神家园>
+subtitle: <span class="mega-octicon octicon-clippy"></span>
 menu: tomcat
 css: ['blog-page.css']
 permalink: /tomcat

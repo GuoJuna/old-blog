@@ -3,7 +3,7 @@ layout: post
 title: Tomcat 重启脚本
 category: tomcat
 tags: [java,idea]
-excerpt: 如果不曾见过阳光, 或许我能忍受黑暗
+excerpt: idea重启脚步
 ---
 
 ## tomcat重启脚本

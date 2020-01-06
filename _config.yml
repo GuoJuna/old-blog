@@ -130,11 +130,14 @@ navs:
      - subHref: /tomcat.html
        subLabel: Tomcat
 
+     - subHref: /docker.html
+       subLabel: Docker
+
      - subHref: /git.html
        subLabel: Git
 
-     - subHref: /docker.html
-       subLabel: Docker
+     - subHref: /life.html
+       subLabel: Life
 
   -
     href: /archives.html

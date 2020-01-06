@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Tools 工具集
-titlebar: tools
-subtitle: <span class="mega-octicon octicon-calendar">
-menu: tools
+title: Tomcat
+titlebar: java
+subtitle: <span class="mega-octicon octicon-clippy"></span> &nbsp;&nbsp; Java 人的精神家园。
+menu: tomcat
 css: ['blog-page.css']
-permalink: /tools
+permalink: /tomcat
 ---
 
 <div class="row">
@@ -14,7 +14,7 @@ permalink: /tools
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='tools' %}
+                {% if post.category=='tomcat' or post.category=='jvm' or post.keywords contains 'java' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

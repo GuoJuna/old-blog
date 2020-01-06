@@ -127,6 +127,9 @@ navs:
      - subHref: /idea.html
        subLabel: Idea
 
+     - subHref: /tomcat.html
+        subLabel: Tomcat
+
      - subHref: /git.html
        subLabel: Git
 

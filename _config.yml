@@ -124,7 +124,7 @@ navs:
      - subHref: /java.html
        subLabel: Java
 
-     - subHref: /Mysql.html
+     - subHref: /mysql.html
        subLabel: Mysql
 
      - subHref: /idea.html

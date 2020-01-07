@@ -15,7 +15,7 @@ permalink: /mysql
 
         <ul id="posts-list">
             {% for post in site.posts %}
-                {% if post.category=='mysql' or post.category=='jvm' or post.keywords contains 'java' %}
+                {% if post.category=='mysql' %}
                 <li class="posts-list-item">
                     <div class="posts-content">
                         <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>

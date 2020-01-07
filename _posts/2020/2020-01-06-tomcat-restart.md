@@ -3,7 +3,7 @@ layout: post
 title: Tomcat 重启脚本
 category: tomcat
 tags: [java,idea]
-excerpt: idea重启脚本
+excerpt: 我真是太南了
 ---
 
 ## tomcat重启脚本

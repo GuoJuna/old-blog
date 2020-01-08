@@ -127,6 +127,9 @@ navs:
      - subHref: /mysql.html
        subLabel: Mysql
 
+     - subHref: /linux.html
+       subLabel: Linux
+
      - subHref: /idea.html
        subLabel: Idea
 

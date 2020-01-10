@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Mysql 使用总结
+title: Mysql 函数使用总结
 category: mysql
 tags: [java,mysql]
-excerpt: mysql 使用总结
+excerpt: mysql 函数使用总结
 ---
 
 ## mysql 启动/停止/重启MySQL
@@ -39,11 +39,11 @@ USE `pv_web2`$$
 DROP FUNCTION
 IF EXISTS `getChildList`$$
 
-CREATE DEFINER = `root`@`%` FUNCTION `getChildList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
+CREATE DEFINER = `root`@`%` FUNCTION `getChildList` (rootId VARCHAR(50)) RETURNS VARCHAR (4000) CHARSET utf8
 BEGIN
 	DECLARE
-		sChildList VARCHAR (1000) ; DECLARE
-			sChildTemp VARCHAR (1000) ;
+		sChildList VARCHAR (4000) ; DECLARE
+			sChildTemp VARCHAR (4000) ;
 		SET sChildTemp = rootId;
 		WHILE sChildTemp IS NOT NULL DO
 
@@ -84,4 +84,30 @@ show create function getChildList
 - 函数调用
 ```
 select getChildList("o_RE65KroiKWbuzBUT05KjTEMfQM")
+```
+
+- 查询sql处理情况 元数据锁
+```
+#https://help.aliyun.com/document_detail/94566.html  
+show full processlist
+```
+
+- 查询数据库行锁
+```
+select l.* from 
+( 
+  select 'Blocker' role,    p.id,    p.user,    left(p.host, locate(':', p.host) - 1) host,    tx.trx_id,    tx.trx_state,    tx.trx_started, timestampdiff(second, tx.trx_started, now()) duration, lo.lock_mode, lo.lock_type, lo.lock_table, lo.lock_index,    tx.trx_query,    lw.requesting_trx_id Blockee_id,    lw.requesting_trx_id Blockee_trx
+  from    information_schema.innodb_trx tx,    
+      information_schema.innodb_lock_waits lw, 
+      information_schema.innodb_locks lo,    
+      information_schema.processlist p
+  where    lw.blocking_trx_id = tx.trx_id and p.id = tx.trx_mysql_thread_id and lo.lock_id = lw.blocking_lock_id
+  union
+  select    'Blockee' role,    p.id,    p.user,    left(p.host, locate(':', p.host) - 1) host,    tx.trx_id,    tx.trx_state,    tx.trx_started, timestampdiff(second, tx.trx_started, now()) duration, lo.lock_mode, lo.lock_type, lo.lock_table, lo.lock_index,    tx.trx_query,    null,    null
+  from    information_schema.innodb_trx tx,    
+      information_schema.innodb_lock_waits lw, 
+      information_schema.innodb_locks lo,    
+      information_schema.processlist p
+  where    lw.requesting_trx_id = tx.trx_id and p.id = tx.trx_mysql_thread_id and lo.lock_id = lw.requested_lock_id
+) l order by role desc, trx_state desc;  
 ```

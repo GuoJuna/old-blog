@@ -49,11 +49,11 @@ USE `pv_web2`$$
 DROP FUNCTION
 IF EXISTS `getChildList`$$
 
-CREATE DEFINER = `root`@`%` FUNCTION `getChildList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
+CREATE DEFINER = `root`@`%` FUNCTION `getChildList` (rootId VARCHAR(50)) RETURNS VARCHAR (4000) CHARSET utf8
 BEGIN
 	DECLARE
-		sChildList VARCHAR (1000) ; DECLARE
-			sChildTemp VARCHAR (1000) ;
+		sChildList VARCHAR (4000) ; DECLARE
+			sChildTemp VARCHAR (4000) ;
 		SET sChildTemp = rootId;
 		WHILE sChildTemp IS NOT NULL DO
 
@@ -91,11 +91,11 @@ USE `pv_web2`$$
 DROP FUNCTION
 IF EXISTS `getSupList`$$
 
-CREATE DEFINER = `root`@`%` FUNCTION `getSupList` (rootId VARCHAR(50)) RETURNS VARCHAR (1000) CHARSET utf8
+CREATE DEFINER = `root`@`%` FUNCTION `getSupList` (rootId VARCHAR(50)) RETURNS VARCHAR (4000) CHARSET utf8
 BEGIN
 	DECLARE
-		sChildList VARCHAR (1000) ; DECLARE
-			sChildTemp VARCHAR (1000) ;
+		sChildList VARCHAR (4000) ; DECLARE
+			sChildTemp VARCHAR (4000) ;
 		SET sChildTemp = rootId;
 		WHILE sChildTemp IS NOT NULL DO
 
@@ -128,4 +128,9 @@ select * from sp_member_relation where FIND_IN_SET(open_id, getSupList("44"));
 - 导入阿里云会提示**Access denied; you need (at least one of) the SUPER privilege(s) for this operation** 阿里云这边不支持 这样的操作 把代码**DEFINER=root@%** 去掉之后，重新导入。
 
 > https://blog.csdn.net/sinat_33261247/article/details/91492396
+
+- 会缺少数据
+```
+SET GLOBAL group_concat_max_len = 400000
+```
 

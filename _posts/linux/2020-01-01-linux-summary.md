@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux 使用总结
-category: Linux
+category: linux
 tags: [java,Linux]
 excerpt: 心有猛虎,心系蔷薇 
 ---

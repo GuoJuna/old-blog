@@ -80,3 +80,8 @@ select * from sp_member_relation where FIND_IN_SET(p_open_id, getChildList(1));
 ```
 show create function getChildList
 ```
+
+- 函数调用
+```
+select getChildList("o_RE65KroiKWbuzBUT05KjTEMfQM")
+```

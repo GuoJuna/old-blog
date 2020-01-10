@@ -129,7 +129,7 @@ select * from sp_member_relation where FIND_IN_SET(open_id, getSupList("44"));
 
 > https://blog.csdn.net/sinat_33261247/article/details/91492396
 
-- 会缺少数据
+- 会缺少数据 group_concat_max_len默认1024
 ```
 SET GLOBAL group_concat_max_len = 400000
 ```

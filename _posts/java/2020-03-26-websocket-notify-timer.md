@@ -197,7 +197,7 @@ public class GenNoticeJob {
 
 ## 部署
 部署到服务器,如果通过nginx 访问还需要添加配置
-```nginx
+```
 location /your_websocket_uri {
       proxy_http_version 1.1;
       proxy_set_header Upgrade $http_upgrade;

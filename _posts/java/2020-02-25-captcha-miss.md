@@ -2,7 +2,7 @@
 layout: post
 title: 验证码无法加载
 category: java
-tags: [java,github]
+tags: [java]
 excerpt: 系统启动功能正常,验证码无法加载,导致无法登陆
 ---
 

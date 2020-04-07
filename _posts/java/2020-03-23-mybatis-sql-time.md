@@ -2,7 +2,7 @@
 layout: post
 title: mybatis-sql执行时间插件
 category: java
-tags: [java,github]
+tags: [java,myBaits]
 excerpt: 基于mybatis的一个查看sql执行时间的插件
 ---
 

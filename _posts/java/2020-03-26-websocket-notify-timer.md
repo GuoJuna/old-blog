@@ -2,7 +2,7 @@
 layout: post
 title: WebSocket 定时推送消息
 category: java
-tags: [java,github]
+tags: [java,webSocket]
 excerpt: WebSocket + quartz 实现消息持续推送
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Mybatis Generator配置 + 自定义注释
 category: java
-tags: [java,github]
+tags: [java,myBatis]
 excerpt: Mybatis Generator完整配置
 ---
 

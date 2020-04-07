@@ -2,7 +2,7 @@
 layout: post
 title: Java并发编程：线程封闭和ThreadLocal详解
 category: java
-tags: [java,github]
+tags: [java]
 excerpt: Java并发编程：线程封闭和ThreadLocal详解
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: Java并发编程：JMM和volatile关键字
 category: java
-tags: [java,github]
+tags: [java]
 excerpt: JMM和volatile关键字
 ---
 

@@ -298,7 +298,9 @@ MyBatis Generator（MBG）是MyBatis MyBatis 和iBATIS的代码生成器。它
 ```
 
 ## 配置批处理插件
+
 - 批量插入
+
 ```java
 package com.bxd.core.plugin;
 
@@ -437,6 +439,7 @@ public class BatchInsertPlugin extends PluginAdapter {
 ```
 
 - 批量更新
+
 ```java
 package com.bxd.core.plugin;
 
@@ -708,8 +711,7 @@ public class CustomCommentGenerator implements CommentGenerator {
 配置自定义注释生成器
 ```xml
     <!-- 自定义注释生成器 -->
-	<commentGenerator type="com.bxd.core.support.CustomCommentGenerator" />
-
+    <commentGenerator type="com.bxd.core.support.CustomCommentGenerator" />
 ```
 
 ## 配置实例

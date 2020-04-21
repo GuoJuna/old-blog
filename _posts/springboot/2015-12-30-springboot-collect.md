@@ -12,7 +12,6 @@ tags: [springboot]
 
 ## 推荐博客
 
-- [纯洁的微笑-Spring Boot系列文章](https://www.guojun49.github.io/spring-boot.html)  
 - [林祥纤-从零开始学Spring Boot](https://412887952-qq-com.iteye.com/category/356333)   
 - [Mkyong-Spring Boot教程（国外）](https://www.mkyong.com/tutorials/spring-boot-tutorials/)
 - [baeldung-Spring Boot教程（国外）](https://www.baeldung.com/spring-boot)  
@@ -31,7 +30,6 @@ tags: [springboot]
 
 ## 开源
 
-- [纯洁的微笑 Spring Boot 示例](https://github.com/ityouknow/spring-boot-examples)
 - [Spring Boot 官方示例](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples)  
 - [Spring Boot开源软件 云收藏](https://github.com/cloudfavorites/favorites-web)  
 - [Docker+SpringBoot+Mybatis+thymeleaf等技术实现的Java博客系统](https://github.com/ZHENFENG13/My-Blog)  

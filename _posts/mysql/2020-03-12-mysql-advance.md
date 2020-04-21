@@ -84,11 +84,16 @@ table
 - 显示这一行是关于哪张表的。
 
 type：访问方法
-- ref：普通二级索引与常量进行等值匹配
-- ref_or_null：普通二级索引与常量进行等值匹配，该索引可能是null
-- const：主键或唯一二级索引列与常量进行等值匹配
-- range：范围区间的查询
-- all：全表扫描
+- all — 扫描全表数据
+- index — 遍历索引
+- range — 索引范围查找
+- index_subquery — 在子查询中使用 ref
+- unique_subquery — 在子查询中使用 eq_ref
+- ref_or_null — 对 null 进行索引的优化的 ref
+- fulltext — 使用全文索引
+- ref — 使用非唯一索引查找数据
+- eq_ref — 在 join 查询中使用主键或唯一索引关联
+- const — 将一个主键放置到 where 后面作为条件查询， MySQL 优化器就能把这次查询优化转化为一个常量，如何转化以及何时转化，这个取决于优化器，这个比 eq_ref 效率高一点
 
 possible_keys
 - 对某表进行单表查询时可能用到的索引

@@ -6,7 +6,7 @@ tags: [java,myBatis]
 excerpt: java面试整理
 ---
 
-## 一. java基础
+## 一. Java基础
 #### Java中8大基本类型占用的字节数?
 - 1字节： byte , boolean
 - 2字节： short , char
@@ -155,7 +155,7 @@ volatile 是 Java 虚拟机提供的最轻量级的同步机制。
 #### volatile 对比 synchronized 有什么区别？
 synchronized 既能保证可见性，又能保证原子性，而 volatile 只能保证可见性，无法保证原子性。比如，i++ 如果使用 synchronized 修饰是线程安全的，而 volatile 会有线程安全的问题。
 
-## 三. jvm
+## 三. Jvm
 #### JVM 主要组成部分有哪些？
 - 类加载器（ClassLoader）
 - 运行时数据区（Runtime Data Area）
@@ -204,7 +204,7 @@ synchronized 既能保证可见性，又能保证原子性，而 volatile 只能
 - 清空 Eden 和 From Survivor 分区；
 - From Survivor 和 To Survivor 分区交换（From 变 To，To 变 From）。
 
-### 垃圾回收器
+#### 垃圾回收器
 - CMS（Concurrent Mark Sweep）一种以获得最短停顿时间为目标的收集器，非常适用 B/S 系统。
 - G1 垃圾回收器是一种兼顾吞吐量和停顿时间的 GC 实现，是 JDK 9 以后的默认 GC 选项。G1 可以直观的设定停顿时间的目标，相比于 CMS CG，G1 未必能做到 CMS 在最好情况下的延时停顿，但是最差情况要好很多
 
@@ -217,7 +217,7 @@ synchronized 既能保证可见性，又能保证原子性，而 volatile 只能
 - -XX:NewRatio 设置分代垃圾回收器新生代和老生代内存占比；
 - -XX:SurvivorRatio 设置新生代 Eden、Form Survivor、To Survivor 占比。
 
-## 四. mysql
+## 四. Mysql
 
 #### 事务的四大特性?
 - 原子性
@@ -341,7 +341,7 @@ Spring Boot启动的时候会通过@EnableAutoConfiguration注解找到META-INF/
 #### 什么是spring cloud
 spring cloud 是一系列框架的有序集合。它利用 spring boot 的开发便利性巧妙地简化了分布式系统基础设施的开发，如服务发现注册、配置中心、消息总线、负载均衡、断路器、数据监控等，都可以用 spring boot 的开发风格做到一键启动和部署。
 
-## 九. redis
+## 九. Redis
 
 #### redis持久化方式?
 - RDB(redis database)：在指定的时间间隔能对你的数据进行快照存储。

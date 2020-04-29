@@ -21,8 +21,15 @@ cat /proc/version
 cat /etc/issue  或cat /etc/redhat-release
 ```
 
+4. 查询9090端口进程
+netstat -anp | grep "9090"
+
+5. 结束进程
+kill -9 pid
+
 ## 同步时间
 1. 查询当前时间
 ```
 date
 ```
+

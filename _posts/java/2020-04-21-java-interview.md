@@ -1,9 +1,9 @@
 ---
 layout: post
-title: java面试整理
+title: java整理
 category: java
 tags: [java,myBatis]
-excerpt: 2020 java面试整理
+excerpt: 2020 java整理
 ---
 
 ## 一. Java基础
@@ -19,9 +19,9 @@ excerpt: 2020 java面试整理
 ==对于基本类型来说是值比较,对于引用类型来说是比较的引用;而equals默认情况下是引用比较,只是很多类重写了equals方法,比如String,Integer等把它变成了值比较,所以一般情况下equals比较的是值是否相等
 
 #### final在java中有什么作用?
-final修饰的类叫最终类,该类不能被继承.  
-final修饰的方法不能被重写     
-final修饰的变量是常量,常量必须初始化,初始化之后不能被修改    
+- final修饰的类叫最终类,该类不能被继承.  
+- final修饰的方法不能被重写     
+- final修饰的变量是常量,常量必须初始化,初始化之后不能被修改    
 
 #### java容器有哪些?
 java容器分为Collection和Map两大类.其下又有很多子类.如下所示:
@@ -97,6 +97,7 @@ HashMap的做法是用链表和红黑树存储相同的hash值得value.当hash�
 - @Target：定义注解的作用目标
 - @Document：说明该注解将被包含在javadoc中
 - @Inherited：说明子类可以继承父类中的该注解
+
 >元注解是指注解的注解
 
 #### tcp和 udp的区别
@@ -191,6 +192,7 @@ synchronized 既能保证可见性，又能保证原子性，而 volatile 只能
 #### java有哪些可重入锁
 - ReentrantLock 是基于AQS实现的，分为公平锁和非公平锁
 - Synchronized 是非公平锁
+
 >概念：同一线程可多次获取在同一对象上的锁
 
 ## 三. JVM
@@ -239,6 +241,7 @@ synchronized 既能保证可见性，又能保证原子性，而 volatile 只能
 - JDK1.8的堆内存模型 
     - Young 年轻代
     - Tenured 年老代
+    
 > 在jdk1.8中变化最大的Perm区，用Metaspace（元数据空间）进行了替换。
   需要特别说明的是：Metaspace所占用的内存空间不是在虚拟机内部，而是在本地内存
   空间中，这也是与1.7的永久代最大的区别所在

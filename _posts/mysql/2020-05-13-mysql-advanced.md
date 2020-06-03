@@ -3,7 +3,7 @@ layout: post
 title: 深入理解MySQL
 category: mysql
 tags: [java,mysql]
-excerpt: 深入理解MySQL
+excerpt: SQL优化, MySQL锁, 事物 
 ---
 
 ## SQL 优化

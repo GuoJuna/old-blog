@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mysql 索引数据结构
+title: Mysql 索引是什么
 category: mysql
 tags: [java,mysql]
 excerpt: B-Tree和B+Tree

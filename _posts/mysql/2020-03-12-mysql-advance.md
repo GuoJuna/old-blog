@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Mysql 使用总结
+title: Mysql sql执行流程
 category: mysql
 tags: [java,mysql]
-excerpt: mysql 使用总结
+excerpt: mysql sql执行流程
 ---
 
 ## 一. sql执行流程

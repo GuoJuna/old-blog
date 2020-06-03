@@ -3,7 +3,7 @@ layout: post
 title: Mysql 函数使用总结
 category: mysql
 tags: [java,mysql]
-excerpt: mysql 函数使用总结
+excerpt: mysql 函数的创建与使用
 ---
 
 ## mysql 启动/停止/重启MySQL

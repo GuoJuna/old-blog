@@ -24,7 +24,7 @@ Explain有什么用
 Explain有哪些信息
 ------------
 
-`Explain`&nbsp;执行计划包含字段信息如下：分别是&nbsp;`id`、`select_type`、`table`、`partitions`、`type`、`possible_keys`、`key`、`key_len`、`ref`、`rows`、`filtered`、`Extra`&nbsp;12个字段。![](https://mmbiz.qpic.cn/mmbiz_png/0OzaL5uW2aOD3ic60hLCZUObK1JWNpuhNmJ4grNiclvdEXaRUTb9KKlqZ4YW6GOWO7Julx6J7gPCj1kVRibQW3UUA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1)下边我们会结合具体的`SQL`示例，详细的解读每个字段以及每个字段中不同参数的含义，以下所有示例数据库版本为&nbsp;`MySQL.5.7.17`。
+`Explain`&nbsp;执行计划包含字段信息如下：分别是&nbsp;`id`、`select_type`、`table`、`partitions`、`type`、`possible_keys`、`key`、`key_len`、`ref`、`rows`、`filtered`、`Extra`&nbsp;12个字段。下边我们会结合具体的`SQL`示例，详细的解读每个字段以及每个字段中不同参数的含义，以下所有示例数据库版本为&nbsp;`MySQL.5.7.17`。
 
 ```mysql
 ​```
@@ -523,7 +523,7 @@ mysql> EXPLAIN select now();
 
 ```
 
-`Extra`列的信息非常非常多，这里就不再一一列举了，详见&nbsp;`MySQL`官方文档 ：https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#jointype\_index\_merge![](https://mmbiz.qpic.cn/mmbiz_png/0OzaL5uW2aOD3ic60hLCZUObK1JWNpuhN6icm4H6QEibyibp7l2vcZkgzIM0qg4Aq1vy1IH1B7qoy8RQ93Kmmcgcibg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1)
+`Extra`列的信息非常非常多，这里就不再一一列举了，详见&nbsp;`MySQL`官方文档 ：https://dev.mysql.com/doc/refman/5.7/en/explain-output.html#jointype\_index\_merge
 
 总结
 --

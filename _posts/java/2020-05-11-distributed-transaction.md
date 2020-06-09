@@ -8,19 +8,19 @@ excerpt: 分布式事务解决方案
 
 ## 一.分布式事务产生的场景
 - 微服务之间通过远程调用完成事务操作
-![](assets/images/2020/0E08GB7RLMS6ELBLRIXMQ5B.png)
+![](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200609173848.png)
 
 - 单体系统访问多个数据库实例
-![](assets/images/2020/DP(U{JH0Z7%{UNNYED7Y{7J.png)
+![](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200609173856.png)
 
 - 多服务访问同一个数据库实例
-![](assets/images/2020/BN1365LL_54K_9(EX3R%__C.png)
+![](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200609173859.png)
 
 ## 二.分布式事务理论基础
 ### 2.1 CAP理论
 CAP是Consistency、Availability、Partition tolerance三个词语的缩写，分别表示一致性、可用性、分区容忍
 性。
-![](assets/images/2020/FT([(H$JDP5V[6@Y959@SBW.png)
+![](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200609174033.png)
 整体执行流程如下：
 1、商品服务请求主数据库写入商品信息（添加商品、修改商品、删除商品）
 2、主数据库向商品服务响应写入成功。

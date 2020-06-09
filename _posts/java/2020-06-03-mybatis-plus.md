@@ -29,7 +29,7 @@ MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的�
 - 内置 Sql 注入剥离器：支持 Sql 注入剥离，有效预防 Sql 注入攻击
 
 ## 架构
-![](../../assets/images/2020-06-03-mybatis-plus_images/0163b2e9.png)
+![](https://gitee.com/guojun49/images/raw/master/blog-img/20200609172822.png)
 
 ## 开始
 - @TableName 指定数据库表名
@@ -56,14 +56,14 @@ MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的�
 
 - mybatis-plus.configuration.cache-enabled=false
 > 全局地开启或关闭配置文件中的所有映射器已经配置的任何缓存，默认为 true。
- 
+
 - mybatis-plus.global-config.db-config.id-type=auto
 > 全局默认主键类型，设置后，即可省略实体对象中的@TableId(type = IdType.AUTO)配置。
-  
+
 - mybatis-plus.global-config.db-config.table-prefix=tb_
 > 表名前缀，全局配置后可省略@TableName()配置
- 
- 
+
+
 ## 条件构造器
 - 多eq
 ```

@@ -17,3 +17,14 @@ excerpt: IDEA 习惯配置与问题
  - 启动cmd,执行命令```netstat -ano|findstr  8080```,会查询出占用端口号的进程号
  - ```taskkill -f -pid``` 进程号   杀死进程，然后重启Tomcat即可解决
 ![](https://gitee.com/guojun49/images/raw/master/blog-img/20200609171600.png)
+
+4. 一行代码不折叠
+![](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200610120439.png)
+
+5. maven配置
+
+![image-20200610120647737](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200610120647.png)
+
+6. git配置
+
+![image-20200610120905805](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200610120905.png)

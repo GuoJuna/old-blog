@@ -54,7 +54,7 @@ excerpt: IDEA 快捷键
 
 
 
-## 总结
+## IDEA总结
 - 智能补全：Ctrl+Shift+Space
 
 - 自我修复：Alt+Enter
@@ -75,7 +75,13 @@ excerpt: IDEA 快捷键
 
 - 创造万物：Alt+Insert
 
+## 其他
+- Ctrl + Alt + W 微信打开消息
 
+- Ctrl + Alt + Z QQ提取消息
+- Ctrl + Alt + A 捕捉屏幕
+- Ctrl + Alt + O 屏幕识图
 
+- Ctrl + Alt + D 有道截屏翻译
 
 

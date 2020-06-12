@@ -87,3 +87,5 @@ excerpt: IDEA 快捷键
 - Alt + T 使用Typora打开md文件
 
 - Alt + F12 打开终端
+
+- Shift + Esc 关闭窗口

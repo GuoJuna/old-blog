@@ -10,6 +10,8 @@ excerpt: Mybatis Plus
 MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高
 效率而生。
 
+- 官网地址  http://mp.baomidou.com 
+
 ## 特性
 - 无侵入：只做增强不做改变，引入它不会对现有工程产生影响，如丝般顺滑
 - 损耗小：启动即会自动注入基本 CURD，性能基本无损耗，直接面向对象操作
@@ -92,3 +94,33 @@ sql
 ```
 SELECT * FROM t_student WHERE name = ? OR name = ? 
 ```
+
+![image-20200610142711715](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200610142711.png)
+
+## 代码生成
+
+- 全局配置
+- 数据源配置
+- 策略配置
+- 包名策略配置
+- 整合配置
+
+
+
+## 插件
+
+- 分页插件
+
+  com.baomidou.mybatisplus.plugins.PaginationInterceptor  
+
+- 执行分析插件
+
+  com.baomidou.mybatisplus.plugins.SqlExplainInterceptor 
+
+- 性能分析插件
+
+  com.baomidou.mybatisplus.plugins.PerformanceInterceptor 
+
+- 乐观锁插件
+
+  com.baomidou.mybatisplus.plugins.OptimisticLockerInterceptor 

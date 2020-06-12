@@ -28,3 +28,11 @@ excerpt: IDEA 习惯配置与问题
 6. git配置
 
 ![image-20200610120905805](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200610120905.png)
+
+7. Vue项目在IDEA中@无法跳转
+
+![image-20200612102208781](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200612102208.png)
+
+9. 添加idea中外部工具Typora打开md文件
+
+![image-20200612103208872](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200612103208.png)

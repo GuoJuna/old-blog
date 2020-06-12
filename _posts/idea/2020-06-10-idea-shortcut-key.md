@@ -75,7 +75,7 @@ excerpt: IDEA 快捷键
 
 - 创造万物：Alt+Insert
 
-## 其他
+## 常用
 - Ctrl + Alt + W 微信打开消息
 
 - Ctrl + Alt + Z QQ提取消息
@@ -84,4 +84,6 @@ excerpt: IDEA 快捷键
 
 - Ctrl + Alt + D 有道截屏翻译
 
+- Alt + T 使用Typora打开md文件
 
+- Alt + F12 打开终端

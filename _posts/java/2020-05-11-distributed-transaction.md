@@ -66,6 +66,15 @@ BASE 是Basically Available(基本可用)、Soft state(软状态)和Eventually c
 - 最终一致:最终一致是指经过一段时间后，所有节点数据都将会达到一致。如订单的"支付中"状态，最终会变
 为“支付成功”或者"支付失败"，使订单状态与实际交易结果达成一致，但需要一定时间的延迟、等待。
 
+### 分布式Id生成
+- 数据库自增
 
+- uuid
+
+- 借助全局redis
+
+- 雪花算法
+
+  ![image-20200615114808886](https://gitee.com/guojun49/images/raw/master/blog-img/2020/06/20200615114815.png)
 
 #### 可靠消息一致性
